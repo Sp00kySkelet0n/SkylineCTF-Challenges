@@ -1,0 +1,17 @@
+---
+apiVersion: skyline.local/v1 # Ne jamais modifier ici
+kind: CTFChallenge # Ne jamais modifier ici
+metadata:
+  name: File-Quest-lvl-2
+  namespace: ctfd # Ne jamais modifier ici
+spec:
+  name: "File Quest lvl 2"
+  description: |
+    Work In progress
+  category: "Web"
+  points: 100
+  type: "standard"
+  state: "visible"
+  connection_info: "Lancer votre instance sur http://deployer.ctfd.tail575cd.ts.net"
+  max_attempts: 0
+  creator: "Enzo"
