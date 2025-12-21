@@ -16,4 +16,5 @@ spec:
   connection_info: "Lancer votre instance sur http://deployer.ctfd.tail575cd.ts.net"
   max_attempts: 0
   image: "nginx:latest"
+  port: 80
   creator: "Enzo"
