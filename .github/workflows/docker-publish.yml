@@ -45,45 +45,21 @@ jobs:
           GITHUB_REPOSITORY: ${{ github.repository }}
           GITHUB_SHA: ${{ github.sha }}
         run: |
-          if [ -z "$CHANGED_FILES" ]; then
-            echo "No Dockerfiles changed."
-            exit 0
-          fi
-
-          echo "Changed files: $CHANGED_FILES"
+          if [ -z "$CHANGED_FILES" ]; then exit 0; fi
 
           for file in $CHANGED_FILES; do
-            echo "------------------------------------------------"
-            echo "Processing $file"
-            
+            [ -f "$file" ] || continue
+
             dir=$(dirname "$file")
             folder_name=$(basename "$dir")
-            
-            # Handle root directory case
-            if [ "$folder_name" = "." ]; then
-                folder_name="$REPO_NAME"
-            fi
-            
-            # Sanitize folder name for Docker image name
             safe_name=$(echo "$folder_name" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9._-]/-/g' | sed 's/-\+/-/g' | sed 's/^[-._]\+\|[-._]\+$//g')
-            
-            IMAGE_NAME="ghcr.io/$GITHUB_REPOSITORY/$safe_name"
-            echo "  Context: $dir"
-            echo "  Image Name: $IMAGE_NAME"
-            
-            # Generate tags
-            TAG_LATEST="$IMAGE_NAME:latest"
-            TAG_SHA="$IMAGE_NAME:sha-$GITHUB_SHA"
-            
-            echo "  Building and pushing tags: $TAG_LATEST, $TAG_SHA"
-            
-            # Build and push using docker buildx directly or just docker build
-            # Using docker buildx build is robust
+
+            IMAGE_NAME="ghcr.io/${GITHUB_REPOSITORY,,}/$safe_name"
             docker buildx build \
+              --platform linux/amd64 \
               --push \
-              --tag "$TAG_LATEST" \
-              --tag "$TAG_SHA" \
+              -f "$file" \
+              --tag "$IMAGE_NAME:latest" \
+              --tag "$IMAGE_NAME:sha-${GITHUB_SHA}" \
               "$dir"
-              
-            echo "  Successfully pushed $safe_name"
           done
