@@ -14,4 +14,7 @@ spec:
   state: "visible"
   connection_info: "Lancer votre instance sur http://deployer.ctfd.tail575cd.ts.net"
   max_attempts: 0
+  image: "ghcr.io/sp00kyskelet0n/skylinectf-challenges/file-quest-lvl-2:latest"
+  port: 80
+  instance: True
   creator: "Enzo"
