@@ -1,4 +1,5 @@
 FROM php:8.1-apache
+
 RUN a2enmod rewrite
 COPY flag.txt /var/flag.txt
 RUN chmod 444 /var/flag.txt
