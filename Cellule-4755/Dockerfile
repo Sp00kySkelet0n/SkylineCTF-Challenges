@@ -9,6 +9,7 @@ RUN gcc /tmp/vulnerable_binary.c -o /usr/local/bin/vulnerable && \
     chmod 4755 /usr/local/bin/vulnerable
 COPY src/entrypoint.sh /entrypoint.sh
 COPY src/flag.txt /root/flag.txt
+
 RUN chmod +x /entrypoint.sh && \
     chmod 600 /root/flag.txt
 
