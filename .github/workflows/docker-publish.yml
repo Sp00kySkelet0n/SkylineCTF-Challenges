@@ -38,7 +38,7 @@ jobs:
           # Find all .gpg files (excluding the key itself if present)
           find . -name "*.zip.gpg" -print0 | while IFS= read -r -d '' file; do
             echo "Decrypting $file..."
-            gpg --quiet --batch --yes --pinentry-mode loopback --decrypt --output "${file%.gpg}" "$file"
+            gpg --quiet --batch --yes --pinentry-mode loopback --passphrase '' --decrypt --output "${file%.gpg}" "$file"
             
             echo "Unzipping ${file%.gpg}..."
             unzip -o -q "${file%.gpg}" -d "$(dirname "$file")"
