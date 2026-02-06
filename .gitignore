@@ -3,3 +3,4 @@ __pycache__
 **/src/
 *.zip
 !*.zip.gpg
+remove2.sh

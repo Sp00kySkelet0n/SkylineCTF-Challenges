@@ -9,7 +9,7 @@ metadata:
 spec:
     name: File Quest lvl 2
     description: |
-        Work In progress
+        TBD
     category: Web
     points: 100
     type: standard
@@ -27,24 +27,24 @@ sops:
     pgp:
         - created_at: "2026-02-06T08:58:07Z"
           enc: |-
-            -----BEGIN PGP MESSAGE-----
+              -----BEGIN PGP MESSAGE-----
 
-            hQIMA4Wg+3KzyZPEARAA0AxZTT4LRMykbm5XIt4kWFZdczdDiSMJJFHnUEw0C7mG
-            xkJsRKVD0U+q5HFdJpjo9e9mjMau56A6beWz058y+/44YSRnjUgmMrZSFQTsDEPb
-            RZF7QpgXdI2TexMYiiOhD0u0QC9oS8FxfrOl18DCDyA2GXmMpKf8PLd2noIox1/R
-            hPKc77WL6aNqDsd7AKApeAG540Qr/KujQCs+BHFiPzuon9smZoh3XaMX2owVIwkl
-            z2SvtO77/PtakniYEObtzd8I5LTMhdscT1t3fC3CkIxmzymyZtmBbNTqvkFHTLCT
-            IuyLRyLOn9gIMq7DugbW+zNel6cf6xQECuGZBZE4I/6xTc+QQpiiuo8031cKYEmi
-            1oNB1GvJvbiT0dCqwJKSpusEvMOuye4SkUgQK5ZOVCKtzVkUHK7TuKFmx3urQGoL
-            rXY3IBsybiOQwKVGrJS1ic6aPyG4ftqQ9HGtXhsIs1/ropyPgobnkdY5Er2UvDMa
-            /1gNMwlrLDHgBtJh8n7zBah0SKi1yY6/ciqa7if4ySOlkJ/VMaSppdGwUS+1NNqV
-            wq/wnBOUdUhh6SgLg3uJ/fQAvwmzclb3wEg9RIvM3hrL5KZEpvalg7hN0J6vvnq9
-            SVz4xcF+cycky9Sh5nMNWquUGgF3L97u25ToxlkOPHAfN1B7/hZm+ZOF5rdrOSTU
-            ZgEJAhD9EW/M+7+v0yVxRx/kCIAMLIfFzzw+DYBYJ4j8sSSDbQmo1O2K1Oj6T4is
-            eIKH8qGtx8Kg9vRsdD+GXHB940zXu1aKONRqpbKD4WazhUnJ0X1/UExHMgixUAtF
-            +9Fnx1F1sw==
-            =A8V4
-            -----END PGP MESSAGE-----
+              hQIMA4Wg+3KzyZPEARAA0AxZTT4LRMykbm5XIt4kWFZdczdDiSMJJFHnUEw0C7mG
+              xkJsRKVD0U+q5HFdJpjo9e9mjMau56A6beWz058y+/44YSRnjUgmMrZSFQTsDEPb
+              RZF7QpgXdI2TexMYiiOhD0u0QC9oS8FxfrOl18DCDyA2GXmMpKf8PLd2noIox1/R
+              hPKc77WL6aNqDsd7AKApeAG540Qr/KujQCs+BHFiPzuon9smZoh3XaMX2owVIwkl
+              z2SvtO77/PtakniYEObtzd8I5LTMhdscT1t3fC3CkIxmzymyZtmBbNTqvkFHTLCT
+              IuyLRyLOn9gIMq7DugbW+zNel6cf6xQECuGZBZE4I/6xTc+QQpiiuo8031cKYEmi
+              1oNB1GvJvbiT0dCqwJKSpusEvMOuye4SkUgQK5ZOVCKtzVkUHK7TuKFmx3urQGoL
+              rXY3IBsybiOQwKVGrJS1ic6aPyG4ftqQ9HGtXhsIs1/ropyPgobnkdY5Er2UvDMa
+              /1gNMwlrLDHgBtJh8n7zBah0SKi1yY6/ciqa7if4ySOlkJ/VMaSppdGwUS+1NNqV
+              wq/wnBOUdUhh6SgLg3uJ/fQAvwmzclb3wEg9RIvM3hrL5KZEpvalg7hN0J6vvnq9
+              SVz4xcF+cycky9Sh5nMNWquUGgF3L97u25ToxlkOPHAfN1B7/hZm+ZOF5rdrOSTU
+              ZgEJAhD9EW/M+7+v0yVxRx/kCIAMLIfFzzw+DYBYJ4j8sSSDbQmo1O2K1Oj6T4is
+              eIKH8qGtx8Kg9vRsdD+GXHB940zXu1aKONRqpbKD4WazhUnJ0X1/UExHMgixUAtF
+              +9Fnx1F1sw==
+              =A8V4
+              -----END PGP MESSAGE-----
           fp: 2F678007F08254265530095FB5B68F8BCE0CB069
     encrypted_regex: ^(data|stringData|flag|password|secret)$
     version: 3.11.0
