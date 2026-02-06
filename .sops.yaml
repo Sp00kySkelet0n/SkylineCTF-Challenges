@@ -1,7 +1,7 @@
 creation_rules:
   - path_regex: .*.yaml
     encrypted_regex: "^(data|stringData|flag|password|secret)$"
-    pgp: "96F466C4EF5AE501FC0C31649FBB4E548493AC41"
+    pgp: "2F678007F08254265530095FB5B68F8BCE0CB069"
   - path_regex: .*.json
     encrypted_regex: "^(data|stringData|flag|password|secret)$"
-    pgp: "96F466C4EF5AE501FC0C31649FBB4E548493AC41"
+    pgp: "2F678007F08254265530095FB5B68F8BCE0CB069"
