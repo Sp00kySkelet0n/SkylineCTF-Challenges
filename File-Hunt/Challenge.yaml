@@ -1,46 +1,46 @@
 apiVersion: skyline.local/v1
 kind: CTFChallenge
 metadata:
-    name: file-hunt
-    namespace: ctfd
+  name: file-hunt
+  namespace: ctfd
 spec:
-    name: File Hunt
-    description: |
-        Un fichier suspect a été retrouvé sur un serveur compromis.
-        Analysez-le pour retrouver le flag caché.
-    category: Forensic
-    type: standard
-    points: 50
-    upload_files: true
-    flag: ENC[AES256_GCM,data:k7HJ5BCMwS7aPn6mumQ9vMFrCWAKZEfT/WA=,iv:/Nb15cbUl0jYrfqOJoIGVqiMJadw+FcEy0qOcoH3ld0=,tag:HSN2fskYiVI3upgrxy2AKg==,type:str]
+  name: File Hunt
+  description: |
+    Un fichier suspect a été retrouvé sur un serveur compromis.
+    Analysez-le pour retrouver le flag caché.
+  category: Forensic
+  type: standard
+  points: 50
+  upload_files: true
+  flag: ENC[AES256_GCM,data:k7HJ5BCMwS7aPn6mumQ9vMFrCWAKZEfT/WA=,iv:/Nb15cbUl0jYrfqOJoIGVqiMJadw+FcEy0qOcoH3ld0=,tag:HSN2fskYiVI3upgrxy2AKg==,type:str]
 sops:
-    kms: []
-    gcp_kms: []
-    azure_kv: []
-    hc_vault: []
-    age: []
-    lastmodified: "2026-02-10T22:47:20Z"
-    mac: ENC[AES256_GCM,data:ZO71E58hlaIdZNhWuLrwnphSal8rov1csu4IrpjjtR8kNM/lweufV6NTgGZhFskK+Wg3k6xDdp4f04w7KtlqVtzFNMdyD0AelZCVxobE8TM30wJ5jYH+3D50q/a3uteJJhSrPfrRvrTK2gbY3bCDg4bltVaamf7MaX8wDQvxKXI=,iv:h6O+pMLh7rWlq7Ccr2xISKeKl9BgaKJjd5DlbPNxo7Q=,tag:jTJGFVfhgqLzeipr40D9Rw==,type:str]
-    pgp:
-        - created_at: "2026-02-10T22:47:20Z"
-          enc: |-
-            -----BEGIN PGP MESSAGE-----
+  kms: []
+  gcp_kms: []
+  azure_kv: []
+  hc_vault: []
+  age: []
+  lastmodified: "2026-02-10T22:47:20Z"
+  mac: ENC[AES256_GCM,data:ZO71E58hlaIdZNhWuLrwnphSal8rov1csu4IrpjjtR8kNM/lweufV6NTgGZhFskK+Wg3k6xDdp4f04w7KtlqVtzFNMdyD0AelZCVxobE8TM30wJ5jYH+3D50q/a3uteJJhSrPfrRvrTK2gbY3bCDg4bltVaamf7MaX8wDQvxKXI=,iv:h6O+pMLh7rWlq7Ccr2xISKeKl9BgaKJjd5DlbPNxo7Q=,tag:jTJGFVfhgqLzeipr40D9Rw==,type:str]
+  pgp:
+    - created_at: "2026-02-10T22:47:20Z"
+      enc: |-
+        -----BEGIN PGP MESSAGE-----
 
-            hQIMA4Wg+3KzyZPEAQ/9HH6l3ZDqUVGs9jCoA6U13NALgg7AEA1UG/K/eodBUaAb
-            cEZSkDDRP/Fj+zn9jfZp1k0XSf3udddQ6Hc0TWQoLU6KjB6bzaF4noX4Bdf/3v2l
-            ZpviHBoei0kL8kqnlWbgUnxMREGDod4af1cribw45+zQ18XOFei/C8VJE1AD5icy
-            Z6f1Art99+4WRoUU/LUrTc9s7BGAl8WuCNI7YOC+atUYC5JyBW9BMv6WRtzjOWUa
-            L27hH95dbFx/LGdcAr4e4qSdeT9rCEHX+NvlDJ8GkjGDrD38nw3jNW051Gis2tdZ
-            cGa/JsmPGFAICVXVi5gPQYeSvKCPUlEEgDhBKxwhXk1axU62tcOkjYo4MA5ozYkz
-            NMT7kitLE7BmjB6tDNgFlUx/dxs/AMvVFhFhEjAhR5J8bOEen6oe9wY5tkBh9VoE
-            n00XyGIpFP9qJ+t+qjw1f0dKQxYUsgz3tl4zgyMPvT2042Yf4x06vKmCr3DjM9hL
-            bFSZBJCKLPKj6HnsW7N2oz5EAgotl5CgX+cz+aHy6LLs6XA8+ZUAXAWij+ashomF
-            1XPLkDANCd6hxN70s/KcOLC2h/M2koFIN8uyo8UVzMyqPZw2QU4hKNepTfutdN8X
-            QRPc1L7kR7j7j4npkwEwXZY3IaMfEakte28nXsEGqV73xcvxp7rE/LIqHedBHMbS
-            XgHcMIe98r77ZkIZi1w1uzzorkkmsrb0UiMeupFVIvpNoixMGaIBMox/h01W/PBN
-            I3fKjv/hw/ZjdnTBJQM2nLb926A2yGpz/mrmfHIB1OoQIAOz9ca1fmwgzhppqOM=
-            =VN4s
-            -----END PGP MESSAGE-----
-          fp: 2F678007F08254265530095FB5B68F8BCE0CB069
-    encrypted_regex: ^(data|stringData|flag|password|secret)$
-    version: 3.8.1
+        hQIMA4Wg+3KzyZPEAQ/9HH6l3ZDqUVGs9jCoA6U13NALgg7AEA1UG/K/eodBUaAb
+        cEZSkDDRP/Fj+zn9jfZp1k0XSf3udddQ6Hc0TWQoLU6KjB6bzaF4noX4Bdf/3v2l
+        ZpviHBoei0kL8kqnlWbgUnxMREGDod4af1cribw45+zQ18XOFei/C8VJE1AD5icy
+        Z6f1Art99+4WRoUU/LUrTc9s7BGAl8WuCNI7YOC+atUYC5JyBW9BMv6WRtzjOWUa
+        L27hH95dbFx/LGdcAr4e4qSdeT9rCEHX+NvlDJ8GkjGDrD38nw3jNW051Gis2tdZ
+        cGa/JsmPGFAICVXVi5gPQYeSvKCPUlEEgDhBKxwhXk1axU62tcOkjYo4MA5ozYkz
+        NMT7kitLE7BmjB6tDNgFlUx/dxs/AMvVFhFhEjAhR5J8bOEen6oe9wY5tkBh9VoE
+        n00XyGIpFP9qJ+t+qjw1f0dKQxYUsgz3tl4zgyMPvT2042Yf4x06vKmCr3DjM9hL
+        bFSZBJCKLPKj6HnsW7N2oz5EAgotl5CgX+cz+aHy6LLs6XA8+ZUAXAWij+ashomF
+        1XPLkDANCd6hxN70s/KcOLC2h/M2koFIN8uyo8UVzMyqPZw2QU4hKNepTfutdN8X
+        QRPc1L7kR7j7j4npkwEwXZY3IaMfEakte28nXsEGqV73xcvxp7rE/LIqHedBHMbS
+        XgHcMIe98r77ZkIZi1w1uzzorkkmsrb0UiMeupFVIvpNoixMGaIBMox/h01W/PBN
+        I3fKjv/hw/ZjdnTBJQM2nLb926A2yGpz/mrmfHIB1OoQIAOz9ca1fmwgzhppqOM=
+        =VN4s
+        -----END PGP MESSAGE-----
+      fp: 2F678007F08254265530095FB5B68F8BCE0CB069
+  encrypted_regex: ^(data|stringData|flag|password|secret)$
+  version: 3.8.1
