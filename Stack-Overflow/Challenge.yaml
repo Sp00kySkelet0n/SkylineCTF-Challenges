@@ -1,47 +1,48 @@
 apiVersion: skyline.local/v1
 kind: CTFChallenge
 metadata:
-    name: stack-overflow
-    namespace: ctfd
+  name: stack-overflow
+  namespace: ctfd
 spec:
-    name: Stack Overflow
-    description: |
-        Un terminal d'accès SKL Corp semble vulnérable.
-        Le buffer est-il vraiment assez grand ?
-    category: Pwn
-    points: 100
-    image: ghcr.io/sp00kyskelet0n/skylinectf-challenges/stack-overflow:latest
-    port: 9000
-    instance: true
-    flag: ENC[AES256_GCM,data:Ll1zJg2+GoAFrVRYkVLMgIheuoOv3BQ+xAEb,iv:khJ7EZEWsjJ4HR3pwrWj8L7MdnO5vJ4dCfC5UjIwN7c=,tag:nWU7zZugMtPON1g+p+cH4w==,type:str]
+  name: Stack Overflow
+  description: |
+    Un terminal d'accès SKL Corp semble vulnérable.
+    Le buffer est-il vraiment assez grand ?
+  category: Pwn
+  points: 100
+  image: ghcr.io/sp00kyskelet0n/skylinectf-challenges/stack-overflow:latest
+  port: 9000
+  instance: true
+  upload_files: true
+  flag: ENC[AES256_GCM,data:Ll1zJg2+GoAFrVRYkVLMgIheuoOv3BQ+xAEb,iv:khJ7EZEWsjJ4HR3pwrWj8L7MdnO5vJ4dCfC5UjIwN7c=,tag:nWU7zZugMtPON1g+p+cH4w==,type:str]
 sops:
-    kms: []
-    gcp_kms: []
-    azure_kv: []
-    hc_vault: []
-    age: []
-    lastmodified: "2026-02-11T16:59:32Z"
-    mac: ENC[AES256_GCM,data:1oa8eamEo3eQVkvCkPP1q9UWpjmkz6mJ9LD6LK13L/+7KpbMlbvEgjGL24icAv8PDRdPNi9k2wZz5iLJuFWgLyfBjCmgnNJ+fhlj/BTwtapI7x6MhIV8O30UVJgSp/4qe2V9hnbs0ekEKSCEq7F1zIuJq3odDVdLjLoA2jo+cuQ=,iv:H+7raeVoXPClS04nDRTvt94Zo9v6uatSNdjXHMK5vHk=,tag:nHuVF4YSBrln4UktXw/EFQ==,type:str]
-    pgp:
-        - created_at: "2026-02-11T16:59:32Z"
-          enc: |-
-            -----BEGIN PGP MESSAGE-----
+  kms: []
+  gcp_kms: []
+  azure_kv: []
+  hc_vault: []
+  age: []
+  lastmodified: "2026-02-11T16:59:32Z"
+  mac: ENC[AES256_GCM,data:1oa8eamEo3eQVkvCkPP1q9UWpjmkz6mJ9LD6LK13L/+7KpbMlbvEgjGL24icAv8PDRdPNi9k2wZz5iLJuFWgLyfBjCmgnNJ+fhlj/BTwtapI7x6MhIV8O30UVJgSp/4qe2V9hnbs0ekEKSCEq7F1zIuJq3odDVdLjLoA2jo+cuQ=,iv:H+7raeVoXPClS04nDRTvt94Zo9v6uatSNdjXHMK5vHk=,tag:nHuVF4YSBrln4UktXw/EFQ==,type:str]
+  pgp:
+    - created_at: "2026-02-11T16:59:32Z"
+      enc: |-
+        -----BEGIN PGP MESSAGE-----
 
-            hQIMA4Wg+3KzyZPEAQ//Vbouw7QgR+EZnFv5l2oTPzoUh6RpbYCDmPc5QH87mhTy
-            ao1wziUMxafcs7kOWYKm/6Y+JiLysRvQO6zmqOGioWPx9q1ggSSdQCUjRxGvx25V
-            BpZtLDwQb66MNmrPgc5ZQkCmJLwKiik1SwcDUyBDwUB50p099aW7B1cC8fJg5t8d
-            ood0i6jmkaZ1sf1FVCLiCFLjkfRxJEA4k9IaDjpfppiq7fBScCIJFBTWJzwTEy2F
-            d1+erk8LYZmP7RWElUSR+RInkr5PyfC9jv+PLuk2x+IhWzUw0szTo03IJ5e8fdUZ
-            IweNW/gjv7JIReisZUdYeT/QOsQ++Kr+QhY0k3ljg45cpCOrkWAnqKHUE+Ag3rwU
-            Lvs86iVUcW8+rVPUquLhXMOCXD9quBGUYbFygOFRVdjVxEOABgiVPYxl0Zy4wmiO
-            KtsONcTjYNg9sBDhgxxKYwkYsChIyaFsdqufC1tVcbGFm6lJZ7bzGT/axaltmmeC
-            trq7/9Y5mTlv9qIxQKmbB8M9Tr9UF/oU4Ezo9wgugEAEw5YAXcwpT8zchwmdLIWU
-            a1Qvtm+TOl6tqcFGBYjldNkBG4vWzuptOka3HGXZ8sfUaGKe5IlQ766YtuXvzg/c
-            PvL75ryYMAR8EnoFpg9lazjF2IRgeSLWU50+/O9NSHtgPgpsxYsvB0QBmxYT6ObS
-            XgGt1teJ9SdfpaGn6FPiPLleEfLS3MUTughJYohREKHbNHDVEi25Qjk4FSiEY+fw
-            DwWm1p2NYE0jjt2eT0ztNqpdsF/HiGgGUdv8M3sVckas1DHj71xXpVgiks1SsjU=
-            =UDgG
-            -----END PGP MESSAGE-----
-          fp: 2F678007F08254265530095FB5B68F8BCE0CB069
-    encrypted_regex: ^(data|stringData|flag|password|secret)$
-    version: 3.8.1
+        hQIMA4Wg+3KzyZPEAQ//Vbouw7QgR+EZnFv5l2oTPzoUh6RpbYCDmPc5QH87mhTy
+        ao1wziUMxafcs7kOWYKm/6Y+JiLysRvQO6zmqOGioWPx9q1ggSSdQCUjRxGvx25V
+        BpZtLDwQb66MNmrPgc5ZQkCmJLwKiik1SwcDUyBDwUB50p099aW7B1cC8fJg5t8d
+        ood0i6jmkaZ1sf1FVCLiCFLjkfRxJEA4k9IaDjpfppiq7fBScCIJFBTWJzwTEy2F
+        d1+erk8LYZmP7RWElUSR+RInkr5PyfC9jv+PLuk2x+IhWzUw0szTo03IJ5e8fdUZ
+        IweNW/gjv7JIReisZUdYeT/QOsQ++Kr+QhY0k3ljg45cpCOrkWAnqKHUE+Ag3rwU
+        Lvs86iVUcW8+rVPUquLhXMOCXD9quBGUYbFygOFRVdjVxEOABgiVPYxl0Zy4wmiO
+        KtsONcTjYNg9sBDhgxxKYwkYsChIyaFsdqufC1tVcbGFm6lJZ7bzGT/axaltmmeC
+        trq7/9Y5mTlv9qIxQKmbB8M9Tr9UF/oU4Ezo9wgugEAEw5YAXcwpT8zchwmdLIWU
+        a1Qvtm+TOl6tqcFGBYjldNkBG4vWzuptOka3HGXZ8sfUaGKe5IlQ766YtuXvzg/c
+        PvL75ryYMAR8EnoFpg9lazjF2IRgeSLWU50+/O9NSHtgPgpsxYsvB0QBmxYT6ObS
+        XgGt1teJ9SdfpaGn6FPiPLleEfLS3MUTughJYohREKHbNHDVEi25Qjk4FSiEY+fw
+        DwWm1p2NYE0jjt2eT0ztNqpdsF/HiGgGUdv8M3sVckas1DHj71xXpVgiks1SsjU=
+        =UDgG
+        -----END PGP MESSAGE-----
+      fp: 2F678007F08254265530095FB5B68F8BCE0CB069
+  encrypted_regex: ^(data|stringData|flag|password|secret)$
+  version: 3.8.1
