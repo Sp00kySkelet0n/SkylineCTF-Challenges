@@ -5,7 +5,8 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 COPY src/vuln.c /tmp/vuln.c
-RUN gcc -o /challenge/vuln /tmp/vuln.c \
+RUN mkdir -p /challenge && \
+    gcc -o /challenge/vuln /tmp/vuln.c \
     -fno-stack-protector \
     -no-pie \
     -z execstack \
