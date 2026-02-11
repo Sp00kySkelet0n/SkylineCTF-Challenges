@@ -13,7 +13,6 @@ RUN useradd -m -s /bin/bash user && \
 RUN echo "user ALL=(root) NOPASSWD: /usr/bin/find" > /etc/sudoers.d/user && \
     chmod 0440 /etc/sudoers.d/user
 
-
 COPY src/flag.txt /root/flag.txt
 
 RUN chmod 600 /root/flag.txt

@@ -73,8 +73,10 @@ jobs:
         run: |
           if [ -z "$CHANGED_FILES" ]; then exit 0; fi
 
-          for dir in $CHANGED_FILES; do
-            # CHANGED_FILES now contains directories because of dir_names: true
+          # Use read loop to safely handle folder names with special characters
+          echo "$CHANGED_FILES" | tr ' ' '\n' | while IFS= read -r dir; do
+            [ -z "$dir" ] && continue
+
             # Ensure Dockerfile exists in this directory
             if [ ! -f "$dir/Dockerfile" ]; then
                 continue
