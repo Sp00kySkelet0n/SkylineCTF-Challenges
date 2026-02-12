@@ -476,30 +476,30 @@ def submit_pr(folder_name):
         rprint(f"[red]Erreur Git : {e}[/red]")
         return
 
-    # 4. Create PR
+    # 4. Create PR (or find existing one)
     try:
-        pr = upstream.create_pull(
-            title=f"Nouveau Challenge : {folder_name}",
-            body=(
-                f"## 🧙‍♂️ Soumis via le Wizard SkylineCTF\n\n"
-                f"**Challenge :** `{folder_name}`\n\n"
-                f"**Auteur :** @{username}\n"
-            ),
-            head=f"{username}:{branch_name}",
-            base="main"
-        )
-        rprint(f"   [green]✔ Pull Request créée ![/green]")
-        rprint(f"   [bold cyan]🔗 {pr.html_url}[/bold cyan]")
-    except GithubException as e:
-        if e.status == 422:
-            rprint("   [yellow]⚠ Une PR existe déjà pour cette branche.[/yellow]")
-            # Try to find the existing PR
-            pulls = upstream.get_pulls(state='open', head=f"{username}:{branch_name}")
-            for pr in pulls:
-                rprint(f"   [bold cyan]🔗 {pr.html_url}[/bold cyan]")
-                break
+        # Check if a PR already exists for this branch
+        existing_pulls = list(upstream.get_pulls(state='open', head=f"{username}:{branch_name}"))
+
+        if existing_pulls:
+            pr = existing_pulls[0]
+            rprint(f"   [green]✔ PR existante mise à jour avec les derniers changements.[/green]")
+            rprint(f"   [bold cyan]🔗 {pr.html_url}[/bold cyan]")
         else:
-            rprint(f"[red]Erreur lors de la création de la PR : {e}[/red]")
+            pr = upstream.create_pull(
+                title=f"Nouveau Challenge : {folder_name}",
+                body=(
+                    f"## 🧙‍♂️ Soumis via le Wizard SkylineCTF\n\n"
+                    f"**Challenge :** `{folder_name}`\n\n"
+                    f"**Auteur :** @{username}\n"
+                ),
+                head=f"{username}:{branch_name}",
+                base="main"
+            )
+            rprint(f"   [green]✔ Pull Request créée ![/green]")
+            rprint(f"   [bold cyan]🔗 {pr.html_url}[/bold cyan]")
+    except GithubException as e:
+        rprint(f"[red]Erreur lors de la création de la PR : {e}[/red]")
 
     # Cleanup: switch back to main
     try:
