@@ -1,11 +1,12 @@
 FROM python:3.11-slim
 
 # Install system dependencies
-# gnupg for encryption, curl/wget to download sops
+# gnupg for encryption, curl/wget to download sops, git for PR submission
 RUN apt-get update && apt-get install -y \
     gnupg \
     curl \
     zip \
+    git \
     && rm -rf /var/lib/apt/lists/*
 
 # Install SOPS
@@ -17,7 +18,9 @@ RUN curl -L -o /usr/local/bin/sops https://github.com/getsops/sops/releases/down
 RUN pip install --no-cache-dir \
     rich \
     questionary \
-    python-gnupg
+    python-gnupg \
+    PyGithub \
+    GitPython
 
 WORKDIR /app
 

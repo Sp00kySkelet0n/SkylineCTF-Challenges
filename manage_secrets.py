@@ -3,7 +3,7 @@ import sys
 import argparse
 import subprocess
 import shutil
-import shutil
+import time
 import gnupg
 from rich.console import Console
 from rich.panel import Panel
@@ -35,6 +35,8 @@ console = Console()
 # Configuration
 GPG_KEY_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "skyline_key.pub")
 FINGERPRINT = "2F678007F08254265530095FB5B68F8BCE0CB069"
+UPSTREAM_REPO = "Sp00kySkelet0n/SkylineCTF-Challenges"
+ENV_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), ".env")
 
 def check_dependencies():
     """Checks if 'sops' and 'gpg' are installed."""
@@ -330,6 +332,157 @@ def run_wizard(target_folder):
 
     rprint("[cyan]" + "-" * 50 + "[/cyan]")
     rprint("[bold green]✅  Sécurisation terminée.[/bold green]")
+
+    # 4. Submit via PR
+    rprint(f"\n[bold blue][4/4] Soumission via Pull Request[/bold blue]")
+    do_pr = questionary.confirm("Soumettre ce challenge via Pull Request ?", default=True, style=custom_style).ask()
+    if do_pr:
+        submit_pr(target_folder)
+    else:
+        rprint("   [dim]Soumission ignorée.[/dim]")
+
+
+def load_github_token():
+    """Load GitHub token from .env file, or prompt the user."""
+    # Try loading from .env
+    if os.path.exists(ENV_FILE):
+        with open(ENV_FILE, 'r') as f:
+            for line in f:
+                line = line.strip()
+                if line.startswith('GITHUB_TOKEN=') and not line.startswith('#'):
+                    token = line.split('=', 1)[1].strip().strip('"').strip("'")
+                    if token:
+                        return token
+
+    # Prompt user
+    rprint("\n[yellow]Pour soumettre une PR, un token GitHub (PAT) est requis.[/yellow]")
+    rprint("[dim]Créez-en un sur : https://github.com/settings/tokens[/dim]")
+    rprint("[dim]Scopes nécessaires : repo[/dim]")
+    token = Prompt.ask("[bold]Token GitHub", password=True)
+
+    if not token:
+        return None
+
+    # Save to .env for next time
+    with open(ENV_FILE, 'a') as f:
+        f.write(f"\nGITHUB_TOKEN={token}\n")
+    rprint("[green]✔ Token sauvegardé dans .env[/green]")
+
+    return token
+
+
+def submit_pr(folder_name):
+    """Fork the repo, create a branch, commit, push, and open a PR."""
+    try:
+        from github import Github, GithubException
+        from git import Repo, GitCommandError
+    except ImportError:
+        rprint("[red]Erreur : PyGithub ou GitPython non installé.[/red]")
+        rprint("[dim]pip install PyGithub GitPython[/dim]")
+        return
+
+    # 1. Auth
+    token = load_github_token()
+    if not token:
+        rprint("[red]Aucun token fourni. Soumission annulée.[/red]")
+        return
+
+    try:
+        g = Github(token)
+        user = g.get_user()
+        username = user.login
+        rprint(f"   [green]✔ Authentifié en tant que [bold]{username}[/bold][/green]")
+    except GithubException as e:
+        rprint(f"[red]Erreur d'authentification GitHub : {e}[/red]")
+        return
+
+    # 2. Fork
+    try:
+        upstream = g.get_repo(UPSTREAM_REPO)
+        rprint("   [dim]Fork du dépôt...[/dim]")
+        fork = user.create_fork(upstream)
+        # Wait for fork to be ready
+        time.sleep(3)
+        rprint(f"   [green]✔ Fork : {fork.full_name}[/green]")
+    except GithubException as e:
+        if e.status == 403:
+            rprint("[red]Erreur : Token sans permission 'repo'. Vérifiez les scopes.[/red]")
+        else:
+            rprint(f"[red]Erreur lors du fork : {e}[/red]")
+        return
+
+    # 3. Git operations
+    branch_name = f"challenge/{folder_name}"
+    try:
+        repo = Repo("/app")
+
+        # Add fork remote (or update it)
+        fork_url = f"https://{token}@github.com/{fork.full_name}.git"
+        try:
+            fork_remote = repo.remote("fork")
+            fork_remote.set_url(fork_url)
+        except ValueError:
+            fork_remote = repo.create_remote("fork", fork_url)
+
+        rprint("   [dim]Création de branche...[/dim]")
+        # Create and checkout branch
+        if branch_name in [ref.name for ref in repo.branches]:
+            repo.git.checkout(branch_name)
+        else:
+            repo.git.checkout('-b', branch_name)
+
+        rprint("   [dim]Commit & Push...[/dim]")
+        # Stage challenge files
+        repo.git.add(f"{folder_name}/")
+        # Also stage .sops.yaml in case it changed
+        if os.path.exists("/app/.sops.yaml"):
+            repo.git.add(".sops.yaml")
+
+        # Commit (skip if nothing to commit)
+        try:
+            repo.git.commit('-m', f"Add challenge: {folder_name}")
+        except GitCommandError:
+            rprint("   [yellow]Aucun changement à commiter.[/yellow]")
+
+        # Push
+        repo.git.push('fork', branch_name, force=True)
+        rprint(f"   [green]✔ Poussé sur {fork.full_name}:{branch_name}[/green]")
+
+    except GitCommandError as e:
+        rprint(f"[red]Erreur Git : {e}[/red]")
+        return
+
+    # 4. Create PR
+    try:
+        pr = upstream.create_pull(
+            title=f"Nouveau Challenge : {folder_name}",
+            body=(
+                f"## 🧙‍♂️ Soumis via le Wizard SkylineCTF\n\n"
+                f"**Challenge :** `{folder_name}`\n\n"
+                f"**Auteur :** @{username}\n"
+            ),
+            head=f"{username}:{branch_name}",
+            base="main"
+        )
+        rprint(f"   [green]✔ Pull Request créée ![/green]")
+        rprint(f"   [bold cyan]🔗 {pr.html_url}[/bold cyan]")
+    except GithubException as e:
+        if e.status == 422:
+            rprint("   [yellow]⚠ Une PR existe déjà pour cette branche.[/yellow]")
+            # Try to find the existing PR
+            pulls = upstream.get_pulls(state='open', head=f"{username}:{branch_name}")
+            for pr in pulls:
+                rprint(f"   [bold cyan]🔗 {pr.html_url}[/bold cyan]")
+                break
+        else:
+            rprint(f"[red]Erreur lors de la création de la PR : {e}[/red]")
+
+    # Cleanup: switch back to main
+    try:
+        repo.git.checkout('main')
+    except GitCommandError:
+        pass
+
 
 if __name__ == "__main__":
     main()

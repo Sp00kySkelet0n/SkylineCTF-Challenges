@@ -5,3 +5,4 @@ __pycache__
 !*.zip.gpg
 remove2.sh
 solve.py
+.env

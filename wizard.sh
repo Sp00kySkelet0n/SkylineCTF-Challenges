@@ -15,4 +15,5 @@ echo "🧙‍♂️  Lancement du Wizard..."
 docker run -it --rm \
     -e PYTHONDONTWRITEBYTECODE=1 \
     -v "$(pwd):/app" \
+    -v "${HOME}/.gitconfig:/root/.gitconfig:ro" \
     skyline-wizard
