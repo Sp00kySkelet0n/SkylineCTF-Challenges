@@ -1,0 +1,48 @@
+apiVersion: skyline.local/v1
+kind: CTFChallenge
+metadata:
+    name: cookie-monster
+    namespace: ctfd
+spec:
+    name: Cookie Monster
+    description: |
+        Le portail admin de SKL Corp utilise un cookie pour vérifier les sessions.
+        Quelque chose semble un peu trop simple dans leur implémentation...
+        Connectez-vous en tant qu'admin pour récupérer le flag.
+    category: Web
+    points: 75
+    image: ghcr.io/sp00kyskelet0n/skylinectf-challenges/cookie-monster:latest
+    port: 8080
+    instance: true
+    flag: ENC[AES256_GCM,data:mW66hmOl4SvnE3rZOLE7cUkiXVQnkmIl+M2YpIMWtw==,iv:cJTiJyDZZk66nzymIjxupEMCEzI65WkySNqFyt71UWY=,tag:/X0QU8zIiRYbk/vvWnsnaw==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age: []
+    lastmodified: "2026-02-12T23:00:40Z"
+    mac: ENC[AES256_GCM,data:sLdG3lyWOritXVyGk8nUkEviNZL+VjnQdxzBfyVmSwQ8ynl70umcyo8IZ9XnrW7xyX3zzhCNN9KGabmROfnIF2Splavq/Qepka/9UTqE7ImAJf1vVcHh7K/FmCgtA8LZ5P565c+VptlKYQdwP4RHYsjdKXLaxcnyTbnG32QXm40=,iv:bOU12D/s1+buE1ojAsLQd0QWgTnTiZgu+2NX4Aqlw/s=,tag:V6gFIsrasKNP9LlSTrYVKw==,type:str]
+    pgp:
+        - created_at: "2026-02-12T23:00:40Z"
+          enc: |-
+            -----BEGIN PGP MESSAGE-----
+
+            hQIMA4Wg+3KzyZPEAQ//Ro0UF1N6kectlWsT6HFjgdAC+eiEl2tNu4dZBZxdnTOA
+            I2IKc6+eAvbWGHtjpbJ6V+ci4OH6of7gDAERu/hj4HeLMWCYutkoDUb5JEk0nJoI
+            ypZi6MpYckTko+m3VpnmZwHNc6bSdSRBFA+O4bunU0/24Fy4ypxCPDP0yQcH8Tr0
+            IG4nnWxKrUSgIqvEgNap31OUYrOKjUk2eQQ2MYzeaaNHuzkMuURrLwmG6PGMNmc0
+            9h7bkhuHqtV5n1XhFhtgssKOgaBVXkZUM9tDc0FnrOjEKQcnH1qSEUxQ/iXhHIxb
+            NW5h3CtMMUEEbvNGgthLRXIn8aERb7e6pvkqD5x7+dPa/pZiJQcfN8igqxqjQd/G
+            qkIy1TTg3GfYvdaBHkEZb15ouVIXRfjdlbV2EBOa8jOT16TI8tGXuP4ZuvCy7Kg3
+            lsalVkQNyqPY+JfLf7qv9YugqltTt+lvr1UUQ9mOFLDR1A1dbSrLRzR+J9wiXmj1
+            +dPAvc7beLNHf8XSpH94zCeH6sBMBVjZJiwXEU85C+Hq5zOm8XBcORubbVkamKcw
+            QLhiM2kM8RHIQkCXESnDs3FO/ha1GV+Aee6ljMqvyWj+BieBCja5HHPsk+XT/oZO
+            Zc7CPq3aumcfnYfQp0nrjr+afzHWRyBRpSU3YdUV4ndo5KI5Y2neC9XS7Sbr7h/S
+            XgGiLI4EhJ68+IuTHMNM5O+6vdqtFZSSFCSYoHXGSb7ovy4USEWpqdwlqQZM+5tM
+            kwN1PPV3YhMpXGFZg265copI9XGg4dfeGFcnwJnu3DOHYwaVSvYryZ/vQ3wFfX8=
+            =MCzk
+            -----END PGP MESSAGE-----
+          fp: 2F678007F08254265530095FB5B68F8BCE0CB069
+    encrypted_regex: ^(data|stringData|flag|password|secret)$
+    version: 3.8.1
