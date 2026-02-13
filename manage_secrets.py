@@ -456,9 +456,9 @@ def submit_pr(folder_name):
         base_sha = base_branch.commit.sha
 
         rprint("   [dim]Préparation des fichiers...[/dim]")
-        # Files/dirs to skip
-        SKIP_DIRS = {'__pycache__', '.git', 'node_modules'}
-        SKIP_FILES = {'solve.py', '.DS_Store'}
+        # Files/dirs to skip (src/ is encrypted as src.zip.gpg)
+        SKIP_DIRS = {'__pycache__', '.git', 'node_modules', 'src'}
+        SKIP_FILES = {'solve.py', '.DS_Store', 'WALKTHROUGH.md'}
 
         # Walk challenge folder and create tree elements
         tree_elements = []
@@ -472,6 +472,23 @@ def submit_pr(folder_name):
 
                 filepath = os.path.join(root, filename)
                 rel_path = os.path.relpath(filepath, "/app")
+                file_size = os.path.getsize(filepath)
+
+                # Skip files over 99MB (GitHub API limit is 100MB)
+                if file_size > 99 * 1024 * 1024:
+                    size_mb = file_size / (1024 * 1024)
+                    rprint(f"\n   [yellow]⚠ Le fichier {filename} ({size_mb:.0f} Mo) dépasse la limite de 99 Mo.[/yellow]")
+                    rprint(f"   [yellow]  Ce fichier ne peut pas être inclus automatiquement dans la PR.[/yellow]")
+                    rprint(f"   [yellow]  Contactez un mainteneur pour transmettre le fichier manuellement.[/yellow]\n")
+                    continue
+
+                # Human-readable size
+                if file_size < 1024:
+                    size_str = f"{file_size} B"
+                elif file_size < 1024 * 1024:
+                    size_str = f"{file_size / 1024:.1f} KB"
+                else:
+                    size_str = f"{file_size / (1024 * 1024):.1f} MB"
 
                 try:
                     with open(filepath, 'rb') as f:
@@ -484,7 +501,7 @@ def submit_pr(folder_name):
                         type="blob",
                         sha=blob.sha
                     ))
-                    rprint(f"   [dim]   ✓ {rel_path}[/dim]")
+                    rprint(f"   [dim]   ✓ {rel_path} ({size_str})[/dim]")
                 except Exception as e:
                     rprint(f"   [red]   ✗ {rel_path}: {e}[/red]")
 
