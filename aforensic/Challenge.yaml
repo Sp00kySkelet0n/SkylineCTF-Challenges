@@ -1,0 +1,45 @@
+apiVersion: skyline.local/v1
+kind: CTFChallenge
+metadata:
+    name: aforensic
+    namespace: ctfd
+spec:
+    name: A Forensic
+    description: |
+        Analyser le téléphone de ce fanatique !
+    category: Forensic
+    type: standard
+    points: 300
+    creator: Nzoo
+    flag: ENC[AES256_GCM,data:f2QC8Sz4RfeX8qbT/13U,iv:90kdVEyr5UIKlGQVmF5xwv3UKQHysjiobPnuKaweAs8=,tag:Weo+NFwqSqBs17Af9vDzDg==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age: []
+    lastmodified: "2026-02-15T10:14:55Z"
+    mac: ENC[AES256_GCM,data:BGheMit4yoVDuyMtZ4n7ArYBo5jF1x1FGnA28a0c6cFQZSPEQG9cXT+Yz4A/CC97WerQ8cS88EtX2sFTpP3eNWn40gQBSVud5zUkbrysMh6iU3pABTRIgXZVLesLsv09spXkHnamaTwg09DBQlLuIsbSNyt39vcTbBGs0ItElLY=,iv:lBm9XG7XWAwFFFr7X2579JZMt2JLOiouBho2M5/g/Es=,tag:w6ymmhrMlIBDg+rskRkmmA==,type:str]
+    pgp:
+        - created_at: "2026-02-15T10:14:55Z"
+          enc: |-
+            -----BEGIN PGP MESSAGE-----
+
+            hQIMA4Wg+3KzyZPEARAAovMOfGPM1d1n2+Nvi7CixXnu8B1fAlF3ZD/b3vcsAjZ8
+            UWpsg8EjyiwGoT2m1ol61jxHhUc5fd++OGLQhY7zPdytniwCK1G12S0xc/D9feb5
+            NUi5sE20/Bny+X+Yo3dSb/cDvkftYJPkbtUkQT0wOutndBVX7ZUb2QVO4eQJy/6k
+            9386vJxvRYw3FimKQI+7liIC8M6j5iCfZGfLs0pP+rQx7EVpmgsEqeklSNfFw91Y
+            9PVtREuK8ov7MU7P4/YwetP0oPBvUGOeyTX6gP08UGmQ9MtsACqzfxx4bF4fIpbQ
+            g1JKsFVKfrIrfStd0cgyeZrKl8CxbJ6JdgoU8xQSGVeoww2jWmyf9tTCRmJF87w3
+            cFkupIlaqbvseV/mjAjLZ8hJdgXo4NGRSIFJb7vkbNzT5lwFBQ7zYZao6uPXgpTx
+            ArAbOuXG1kTPiLU7ECGsg7VdVugSJ7oPRbHpINCLhwPAypTpQpgBce7XuwHSr2sx
+            fs3Re35O5D+dE4PnV0AsnQYLOpMfOyp0txU3jee9zcBJCD1ew0RF3r0FgxOnC1uu
+            uqQt/1aMbpYy9VWbHSdwFwDwczmy59y9bFCK1ijGzEoubEwblyZW/r4Jxc9xQMaQ
+            /hqPinXmp7L4g9VVrDqJx6HW/WB72bKDIRmX7ELr7Bl4VVF2raID7Ssh3HdgrgzS
+            XgEPaAsF8+rhpdGuMcL/m2vaUWdPrjo8u8ATVN9Y2bqpEfHVAXJ/X5lPugeCWpVL
+            UX3JDus10mUOy42FF66ooVvy1PIV9/02T/JyS+F7iiEdO/GV0SxtBOHdawO8g2k=
+            =lPFx
+            -----END PGP MESSAGE-----
+          fp: 2F678007F08254265530095FB5B68F8BCE0CB069
+    encrypted_regex: ^(data|stringData|flag|password|secret)$
+    version: 3.8.1
