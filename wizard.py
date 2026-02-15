@@ -318,11 +318,11 @@ def create_challenge():
     # 7. Points
     scoring = questionary.select(
         "Type de scoring :",
-        choices=["Dynamique (recommandé)", "Statique"],
+        choices=["Dynamique", "Statique"],
         style=custom_style
     ).ask()
 
-    if scoring == "Dynamique (recommandé)":
+    if scoring == "Dynamique":
         initial = questionary.text("Points initiaux :", default="500", style=custom_style).ask()
         minimum = questionary.text("Points minimum :", default="50", style=custom_style).ask()
         decay = 10
@@ -331,7 +331,7 @@ def create_challenge():
         except (ValueError, TypeError):
             rprint("[red]Valeurs invalides pour les points.[/red]")
             return
-        points_block = f"  type: dynamic\n  initial: {initial}\n  decay: {decay}\n  minimum: {minimum}"
+        points_block = f"  type: dynamic\n  points: {initial}\n  decay: {decay}\n  minimum: {minimum}"
     else:
         points = questionary.text("Points :", default="100", style=custom_style).ask()
         try:
