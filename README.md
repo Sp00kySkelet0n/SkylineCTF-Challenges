@@ -18,16 +18,22 @@ cd SkylineCTF-Challenges
 ```
 
 ### 2. Création du Challenge 📝
-Créez un dossier pour votre challenge (par exemple `Web/Mon-Challenge`).
+Créez un dossier pour votre challenge (par exemple `Mon-Challenge`).
 Il doit contenir :
 *   `Challenge.yaml` : La définition du challenge.
 *   `Dockerfile` (si dockerisé).
 *   `uploads/` (optionnel) : Fichiers associés au challenge à fournir aux joueurs.
 *   `src/` (optionnel) : Code source (chiffré par le wizard).
 
+> **💡 Astuce :** Vous pouvez utiliser le **Wizard** pour générer le `Challenge.yaml` automatiquement !
+> Lancez `./wizard.sh` (ou `wizard.bat` sur Windows) et choisissez **📝 Créer un Challenge.yaml**.
+> Le wizard vous posera les questions nécessaires (nom, description, catégorie, points, flag...) et générera le fichier pour vous.
+
 ---
 
 ## 📂 Structure du Challenge.yaml
+
+Si vous préférez créer le `Challenge.yaml` manuellement, voici la structure à respecter :
 
 ### Type 1 : Challenge Docker (Web, Pwn...) 🐳
 Utilise une image Docker et un port. Les points s'ajustent dynamiquement.
@@ -52,14 +58,14 @@ spec:
   minimum: 50           # Points minimum
 
   # Déploiement
-  image: "ghcr.io/sp00kyskelet0n/chall:latest"
+  image: "ghcr.io/sp00kyskelet0n/skylinectf-challenges/chall:latest"
   port: 1337            # Port interne du conteneur
   instance: true        # Détermine si le challenge peut être déployé à la demande
   
   # Fichiers (si besoin de fournir un binaire/source)
   upload_files: true    # Upload tout le dossier 'uploads/' vers CTFd
 
-  flag: "SKL{...}"    # À chiffrer avec wizard.sh !
+  flag: "SKL{...}"    # À chiffrer avec le wizard !
 ```
 
 ### Type 2 : Challenge Statique (Forensic, Reverse) 📁
@@ -81,7 +87,7 @@ spec:
   upload_files: true    # Indispensable pour Forensic/Reverse !
   # Placez vos fichiers (PCAP, binaire...) (dans la limite de 50mb) dans le dossier 'uploads/' du challenge.
   
-  flag: "SKL{...}"      # À chiffrer avec wizard.sh !
+  flag: "SKL{...}"      # À chiffrer avec le wizard !
 ```
 
 **Note sur la Connexion :** 
@@ -102,21 +108,41 @@ L'opérateur détecte automatiquement le protocole (`http://` ou `tcp://`) selon
 wizard.bat
 ```
 
-L'assistant va :
-1.  Chiffrer le `Challenge.yaml` (les secrets).
-2.  Chiffrer le `WALKTHROUGH.md` (writeup).
-3.  Proposer de chiffrer le dossier `src/` (code source).
+Le wizard vous propose deux options :
 
-**C'est tout !** Vos fichiers `.encrypted` sont prêts.
+#### Option 1 : 📝 Créer un Challenge.yaml
+Le wizard vous guide étape par étape pour générer le fichier :
+1.  **Sélection du dossier** — Choisissez le dossier de votre challenge (il doit déjà exister).
+2.  **Nom affiché** — Le titre visible sur CTFd (ex: `Mon Super Challenge`).
+3.  **Description** — La description du challenge (multi-lignes, terminez par une ligne vide).
+4.  **Catégorie** — Web, Pwn, Crypto, Forensic, Reverse, Misc...
+5.  **Détection automatique du type** — Le wizard détecte si un `Dockerfile` et/ou un dossier `uploads/` existent pour configurer `instance` et `upload_files`.
+6.  **Scoring** — Dynamique (initial/decay/minimum) ou statique (points fixes).
+7.  **Port** — Le port interne du conteneur (uniquement si challenge dockerisé).
+8.  **Flag** — Le flag du challenge (ex: `SKL{...}`).
+9.  **Créateur** — Votre nom/pseudo.
+
+> Le `metadata.name` et l'`image` Docker sont déduits automatiquement du nom de dossier.
+
+À la fin, le wizard propose d'enchaîner directement avec le chiffrement et la soumission.
+
+#### Option 2 : 🔐 Sécuriser un challenge existant
+Pour un challenge dont le `Challenge.yaml` existe déjà :
+1.  **Chiffrement du `Challenge.yaml`** — Les champs sensibles (flag, etc.) sont chiffrés avec SOPS.
+2.  **Chiffrement du `WALKTHROUGH.md`** — Le writeup est chiffré avec GPG (si présent).
+3.  **Chiffrement du `src/`** — Le code source est zippé et chiffré avec GPG (optionnel).
+4.  **Soumission via Pull Request** — Fork automatique, upload des fichiers, et création de la PR.
+
+**C'est tout !** Vos fichiers sont prêts et soumis.
 
 ### 4. Publication ✈️
 Une fois vos fichiers sécurisés :
 
 1.  Ajoutez vos fichiers (les versions chiffrées !) :
     ```bash
-    git add Web/Mon-Challenge/Challenge.yaml
-    git add Web/Mon-Challenge/src.zip.gpg
-    git add Web/Mon-Challenge/Dockerfile
+    git add Mon-Challenge/Challenge.yaml
+    git add Mon-Challenge/src.zip.gpg
+    git add Mon-Challenge/Dockerfile
     ```
 2.  Commitez et Pushez :
     ```bash
@@ -124,6 +150,8 @@ Une fois vos fichiers sécurisés :
     git push origin ma-branche
     ```
 3.  Ouvrez une Pull Request. Une fois validée, Flux déploiera automatiquement votre challenge sur le cluster ! 🚀
+
+> **💡 Astuce :** Le wizard peut aussi soumettre automatiquement via Pull Request à la fin du processus de sécurisation !
 
 ---
 

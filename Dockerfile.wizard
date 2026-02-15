@@ -34,4 +34,4 @@ WORKDIR /app
 
 # The script itself will be mounted or copied. 
 # We assume the user mounts the project root to /app
-ENTRYPOINT ["python", "manage_secrets.py"]
+ENTRYPOINT ["python", "wizard.py"]

@@ -3,7 +3,7 @@ apiVersion: skyline.local/v1
 # Ne jamais modifier ici
 kind: CTFChallenge
 metadata:
-    name: gate-bypass-enzo
+    name: gate-bypass
     # Ne jamais modifier ici
     namespace: ctfd
 spec:
@@ -22,13 +22,8 @@ spec:
     creator: Enzo
     flag: ENC[AES256_GCM,data:RtH0v+YdZqqQaQAk9dVq4EHTBA==,iv:ZIBo4AyYvmmBDyQ7J4WpLSibfa09ydjT8mNFUgzfdQ8=,tag:Y1b0VqGrpmRJEGysmX8zOQ==,type:str]
 sops:
-    kms: []
-    gcp_kms: []
-    azure_kv: []
-    hc_vault: []
-    age: []
-    lastmodified: "2026-02-11T17:13:11Z"
-    mac: ENC[AES256_GCM,data:fImPNL35Ytj5nDI2TB71duPPnAe8PQNtdAHLZ2fpj5rgiJxCMtkGruHpyrgiscuTerGDWNfQu7XCqw2UCvi1QbfS7toe8R41y0oYVejSWZOMPImQRyNAB0K5BnMVNTTXqCT41E6pB/+jKgJYYofuU7EsAhAvVXZson52nvNC34k=,iv:63Oejb9i8m2wy7MHSWGl/6qWUAq9mhc34chRIwR8TIg=,tag:8CmBdko2X0f14a+PHYbh/A==,type:str]
+    lastmodified: "2026-02-15T09:27:34Z"
+    mac: ENC[AES256_GCM,data:Hrgg3jPJFAOgQyyL6r/hD+dfWO/Y6LfDppEjuNt04wBgVLq15NiXrufiNpah5Jk2fU8fZs3NwTn1xYf/AwIcB1/iMu4iVoBAX+e3UwMUxvRUNrAC7eWdL6PaPNbbiAJI3niPdEdmKUkABou3wGr9FTuuaB+R9Qo05KcOGQOFbPI=,iv:JP07U5KdhKUfK1j5MMM0TNRbG8Nov5bNncULXEo7fzc=,tag:prDG7vABSfBa/cXRBKSpTQ==,type:str]
     pgp:
         - created_at: "2026-02-11T17:13:11Z"
           enc: |-

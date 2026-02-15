@@ -1,5 +1,6 @@
 import os
 import sys
+import re
 import argparse
 import subprocess
 import shutil
@@ -211,48 +212,252 @@ def main():
         elif args.command == "secure":
             run_wizard(args.folder)
 
-def run_tui():
-    """Launches the beautiful interactive Text User Interface."""
-    console.clear()
-    console.print(Panel.fit(
-        "[bold cyan]SkylineCTF - Assistant de Sécurité[/bold cyan]\n"
-        "[dim]Sécurisez vos challenges facilement![/dim]",
-        border_style="cyan"
-    ))
-    
-    check_dependencies()
-    import_gpg_key()
+# RFC 1123 subdomain regex (same as validation script)
+NAME_REGEX = re.compile(r'^[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*$')
 
-    # WARNING (Moved to startup)
-    rprint("\n[bold red blink]⚠️  ATTENTION AVANT DE CONTINUER ⚠️[/]")
-    rprint("[bold white]Dû à la nature publique de ce dépôt, tout le monde peut contribuer.[/bold white]")
-    rprint("[bold white]Pour empêcher la lecture des flags, le chiffrement est irréversible pour vous.[/bold white]")
-    rprint("[bold white]Seul l'administrateur possède la clé privée pour déchiffrer ces fichiers.[/bold white]")
-    rprint("[yellow]Assurez-vous d'avoir une copie de sauvegarde (backup en dehors de ce repo) de votre challenge ![/yellow]\n")
-    
-    if not questionary.confirm("J'ai une sauvegarde et je veux procéder au chiffrement", default=False, style=custom_style).ask():
-        rprint("[red]Opération annulée.[/red]")
-        return
 
-    # Direct Wizard Launch
-    dirs = [d for d in os.listdir('.') if os.path.isdir(d) and not d.startswith('.') and not d.startswith('__') and d != "Others"]
+def create_challenge():
+    """Interactive wizard to create a Challenge.yaml from an existing folder."""
+    rprint("\n[bold cyan]📝 Création d'un Challenge.yaml[/bold cyan]")
+    rprint("[cyan]" + "-" * 50 + "[/cyan]")
+    rprint("[dim]Le dossier du challenge doit déjà exister avec son contenu (Dockerfile, src/, uploads/).[/dim]\n")
+
+    # 1. Select existing folder
+    dirs = [d for d in os.listdir('.') if os.path.isdir(d) and not d.startswith('.') and not d.startswith('__') and d != 'Others']
     dirs.sort()
-    
+
     if not dirs:
-        rprint("[yellow]Aucun dossier de challenge trouvé dans le répertoire courant.[/yellow]")
+        rprint("[yellow]Aucun dossier de challenge trouvé.[/yellow]")
         return
 
-    target = questionary.select(
+    folder = questionary.select(
         "Sélectionnez le dossier du challenge :",
         choices=dirs,
         style=custom_style,
         use_indicator=True,
         instruction="(Utilisez les flèches)"
     ).ask()
-    
-    if target:
-        run_wizard(target)
-        rprint("\n[dim]Terminé.[/dim]")
+    if not folder:
+        return
+
+    yaml_path = os.path.join(folder, "Challenge.yaml")
+    if os.path.exists(yaml_path):
+        rprint(f"[yellow]⚠ Un Challenge.yaml existe déjà dans '{folder}'.[/yellow]")
+        if not questionary.confirm("Écraser le fichier existant ?", default=False, style=custom_style).ask():
+            rprint("[dim]Annulé.[/dim]")
+            return
+
+    # 2. metadata.name (auto-derived from folder, lowercased)
+    auto_name = re.sub(r'[^a-z0-9-]', '-', folder.lower()).strip('-')
+    # Collapse multiple dashes
+    auto_name = re.sub(r'-+', '-', auto_name)
+
+    if not NAME_REGEX.match(auto_name):
+        rprint(f"[red]Le nom de dossier '{folder}' ne peut pas être converti en nom RFC 1123 valide.[/red]")
+        rprint("[dim]Renommez le dossier (ex: Mon-Challenge → mon-challenge).[/dim]")
+        return
+
+    rprint(f"   [dim]metadata.name déduit : [bold]{auto_name}[/bold][/dim]")
+
+    # 3. Display name
+    display_name = questionary.text(
+        "Nom du challenge (affiché sur CTFd) :",
+        default=folder.replace('-', ' ').title(),
+        style=custom_style
+    ).ask()
+    if not display_name:
+        return
+
+    # 4. Description
+    rprint("[dim]Entrez la description (terminez par une ligne vide) :[/dim]")
+    desc_lines = []
+    while True:
+        line = questionary.text("", style=custom_style).ask()
+        if line is None:
+            return
+        if line == "":
+            break
+        desc_lines.append(line)
+    description = "\n".join(desc_lines) if desc_lines else "Description du challenge."
+
+    # 5. Category
+    category = questionary.text(
+        "Catégorie :",
+        default="Web",
+        style=custom_style
+    ).ask()
+    if not category:
+        return
+
+    # 6. Challenge type: instance (Docker) or static (uploads only) or both
+    has_dockerfile = os.path.exists(os.path.join(folder, "Dockerfile"))
+    has_uploads = os.path.isdir(os.path.join(folder, "uploads"))
+
+    if has_dockerfile and has_uploads:
+        rprint(f"   [green]✔ Dockerfile trouvé[/green]")
+        rprint(f"   [green]✔ Dossier uploads/ trouvé[/green]")
+        is_instance = True
+        upload_files = True
+    elif has_dockerfile:
+        rprint(f"   [green]✔ Dockerfile trouvé[/green]")
+        rprint(f"   [dim]  Pas de dossier uploads/[/dim]")
+        is_instance = True
+        upload_files = False
+    elif has_uploads:
+        rprint(f"   [dim]  Pas de Dockerfile[/dim]")
+        rprint(f"   [green]✔ Dossier uploads/ trouvé[/green]")
+        is_instance = False
+        upload_files = True
+    else:
+        rprint("[yellow]⚠ Ni Dockerfile ni dossier uploads/ trouvé.[/yellow]")
+        is_instance = questionary.confirm("Ce challenge est-il dockerisé (instance) ?", default=False, style=custom_style).ask()
+        upload_files = questionary.confirm("Ce challenge a-t-il des fichiers à fournir (< 100 Mo) ?", default=False, style=custom_style).ask()
+        if not is_instance and not upload_files:
+            rprint("[yellow]⚠ Aucun déploiement ni fichier. Si vos fichiers dépassent 100 Mo, contactez un mainteneur.[/yellow]")
+
+    # 7. Points
+    scoring = questionary.select(
+        "Type de scoring :",
+        choices=["Dynamique (recommandé)", "Statique"],
+        style=custom_style
+    ).ask()
+
+    if scoring == "Dynamique (recommandé)":
+        initial = questionary.text("Points initiaux :", default="500", style=custom_style).ask()
+        minimum = questionary.text("Points minimum :", default="50", style=custom_style).ask()
+        decay = 10
+        try:
+            initial, minimum = int(initial), int(minimum)
+        except (ValueError, TypeError):
+            rprint("[red]Valeurs invalides pour les points.[/red]")
+            return
+        points_block = f"  type: dynamic\n  initial: {initial}\n  decay: {decay}\n  minimum: {minimum}"
+    else:
+        points = questionary.text("Points :", default="100", style=custom_style).ask()
+        try:
+            points = int(points)
+        except (ValueError, TypeError):
+            rprint("[red]Valeur invalide pour les points.[/red]")
+            return
+        points_block = f"  type: standard\n  points: {points}"
+
+    # 8. Port & Image (only for instance)
+    deploy_block = ""
+    if is_instance:
+        port = questionary.text("Port interne du conteneur :", default="8080", style=custom_style).ask()
+        try:
+            port = int(port)
+        except (ValueError, TypeError):
+            rprint("[red]Port invalide.[/red]")
+            return
+        image = f"ghcr.io/sp00kyskelet0n/skylinectf-challenges/{auto_name}:latest"
+        rprint(f"   [dim]Image Docker : {image}[/dim]")
+        deploy_block = f"  image: \"{image}\"\n  port: {port}\n  instance: true"
+
+    upload_block = ""
+    if upload_files:
+        upload_block = "  upload_files: true"
+
+    # 9. Flag
+    flag = questionary.text("Flag (ex: SKL{{...}}) :", style=custom_style).ask()
+    if not flag:
+        rprint("[red]Un flag est obligatoire.[/red]")
+        return
+
+    # 10. Creator name
+    creator = questionary.text("Votre nom/pseudo (créateur) :", style=custom_style).ask()
+
+    # Build YAML
+    yaml_content = f"""apiVersion: skyline.local/v1
+kind: CTFChallenge
+metadata:
+  name: {auto_name}
+  namespace: ctfd
+spec:
+  name: \"{display_name}\"
+  description: |\n"""
+    for line in description.split("\n"):
+        yaml_content += f"    {line}\n"
+    yaml_content += f"  category: \"{category}\"\n"
+    yaml_content += points_block + "\n"
+    if deploy_block:
+        yaml_content += deploy_block + "\n"
+    if upload_block:
+        yaml_content += upload_block + "\n"
+    if creator:
+        yaml_content += f"  creator: \"{creator}\"\n"
+    yaml_content += f"  flag: \"{flag}\"\n"
+
+    # Write file
+    with open(yaml_path, 'w') as f:
+        f.write(yaml_content)
+
+    rprint(f"\n[bold green]✅ Challenge.yaml créé : {yaml_path}[/bold green]")
+    rprint("[dim]Contenu :[/dim]")
+    rprint(f"[cyan]{yaml_content}[/cyan]")
+
+    # Offer to continue to encryption
+    if questionary.confirm("Passer directement au chiffrement et soumission ?", default=True, style=custom_style).ask():
+        run_wizard(folder)
+
+
+def run_tui():
+    """Launches the beautiful interactive Text User Interface."""
+    console.clear()
+    console.print(Panel.fit(
+        "[bold cyan]SkylineCTF - Wizard[/bold cyan]\n"
+        "[dim]Créez et sécurisez vos challenges ![/dim]",
+        border_style="cyan"
+    ))
+
+    check_dependencies()
+    import_gpg_key()
+
+    # Main menu
+    action = questionary.select(
+        "Que souhaitez-vous faire ?",
+        choices=[
+            "📝 Créer un Challenge.yaml",
+            "🔐 Sécuriser un challenge existant",
+        ],
+        style=custom_style,
+        use_indicator=True
+    ).ask()
+    if not action:
+        return
+
+    if "Créer" in action:
+        create_challenge()
+    elif "Sécuriser" in action:
+        # WARNING
+        rprint("\n[bold red blink]⚠️  ATTENTION AVANT DE CONTINUER ⚠️[/]")
+        rprint("[bold white]Dû à la nature publique de ce dépôt, tout le monde peut contribuer.[/bold white]")
+        rprint("[bold white]Pour empêcher la lecture des flags, le chiffrement est irréversible pour vous.[/bold white]")
+        rprint("[bold white]Seul l'administrateur possède la clé privée pour déchiffrer ces fichiers.[/bold white]")
+        rprint("[yellow]Assurez-vous d'avoir une copie de sauvegarde (backup en dehors de ce repo) de votre challenge ![/yellow]\n")
+
+        if not questionary.confirm("J'ai une sauvegarde et je veux procéder au chiffrement", default=False, style=custom_style).ask():
+            rprint("[red]Opération annulée.[/red]")
+            return
+
+        dirs = [d for d in os.listdir('.') if os.path.isdir(d) and not d.startswith('.') and not d.startswith('__') and d != 'Others']
+        dirs.sort()
+
+        if not dirs:
+            rprint("[yellow]Aucun dossier de challenge trouvé.[/yellow]")
+            return
+
+        target = questionary.select(
+            "Sélectionnez le dossier du challenge :",
+            choices=dirs,
+            style=custom_style,
+            use_indicator=True,
+            instruction="(Utilisez les flèches)"
+        ).ask()
+
+        if target:
+            run_wizard(target)
+            rprint("\n[dim]Terminé.[/dim]")
 
 
 def encrypt_standalone_file(file_path):

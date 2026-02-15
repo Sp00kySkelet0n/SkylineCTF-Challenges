@@ -1,48 +1,46 @@
 apiVersion: skyline.local/v1
 kind: CTFChallenge
 metadata:
-    # Doit correspondre au nom du dossier (lowercase, sans espaces)
-    name: aForensic
+    name: aforensic
     namespace: ctfd
 spec:
-    name: aForensic
-    description: Analysez ce tel du fanatique
+    name: A Forensic
+    description: |
+        Analyser le téléphone de ce fanatique !
     category: Forensic
-    # Ou dynamic
-    type: standard
-    points: 100
-    # Indispensable pour Forensic/Reverse !
-    upload_files: true
-    # Placez vos fichiers (PCAP, binaire...) (dans la limite de 50mb) dans le dossier 'uploads/' du challenge.
-    # À chiffrer avec wizard.sh !
-    flag: ENC[AES256_GCM,data:vSwl9MhJyoTEH5faP3K2U+Q=,iv:9x/dEzosGkgnQP/+y1qiaFI059DwAqI2IuLmG2DUPEo=,tag:PkPIAnLCjHmuomTJSE24Hg==,type:str]
+    type: dynamic
+    initial: 500
+    decay: 10
+    minimum: 50
+    creator: Nzoo
+    flag: ENC[AES256_GCM,data:9gj83OXmYE6DjOxkiagF,iv:IIkw7e1hIzGhzb4VhM2XHtOOg0XaQ0m1/llRVDqdyxU=,tag:WoDVDPEQgYmNhT6DuPNa/w==,type:str]
 sops:
     kms: []
     gcp_kms: []
     azure_kv: []
     hc_vault: []
     age: []
-    lastmodified: "2026-02-12T21:55:13Z"
-    mac: ENC[AES256_GCM,data:0EaDG2vTknC2UsO7zeB8zArk17sOZiyLb2v1y7wZGjgRlIjRow6RNKEjWQ+0JMH7TC47lDzz5qeEvF/SayZwe5n9tJsZB0hL86I2/YM4h5MccNb+hPeC4WseicnMXaYKIrkflcZ4p4B4u3qI/OToCwwyy/CN/OT4OUkVv+k2KbA=,iv:+wlmNvBfA0KZptZS9hQnA2aUOpvUsb69em3xVeVM1+g=,tag:vQazFwpAeovA4Dhj4/qZbw==,type:str]
+    lastmodified: "2026-02-15T10:01:16Z"
+    mac: ENC[AES256_GCM,data:p5p2Yf/bghtQ/pvyqA9PvvpUCVv+s5x9W+5x3iv/Y8oB4m5MuuoKFJoV8TfQUURLxjEpGf8QUdfj5OQN3F+FHetvzGlsKYkTjJAkv7Jb+AMDTxpsa1uakLIE8jLS/LShYULtxEBMFm0zQVHIVO6npKpNsAyhP9OJst5zdA5nhp0=,iv:MJqwfXZBAtxjHPkpQcEKRiAM920kB7LjrQ9z3o3EJzA=,tag:qAmnfZsDvsnblyd1AbS1ng==,type:str]
     pgp:
-        - created_at: "2026-02-12T21:55:13Z"
+        - created_at: "2026-02-15T10:01:16Z"
           enc: |-
             -----BEGIN PGP MESSAGE-----
 
-            hQIMA4Wg+3KzyZPEARAAsUQ4J/M++6UMvX95oITee0Z9yc/ib7d1huUM3PjBwLKq
-            315npefc3iQpi9kIQhnDiv27LaLIGlSo7kX08q8/yhV/YAoo1aSYCmi381n7DaIn
-            Hzby2gbEA0TbSx6GifDPEtQcMPS10ZK6FX9UoF1QcDKgHraKGaR1VYp3j8Y8Qhmy
-            ryRLrfSyjDgh509/96ZzI7Mm4yL1DkNN7bcn8ikq4Xq7pggXqobUwo6paEhyKu/O
-            gk2jHCawt1aTRwzvlFafBaToh1jnfJPdNipLeXUSBDohuWe0KeZEY+GPUielIZYN
-            AHb5Gxi/g/o99c5YWLd3FUuzqA7DEvSdriTz7shXl+J06HKVe9djht6d/1KpCmdt
-            foUi7kuWDGrqMdywkYTQDcryS0gmC6jaFzPIA3WDvi0XkbsxJv4LINgqbGNikz1f
-            f3Mw84Rl6s4lK2yNsMEQTGFD97vURm8GxmdWqqSNQAzjd/a8BJIA77MuPTuVT1WL
-            0yIPkCZagM26wOwmFuP9O1H5gR5lqLgdbZ7EiP0x5yN1FQwmQLn12A3tCBo95CKx
-            NVLfMeIkPeh9Qfibl1cCUSA/aPlMwy+KtGQD1kChFhpr58Qruc0VOEvhY5yy6jiu
-            9xW9tG002KkyHQm4sVBLNcao1Tw3ClWsBzuTjLEXEJWOfIhGj2TcEPEudPjXIhrS
-            XAG3678WsXj9w0H4vIZNMAHQ5wWHKYIbasr40bes8UYdZNNzPwmVieeFIxdcGfLD
-            mTJgPc345+wFMTh9+Pqyn5Sxc6qtmDe0/d0FfLsGbmThjGgo/lpQF+MkoHyv
-            =Bu2O
+            hQIMA4Wg+3KzyZPEARAAk82ze5kGGc9hjGdmmv46aMkq2AwNWF0xnuaMbclVTTEY
+            5XSPruBcJlTbLnwuK8sMGERdXbZ5OLJKdOjldDzgMtkBP4ttzv3XDK9K9KnrZrWS
+            OHm4j/vPg5v5GPG2Al6sDGvQ1SePxI5iXcuEszeK+SJvKO/ZLAFBcJeFYud15ixe
+            ck325FxfgNMl0Q+KAGwAf6MclmCz+0xsfA+OfrZcfLVUjecyERJZpVw9uVsjjZU5
+            mDSMALzFwduey7tAKhdz2Oh0SfY8y35dwxbXYuvyGMusd/rr1EGZjbSHkUlqv1Fu
+            ko964nE2rIc+6aeZvH41478e7eReKSpZJ2B1Yz/bxcEG0JIzXVgyUZc8o9PnRtjH
+            Pu/5JbBibFYnOBrLfGf29GVxcW3/ZTagbP47jma0eQx145vSlpLB1pxpapHp9tRp
+            WMo7gr7uu+lnKD/5S56EtvDVbcbiNSB6Mnw390hVF9mlsO2D4nfacqHY/eUSyVNA
+            14hZRkZBunNSuEOoMOPxzo6FZIHzi15Q4ae1LAgQqyEV/Qydvwt1xIR5AvJ32ccB
+            HwX+f4GPeHhBd7YsIir9AnboTNyLDFbQhhUl6semvGI/Yl+WNdgl1DXPOsloYcWN
+            CRCEGqFEVk6M3B9j7H4bH/i59sMDaqAJqtZz5OD7AJHBf3wnaNI/lDpR472/nWbS
+            XgHU9z/0s8a+QNJxI+fPvur5zo48fejAqUTsFnqT7mEtVPx2Xk1PZZsIsRi7em+Q
+            ercAKvDrqf5OhP9uPNCl+t5q9ry/tdy22ffGTGPKJLDgKal9Q6LpPJjmbtFiPEI=
+            =rPmV
             -----END PGP MESSAGE-----
           fp: 2F678007F08254265530095FB5B68F8BCE0CB069
     encrypted_regex: ^(data|stringData|flag|password|secret)$
