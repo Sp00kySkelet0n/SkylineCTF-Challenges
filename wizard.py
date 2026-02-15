@@ -646,15 +646,13 @@ def submit_pr(folder_name):
 
     try:
         # Sync fork with upstream before creating branch
-        rprint("   [dim]Synchronisation du fork...[/dim]")
+        rprint("   [dim]Synchronisation du fork avec upstream...[/dim]")
         try:
             upstream_main = upstream.get_branch("main")
-            try:
-                fork.get_git_ref(f"heads/main").edit(upstream_main.commit.sha)
-            except GithubException:
-                pass
-        except GithubException:
-            pass
+            fork.get_git_ref("heads/main").edit(upstream_main.commit.sha, force=True)
+            rprint("   [green]✔ Fork synchronisé avec upstream[/green]")
+        except GithubException as e:
+            rprint(f"   [yellow]⚠ Synchronisation échouée (non bloquant) : {e}[/yellow]")
 
         # Get the base commit (fork's main branch)
         base_branch = fork.get_branch("main")
