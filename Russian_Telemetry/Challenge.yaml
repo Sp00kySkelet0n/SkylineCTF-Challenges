@@ -1,7 +1,7 @@
 apiVersion: skyline.local/v1
 kind: CTFChallenge
 metadata:
-    name: russian-telemetry
+    name: Russian_Telemetry
     namespace: ctfd
 spec:
     name: Russian_Telemetry
