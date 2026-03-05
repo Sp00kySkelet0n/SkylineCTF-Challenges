@@ -1,0 +1,46 @@
+apiVersion: skyline.local/v1
+kind: CTFChallenge
+metadata:
+    name: russian-telemetry
+    namespace: ctfd
+spec:
+    name: Russian_Telemetry
+    description: |
+        La mère Patrie a encore frappée...
+    category: Forensic
+    type: standard
+    points: 100
+    upload_files: true
+    creator: Processus
+    flag: ENC[AES256_GCM,data:oVC1Do1FMWqs3SL4iC9Y9gy4bA==,iv:a1QeZEtb6KbgDYzknv6fxil8z7gutPaOQXQq2NSllIw=,tag:P4YUyMgLQtW0SgwSODRGfg==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age: []
+    lastmodified: "2026-03-05T14:45:24Z"
+    mac: ENC[AES256_GCM,data:UOduY6Upz2pP9lCtd1ELUmqgDGlf7gv5MNNzfyLIfk1xyzstsllCRrKoG41y8tNms7gcT349lEpljG+7xSGR6wJjOD69BOUUcOBW4ueDomSrWMHdcSyMGf6YN1yWhP1j7X0bZAG2/BFihWUZVwdAMucv3Fm44RcbkumA3V9Qmmk=,iv:PcZDM2uN6/a+So8pTCTGmEMsBz/caO+RyriAyg0IQpY=,tag:extCczsDyp+z/2saQymHEw==,type:str]
+    pgp:
+        - created_at: "2026-03-05T14:45:24Z"
+          enc: |-
+            -----BEGIN PGP MESSAGE-----
+
+            hQIMA4Wg+3KzyZPEARAAstzuqnbQVQOmHrRS3Y5kHR69B1lY27F+flNdUhny12BR
+            smdyiRiFjW/whc++sc659USboW3rdUeRNiT5br7vutVt2JS40kLfZMQRSSkY0KHs
+            nuYaMLJcC0lmGcZtHzWv6WtAfZm6yazVFe5lcY9T2s/bDdaTzh3WSshdg5Q+XSnJ
+            H7BPd96IZMy9H2RmJs8ETzDRojsJWut1an0oKtrUnYUROPt9XbbwkuINHFnIgDKN
+            LBXoTdSu0UgLrJZ24+9GPwVmEoVPqeEof5Uc8ZpE3AP1QtAl8dNYz2tMn9LKdZ35
+            OTD4tinbaBHIfNzeMtYncVOugIsbYEN59Q8v4goKUE5LiIMpz83LeORtUWAlFpDM
+            N5VsC0ioYwdjzeZqa4l1BvPBBr9GXrT2PZeJZGvrBi8jloTsOXZwlCKx0aHFEYvW
+            LBnj3Xg69RE1s+80fdcFp2wBmc9gkQb9MVZEHU3eBZPdEeOSq8KEGlNtrMIktMRR
+            079n7X7B8sX8Q/UbUNUoblXvT06NV/LZkmpK2Yf3J+U1Kw90z3rfPPfMyBSczLyK
+            NYaUV4w5OOg23/AJnZpIMaolXNWJFBfQMAnGyErVqNYkB1xGmbZLM1FfeCVrOMRX
+            gGEM4+jpTiXIGka3lEg2bhDcvV8E9V49Gc9i1WPiFo6XxCtqyaBmuw4X3x3LElXS
+            XAGkcbuTf4nshAcg68tDmqKR07GRLA4lq3jSjPUyjFp75EmwOFb2kXqthqvBj7l/
+            beYqjqzP9hCtNQqe84rzK7Jdp8qBvOuW7918fANRvdgL3jsfyxjyxfMMftZA
+            =sK4j
+            -----END PGP MESSAGE-----
+          fp: 2F678007F08254265530095FB5B68F8BCE0CB069
+    encrypted_regex: ^(data|stringData|flag|password|secret)$
+    version: 3.8.1
