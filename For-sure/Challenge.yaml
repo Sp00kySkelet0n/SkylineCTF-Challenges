@@ -4,7 +4,7 @@ metadata:
     name: for-sure
     namespace: ctfd
 spec:
-    name: For_Sure
+    name: For Sure
     description: |
         Sometimes too slow, for suuuuuuure, and needs to be reformed, for suuureeeeeeeee
     category: Forensic
