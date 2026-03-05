@@ -1,0 +1,46 @@
+apiVersion: skyline.local/v1
+kind: CTFChallenge
+metadata:
+    name: for-sure
+    namespace: ctfd
+spec:
+    name: For_Sure
+    description: |
+        Sometimes too slow, for suuuuuuure, and needs to be reformed, for suuureeeeeeeee
+    category: Forensic
+    type: standard
+    points: 50
+    upload_files: true
+    creator: Processus
+    flag: ENC[AES256_GCM,data:93w8FEWJRG97roYXT+zNiTs=,iv:KNsRHA3n7MnKJsSbffGIHSBIglMNFd6gIkn3y+M1rlg=,tag:xUivhTWZm247auhvbgKnIA==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age: []
+    lastmodified: "2026-03-05T15:07:56Z"
+    mac: ENC[AES256_GCM,data:E1djK3DwlgA34YYYw0NmyDGQsdAQZEdzXj2q8tFLTLomy5bPqKhqgiEOtw0oZ38hRJDsNW0ZU6lUyAFnnODatgQ2WpCajpyOcA8iVGiNkUsfpaWNl9v0hQrYwhZpK1TY0GJMAT3ekK4y555AO9gcNNTxIQ4/g2w2Evalmy3LpG8=,iv:Ahmdi8B3jXp5jicDX/WGD6Mi8Q4BZPmd24cH5YGTgUQ=,tag:8NLwREo72MKkrQNiZ+Nu8w==,type:str]
+    pgp:
+        - created_at: "2026-03-05T15:07:56Z"
+          enc: |-
+            -----BEGIN PGP MESSAGE-----
+
+            hQIMA4Wg+3KzyZPEAQ//YcMww1td7M2uczXplUZ6evxkSUYRgKeffKa8GLrENFyM
+            OuDB4H5XcuLKnOie402w49HuwxDcDVudjutn8+p1TmnMKHyzOApVM+CyvVWdsJaR
+            U0QvQnbFo3HLhCSdCgYpBm8QtNwMQgFgFASGbovN0+EU5Dj+LFN1ctfgHpjspBm8
+            g44R6EEVt5px+wVCTRLxZPUPruc6bKHkNoXiUfkPcaP3Rgjc4gAWrAKvAoJXDlT0
+            DbXhXkPWKPhsl6/8AhTrzu25vHUwKSUBYG6L2SAJMqwdDcWyUByfl8Jwo0msw3op
+            DGlqMrD6NQe90ud3ecJKpu6NWCE9eNR1v3FvmQYod/kkk5CxUe8q3+2bq2iGKe01
+            +HBA+/dc3bzUWbQeOD3zwTvqB0RBcvNtwMwYYFF5iaP3nqvX4r0bebCblrFqFqs3
+            cJtpS06p/NdhXwT+mUC5/MmHBaTQux0MpKvxTdi9YsYHqaFfUdqDYegErWqAysL/
+            oKAYm3dfuAEH56G+L3ffBdLah2WCq1rK5cPRLFbBKXKN/ZJZxlug+vNA/6jneK0i
+            xucoiDP8zbB6OfE6RyNvfR7C3MeKfPpfB4v0FqO4fyYEQV5+NqmrCmbpktBN3vYd
+            8VzNzct1U5lsuuRNWgzH8novOkrX2bcNfguNcby5r26JPIhEc0KWAoTnr7WxDFLS
+            XgEe1Z+Av4Seys6Fxob0eN7sj32PA39w7v5Mf/o5IKr81g5ozyW+Kb58DC5ZFGVQ
+            NKo8gdCXevlUV0LQr3pIXykOQvezviQjgu2XAe6gwe7cJ7EaO+xqjsNXHtNhFMU=
+            =mhOY
+            -----END PGP MESSAGE-----
+          fp: 2F678007F08254265530095FB5B68F8BCE0CB069
+    encrypted_regex: ^(data|stringData|flag|password|secret)$
+    version: 3.8.1
