@@ -1,0 +1,46 @@
+apiVersion: skyline.local/v1
+kind: CTFChallenge
+metadata:
+    name: supercat
+    namespace: ctfd
+spec:
+    name: Supercat
+    description: |
+        Saurez-vous déchiffrer les miaulements de Supercat ?
+    category: Forensic
+    type: standard
+    points: 100
+    upload_files: true
+    creator: Processus
+    flag: ENC[AES256_GCM,data:8vC5ffr6j+vjz4LG3rOcqcsWgR37ow==,iv:RmJc91gWhDyH9eTvsLvJjcYi7nspHBA4mevNPs2sXcA=,tag:9yOvDFpQvfJdm9VoB+TxqQ==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age: []
+    lastmodified: "2026-03-05T14:50:12Z"
+    mac: ENC[AES256_GCM,data:J95dHJaFtihJPK48xXjWugT0oDENQrcErlRuiRGvkSR2GbGCcIxh09m1wdQenmDxe5m+tb/R2EKDbJMDAMkSBpfWWe4cGGT9Tm5zV8ldPM4Nco0xzqS1cs7v6bAIvduhQS+TvVlNflpdLk3Vf0/Wc1h4KJpc2EUorCmogQh9Hsc=,iv:qpoqzeteoGX0owm4D9ROg+8/97629unFQXj8JfBfZgU=,tag:3QcokkOQGAB0zqeuK3AEtQ==,type:str]
+    pgp:
+        - created_at: "2026-03-05T14:50:12Z"
+          enc: |-
+            -----BEGIN PGP MESSAGE-----
+
+            hQIMA4Wg+3KzyZPEARAAk2Uh4IePKU8cnc5BFnRwxbAA9pYYCiLH/sp8oFDFa3ys
+            2YOKA/ltwdpdK7kJnB/HqHyq2fCzUUG3BJMCATteYrOT2ehHLtoQA18Nli11mzfX
+            ZwOR4a4gtllx4GY5sronmy2XKg/HDI+ypm+15h4iUJ+vMEhkqwAENaEUSL8RtEpt
+            ZAb8TFDVJnyMGhQ8nWdwOMxsR8+YehsrLjIJidEUZcYZKQOWywk7T06tAc/jxjSZ
+            Gn475rKrRvKeqqg91vSa5P2OpaLtHIm2KZv2rV8pNg3i/+r5UYNCJWo5/xhImHvb
+            76PAKHXdoqmvPrAYiyo0hYcQ6DHv/XdpwbjyHOt5f8omm32xZFs/jSP9iIUuqDWU
+            08KV4rvRueycLyh9z3EjQUmpACAi2p8JDBcTHzIA9m0Ul7Wy9mUIMXkvCy/iL7iJ
+            /fSFR8YBYDn5v6izHI/XOR+WZh/9XU5ThT5Uwb8YkKsK27yR6EPt4EUhFX5uaH7v
+            MtJnYpS7IEA+5pwTLPuIOWJkM12BKrOUSQUPw3aKjSVw4922SKhBbELvGiKWRP/1
+            9EyaCD3Vn5AXatzdHQ9kXrI9BgfsToS7ym+51mnhH5JSwousA+yhUAD+8fkL1bq/
+            TeqqsHxCD9+vj0rvoxCoSufjvIOB6FYEkbBuPqbHekG1UXnmNF7IrsvmVlEtNLXS
+            XAFcmX1F+Pqlt2b+gjJ2el/9dddcz03ermwvCZuZdJEB6jKuxhMBnoxw8Pwm4Gu6
+            ppwcP9+/8O7s3T6V4R3YFn2Npu2CZxJcL+2VKlWIUd+1vRIJ2qXq7t69qMdk
+            =D5R6
+            -----END PGP MESSAGE-----
+          fp: 2F678007F08254265530095FB5B68F8BCE0CB069
+    encrypted_regex: ^(data|stringData|flag|password|secret)$
+    version: 3.8.1
