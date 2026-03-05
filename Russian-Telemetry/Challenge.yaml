@@ -4,7 +4,7 @@ metadata:
     name: russian_telemetry
     namespace: ctfd
 spec:
-    name: Russian_Telemetry
+    name: russian-telemetry
     description: |
         La mère Patrie a encore frappée...
     category: Forensic
