@@ -1,0 +1,45 @@
+apiVersion: skyline.local/v1
+kind: CTFChallenge
+metadata:
+    name: autobahn1
+    namespace: ctfd
+spec:
+    name: Autobahn 1
+    description: "Il a osé critiquer ma voiture préférée ! Donnez la position GPS XX.XXXXX,Y.YYYYY de cet endroit que je puisse aller lui casser la gueule \n"
+    category: Osint
+    type: standard
+    points: 20
+    upload_files: true
+    creator: ThomSon
+    flag: ENC[AES256_GCM,data:dolRnQ9UHO3cpTmnJpRI9w4=,iv:aJGFSGjXKnmPQLt7NIIWmoP6W3ktZWL7AaxgcVgVpIo=,tag:KOFjjQHs3MasqIUd48qtfA==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age: []
+    lastmodified: "2026-03-22T17:59:16Z"
+    mac: ENC[AES256_GCM,data:w5/a157X5eQLwmEB7VupB5lJxgHgNpjQS4OC42+MnQSUksEUwvnyZJUoFjqq1+Wlglf8n8SFC3LpF9LcFEp1HCpe6FwDVm2GUYpw/a1Yski0Vo/EFXkAqFbJKWAtVYIqWSsXmKqWJqq2h5voQEdB2W6Wf/KVRb4D4WfXsCAVnWg=,iv:4ioaQ4Xyb5u4gqAyHEvBPkWtPkJizoj0kMVPZOZaTYk=,tag:VxyBuMQXT2OMZHQGe2U5IA==,type:str]
+    pgp:
+        - created_at: "2026-03-22T17:59:16Z"
+          enc: |-
+            -----BEGIN PGP MESSAGE-----
+
+            hQIMA4Wg+3KzyZPEAQ/9G22ZxBl4yumketvRTMg0oyyjj4r0aeaE5UXOhXuGmhaQ
+            H8ELA7QqndBXlFFYjBER8d/uqeCRJvPaQ9BR/ne+c+HnpIaYXN0NOXU3PJO9nXBM
+            1LQNECmDZCu8YGbHcrr1FTkKWPFC1ySqFUgau4W22bshwL9Q9eVuVd82zeMIXjwE
+            h6XcBxcOUxZzigcPgWJuE8Cj12oXJinX043hHUiC9sQG7Ev6m0d8jpEsla82Tpon
+            qJt/r+jwhoxTDFWx2pNT14R0uQ9XOGxrW84qtp2mtAKQcOtNdOAAhEmaGXaKr69q
+            47HVqnS/alIYBCY6m6B101QI33b0dgQRJX6pcSxMpkBajV0FNOK3mn7morJWNAsi
+            8OqC+kyStwS76LpYU/UfliGUN4gsgxwqK5Pz6Pd4h37+0CZu2AO8gigK56/hrTW6
+            FNq4uLkGNltqQCxnFf3sw3dAcBZSCVrhEUhS+ZQEbcs1cVCQiw25YhBhCyT5HrJx
+            kxNcOqo4rZmtfMBDSERBu9pFTtJXaSG0SuZDfm56m9ilzal0Dzmt5Wj0VlRVEwsn
+            oM2u45W2uvsAc+gbrLMWS0rKa2Ol2bABILBQZXM80q5Dh2EMPY7hw7GZGc10nhpe
+            w89ryD8M3gqK/fA6zbJtD/5svGAJhFNmtVC30f6GWTiCvnCTrurQgp/vNWj2mITS
+            XgG7TcmfS8RvAG9kyPh4YJTiu+ho9yWOzZ0zb+MFZCkX2s4FZoqTGdbMFSzQzNI9
+            dCEwuEZS1qlsFRNOrypxE4DNvCd8n7GCo3y9vxxmSGtTTQX/eV/pO3tAIh98s2o=
+            =tD9B
+            -----END PGP MESSAGE-----
+          fp: 2F678007F08254265530095FB5B68F8BCE0CB069
+    encrypted_regex: ^(data|stringData|flag|password|secret)$
+    version: 3.8.1
