@@ -1,0 +1,47 @@
+apiVersion: skyline.local/v1
+kind: CTFChallenge
+metadata:
+    name: js-obfuscation-2
+    namespace: ctfd
+spec:
+    name: JS Obfuscation 2
+    description: |
+        Le script embarque une obfuscation multi-couches avec contraintes d'execution.
+        Retrouvez la logique de decoding pour extraire le flag.
+    category: Web
+    points: 200
+    image: ghcr.io/sp00kyskelet0n/skylinectf-challenges/js-obfuscation-2:latest
+    port: 8000
+    instance: true
+    flag: ENC[AES256_GCM,data:SiDRgVG30K/dA+1JKDbw+7Oc9dP0XD7g7cg=,iv:46y27JY1hbLnLcZFHQwlzdbE0mSzNkC0iB+doNoBezw=,tag:jfhZ+BZx95Krxr7ABXBaqg==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age: []
+    lastmodified: "2026-04-01T20:42:40Z"
+    mac: ENC[AES256_GCM,data:OxveQkZ3iH5GLpBFWhFoPPBt3o96iqY31cd7Lux6HDqBt8v+AKvoerApXxM+M+/OANJcmWObXTpFcbjbS+15uyGcRe50NQEQAlmAn2yklA1hqcqwnMbszcJP9CBfkYXJ0UDHewZYv3gxhSAGFLu8roX9i5UlKYgPOk9TX3IOpuQ=,iv:1jjbNiTQJ1TWpwla7S61/keZO+ytqerm3zFww5i130I=,tag:4sKPpWDDnZx8IMBOkq7Bgg==,type:str]
+    pgp:
+        - created_at: "2026-04-01T20:42:40Z"
+          enc: |-
+            -----BEGIN PGP MESSAGE-----
+
+            hQIMA4Wg+3KzyZPEAQ//bVe2H/HPFz32QLoDsbBwOjDiTdcxT1KYm4cr1jTGqCdz
+            kZsOhnZUmhD3TOBrxqC2lAHI9VEgQkUgA+kZgyhU9xeECWbrFxHDm5LbLuPBYLmM
+            wtotXplrFg0QCjBhiKmVppVSF0xbM5WD2kPAn3QYWtdiB+E+nYbao+V6qxRhVmOn
+            k07OVeoPqra6W1vSXG4rpeercomzr7vmcXEdCs7a7yXmWT2/TzeMVWjwd59R+FpG
+            zdDgIau770B3IBd2GusBklbSfR0pskIAW1Nl2ZClBqIeXjpj6s4sYmLIJrNkgokP
+            Lrp+1mv2Leqb+GUTl8M8nT6VIlUf91cuqWb6G8uMLkdIZRIBo8WluxIQ9Z2vtN9a
+            AFZlaQMZNZ7rf++YZ8XwE25jYTNyp2kd3TwAgWpD+SNFmyDyOwK1KRCdAQZpomIG
+            veZyGh+XQqazod6RZnbIePiUIQsBMA5vZi6S1jWrau8+B8da3LOmczDXh3ldZ2BT
+            8U1kTNk7V97we0kOMi35cwAg0wEp2diQkUhzTRxUvNJ4ZUXkVifhOoRerO3QldjR
+            MGmcrCbF7hdkovNGkojXJSzRTJq4OaQEMh0KbvelEyODNOwnxR7o5h2cZJNhXGbo
+            4PVdRh/2nhtPnJJOtmaqfBydo8J4+7l+Q4Xxu7VPGk7FV2cYt+TkpUljyoVtT8rS
+            XgE1TGVfkOlm1WpuaI0Mx+Tekf5XWKPC8ELP62HgrMZ81fs6DS89trBr49v3/1sw
+            oOENkd4enqlwLBFTRaAbY/+2zAjd1bRDzmyT11yyDNJKTBJcRv/o91HvrTMaLww=
+            =lBTp
+            -----END PGP MESSAGE-----
+          fp: 2F678007F08254265530095FB5B68F8BCE0CB069
+    encrypted_regex: ^(data|stringData|flag|password|secret)$
+    version: 3.8.1
