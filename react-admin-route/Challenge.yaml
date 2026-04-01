@@ -1,0 +1,19 @@
+apiVersion: skyline.local/v1
+kind: CTFChallenge
+metadata:
+    name: react-admin-route
+    namespace: ctfd
+spec:
+    name: React Admin Route
+    description: |
+        Une page admin protégée. Le chemin est aléatoire à chaque build.
+    category: Web
+    type: dynamic
+    initial: 150
+    decay: 12
+    minimum: 50
+    image: ghcr.io/sp00kyskelet0n/skylinectf-challenges/react-admin-route:latest
+    port: 80
+    instance: true
+    creator: Enzo QUELENIS
+    flag: "HIT{r34ct_r0ut3_0bfusc4t10n}"
