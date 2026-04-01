@@ -37,16 +37,30 @@ jobs:
 
       - name: Decrypt Source Code
         run: |
-          # Find all .gpg files (excluding the key itself if present)
+          # Find all .gpg files, but only decrypt those whose Challenge.yaml has instance: true
           find . -name "*.zip.gpg" -print0 | while IFS= read -r -d '' file; do
+            challenge_dir="$(dirname "$file")"
+            challenge_yaml="$challenge_dir/Challenge.yaml"
+
+            # Skip if no Challenge.yaml or if instance is not true
+            if [ ! -f "$challenge_yaml" ]; then
+              echo "Skipping $file (no Challenge.yaml found)"
+              continue
+            fi
+
+            if ! grep -q 'instance: true' "$challenge_yaml"; then
+              echo "Skipping $file (instance is not true in Challenge.yaml)"
+              continue
+            fi
+
             echo "Decrypting $file..."
             gpg --quiet --batch --yes --pinentry-mode loopback --passphrase "${{ secrets.SKYLINE_PRIV_KEY_PASSPHRASE }}" --decrypt --output "${file%.gpg}" "$file"
             
             echo "Unzipping ${file%.gpg}..."
-            unzip -o -q "${file%.gpg}" -d "$(dirname "$file")"
+            unzip -o -q "${file%.gpg}" -d "$challenge_dir"
             
             # Allow Docker build to see the files
-            ls -la "$(dirname "$file")"
+            ls -la "$challenge_dir"
           done
 
       - name: Set up Docker Buildx
