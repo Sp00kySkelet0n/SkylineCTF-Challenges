@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <!-- /admin ? non. /secret ? non plus. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vault Ultimate</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Vault Ultimate</h1>
+        <p>Le coffre-fort ultime.</p>
+        <div class="payload-box">
+            <pre id="payload">{{ fake_payload }}</pre>
+        </div>
+        <p class="hint">Le standard ne suffit pas.</p>
+    </div>
+    <script>
+        (function () {
+            var _0x1 = 's3HXunU82JdSpkQWzqeTfLZox/hY4E6VyKA9cta1Mjwmg7N0BCblFi5rG+I=PRvDO';
+            var _0x2 = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
+            var _0x3 = function (_0xs) {
+                var _0xr = '';
+                for (var _0xi = 0; _0xi < _0xs['\x6c\x65\x6e\x67\x74\x68']; _0xi++) {
+                    var _0xp = _0x1['\x69\x6e\x64\x65\x78\x4f\x66'](_0xs['\x63\x68\x61\x72\x41\x74'](_0xi));
+                    _0xr += _0xp >= 0 ? _0x2['\x63\x68\x61\x72\x41\x74'](_0xp) : _0xs['\x63\x68\x61\x72\x41\x74'](_0xi);
+                }
+                return _0xr;
+            };
+            var _0x4 = function (_0xs) {
+                var _0xt = _0x3(_0xs);
+                var _0xb64 = atob(_0xt);
+                var _0xr = '';
+                var _0xk = 0x3F;
+                for (var _0xi = 0; _0xi < _0xb64['\x6c\x65\x6e\x67\x74\x68']; _0xi++) {
+                    _0xr += String['\x66\x72\x6f\x6d\x43\x68\x61\x72\x43\x6f\x64\x65'](_0xb64['\x63\x68\x61\x72\x43\x6f\x64\x65\x41\x74'](_0xi) ^ ((_0xk + _0xi) % 0x100));
+                }
+                return _0xr;
+            };
+        })();
+    </script>
+</body>
+
+</html>
