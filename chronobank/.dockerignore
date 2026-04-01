@@ -1,0 +1,31 @@
+# Python
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+
+# Git
+.git/
+.gitignore
+
+# IDE
+.idea/
+.vscode/
+
+# Documentation (optional, remove if needed in image)
+*.md
+
+# Environment
+.env
+.env.*
+
+# Logs
+*.log
+
+# OS
+Thumbs.db
+.DS_Store

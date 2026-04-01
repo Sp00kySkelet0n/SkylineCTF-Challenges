@@ -1,0 +1,50 @@
+apiVersion: skyline.local/v1
+kind: CTFChallenge
+metadata:
+    name: chronobank
+    namespace: ctfd
+spec:
+    name: Chronobank
+    description: |
+        Le système bancaire temporel le plus sécurisé de 2147.
+    category: Web
+    type: dynamic
+    points: 25
+    decay: 10
+    minimum: 25
+    image: ghcr.io/sp00kyskelet0n/skylinectf-challenges/chronobank:latest
+    port: 8000
+    instance: true
+    creator: Enzo QUELENIS
+    flag: ENC[AES256_GCM,data:jIi4I7McFzfAE/2X+yYBghrxvAe53fMIqukOCfgtQQ==,iv:3Ftvvz8ER0St0ZifRnh2JEHXUgM81FskpzgVdFd+R7M=,tag:n8PRQHNqtE4YF+lAHZa3QA==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age: []
+    lastmodified: "2026-04-01T08:20:59Z"
+    mac: ENC[AES256_GCM,data:JsKlChOP74t9jsXMzs8/Z8PjcbzHGvB5g8MesJg++55dnrCcwqOgryfdfaZ2sU8U3yC1Os92OL+ec9DRKfX5O2NpsGMZOHKorHFQo8d9c/H/MlCH6DE60LYRR8iPOGOrX12lQiZ51lUEWd6x6pWzmRZqWKy9DS4bJls1Tj4xDBk=,iv:n8/gerVu6fa4fURdXL3G5WAYfintCUlpXSI3NrMJMQ8=,tag:5NhOiWihgww9s+ztejBUCw==,type:str]
+    pgp:
+        - created_at: "2026-04-01T08:20:59Z"
+          enc: |-
+            -----BEGIN PGP MESSAGE-----
+
+            hQIMA4Wg+3KzyZPEAQ/9H57tOnXScnJfFwcQ6a3Td7CzqCfN21SiJf6etuuLRii7
+            x7QTZ3a1JffG7aSblrCV87IGz83NISUfLlTfnrFuRzrj+j7f7Hg1/4i1I73bqJpw
+            kKK8DrkoJsfsCzR47dckgnlCZsUH84m5W7wVcQEjAypGc+HaGpFj3N9Sayf1hW4h
+            668u5OdSTe6nujHO56alxSTUoSMC+aNnADGnbjXbOgZUaJtu6W22rNMuA8yL+9B3
+            vIx53TUEtab/zhINk5ZQelGRbFD3LdUHQfFdBW4Eeqh/R0SAXvHTckdXjGWsGUGt
+            fKVNgTuw3tDQ2NLUroBocGHNL9PfieVPRNS0NOyso5qdI4Kvr3QNhitrGTrDyxCJ
+            mFX4vip7+m6RhWy3RP5AVoLXhwVCN9HBi06Ib5Z15tRvF2FQg0GlGC4qBjgitIRf
+            bXeAzbmWUbbZ35IzX1iCy8zDsx47Hfh3kXvGCL+hyhgExkrnQ45meK8dur4IM6k/
+            sDeNG7Wj4/On4Dk4kbVXSgPWHq0is6Bh59x7dXWSSXiNnubKfBvduji4i7NvHAYn
+            Z18MtP8YOQp8nLtlcrfHHs9c6fFQb+KPmqAjVHxUUQf64wriDjIX28Z5x3xO15VZ
+            5cTSFsmdeFq3q22vRPPtE3Wm3d0RxQ7B4NRlWZTe6UZvRGUSpT9RggCLbkSxlHXS
+            XgFaL2xlAqd1z2d6Ax0RvUpYi+bq1sCfSOtP2kohP9lqtR9wx3SZ+KBNQEb9eTEa
+            Tf3Gq9PrdZLN0Wh/Zq30+O5YZILZhAhJZPcPANy1O0ztZk0b8itlhIZ1o6GBUrY=
+            =97h9
+            -----END PGP MESSAGE-----
+          fp: 2F678007F08254265530095FB5B68F8BCE0CB069
+    encrypted_regex: ^(data|stringData|flag|password|secret)$
+    version: 3.8.1

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account {{ account.account_number }} — Chronobank</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <div class="noise-overlay"></div>
+
+    <nav class="top-nav">
+        <div class="nav-brand">
+            <span class="logo-icon-sm">◈</span> CHRONOBANK
+        </div>
+        <div class="nav-links">
+            <a href="/dashboard">Accounts</a>
+            <a href="/vault">Vault</a>
+            <span class="nav-user">{{ user.full_name }} <span class="role-badge role-{{ user.role }}">{{ user.role
+                    }}</span></span>
+            <a href="/logout" class="nav-logout">Logout ⏏</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <a href="/dashboard" class="back-link">← Back to Dashboard</a>
+
+        <div class="account-detail">
+            <div class="detail-header">
+                <div>
+                    <h1>{{ account.account_name }}</h1>
+                    <p class="account-number-lg">{{ account.account_number }}</p>
+                    <p class="owner-info">Owner: <strong>{{ account.owner_name }}</strong></p>
+                </div>
+                <div class="detail-balance">
+                    <span class="balance-label">Current Balance</span>
+                    <span class="balance-amount-lg">{{ "{:,.2f}".format(account.balance) }} TC</span>
+                </div>
+            </div>
+        </div>
+
+        <section class="transactions-section">
+            <h2 class="section-title">⬡ Transaction History</h2>
+
+            {% if transactions %}
+            <table class="transactions-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Description</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for tx in transactions %}
+                    <tr>
+                        <td class="tx-date">{{ tx.date }}</td>
+                        <td>{{ tx.description }}</td>
+                        <td class="tx-amount {% if tx.amount >= 0 %}positive{% else %}negative{% endif %}">
+                            {% if tx.amount >= 0 %}+{% endif %}{{ "{:,.2f}".format(tx.amount) }} TC
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% else %}
+            <p class="empty-state">No transactions recorded.</p>
+            {% endif %}
+        </section>
+    </div>
+
+    <footer class="main-footer">
+        <p>Chronobank Temporal Banking — Encrypted on all timelines</p>
+    </footer>
+</body>
+
+</html>
