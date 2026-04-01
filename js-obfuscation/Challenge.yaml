@@ -1,0 +1,50 @@
+apiVersion: skyline.local/v1
+kind: CTFChallenge
+metadata:
+    name: js-obfuscation
+    namespace: ctfd
+spec:
+    name: JS Obfuscation
+    description: |
+        Un script JavaScript obfusqué protège un secret. Trouve-le.
+    category: Reverse
+    type: dynamic
+    initial: 150
+    decay: 12
+    minimum: 50
+    image: ghcr.io/sp00kyskelet0n/skylinectf-challenges/js-obfuscation:latest
+    port: 8000
+    instance: true
+    creator: Enzo QUELENIS
+    flag: ENC[AES256_GCM,data:kbKyqTNgdKHEylf7oxogunY57y9OvA==,iv:If7Eg1wajhPhryBuLEVRgMFkYCsJZ5/3nm6hG8R27cM=,tag:WF+CJdxw0j/KGaxe4Z6vGA==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age: []
+    lastmodified: "2026-04-01T09:26:24Z"
+    mac: ENC[AES256_GCM,data:avWHWjmIgNZbNd93A2qsCzXYUdxZP3E2EiiQ6Z98ENC3aaadaNjTQP0a2rRQD1MEW27OigUpX93RA+Y8P/F8VxVpl8a8A9ALL6PmOXp+VBiq002VXN+JKl2oryhH3bkVxi5E18BK9Q77/ICWDiShgIuNRusWhSYllUJ3O+u/xKI=,iv:8f5bme2WVwdYPP1fgzNih878+je/KMF8mQSFPRrP9Us=,tag:gJx3PTAhvqVydweJ12sh1g==,type:str]
+    pgp:
+        - created_at: "2026-04-01T09:26:24Z"
+          enc: |-
+            -----BEGIN PGP MESSAGE-----
+
+            hQIMA4Wg+3KzyZPEARAAwa5ePGyLLh3Fax3pmwdbhZOQpMXsutVRUx8t3+qCAmhX
+            hhb+GMwv7s9uswmucyy1FEUhLKlGm6xw9itoXgUCZwlvdoLezICMF1XRi9/id4Kg
+            CBjU4xK1XAcnOXZZHM04Sh0Su5Nng7yfTJZc8PE/biUSPGRmst2rd5Y6p5RsZHJU
+            BkKsPHu8HLvTtfVI9rrpiXG2d4q7JSsDLSd5s67yxu3RZtfN3qXx3sg7jRlH4e4i
+            s9CYoYVotsvH3mCaMiL7Ayp7LBX0DkuwIpLka7L6Nhf5pgtaGBNJKfkxx7u56D30
+            tvEZIK0A/v4VNfbjwUoRn5MuyL0dKy1riWr8OR7GScrBNqpck9vHigI37NimK3aP
+            G1SEth8+wbr9glz/O9HRmBF5213XogUdSJ50fBiIWzNLbz8dsfo/ctU5lHJP4WdK
+            voZBp824/lV1d/UL6UFAukekefE20VFYZLBmYBm7FRaz0ivHRMOzcJ3PSGG6FSYO
+            9SZu3gDuvf36S039VPz8e4fg/xxBb76k4eYDrw+dftjoUODFYOn/NTR1wSqnma5P
+            1+MKyLN66602ZHfIPufe54LhS6U8xjZsp2h/3f3d2MkyUxvVM9RE+ZCXVQ2li8vj
+            YFbcCB5+Ngf9iyjoDjfYVJqBTE49/PpTXdip15ghn0sqGNzPZdn3ypCxbhZqvRTS
+            XgEWA5a2kU4GY22IzML1s21jzHiOhPBo4MrxA+uKNVsXdIo5JoPYpEqHZbFmJvZv
+            gpXvvkQ0kPoIlkZF9OFRb/Onjt1/aX5s6WJbiMHC6+JetduFxXogdXs+2pnRWhU=
+            =I/UA
+            -----END PGP MESSAGE-----
+          fp: 2F678007F08254265530095FB5B68F8BCE0CB069
+    encrypted_regex: ^(data|stringData|flag|password|secret)$
+    version: 3.8.1

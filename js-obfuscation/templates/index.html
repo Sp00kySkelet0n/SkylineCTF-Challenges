@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secret Vault</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Secret Vault</h1>
+        <p>Bienvenue dans le coffre-fort. La cle est perdue.</p>
+        <p class="hint">Peut-etre que le navigateur en sait plus que ce qu'il affiche.</p>
+    </div>
+    <script>
+    (function(){
+        var _0x4a2f=[{% for p in flag_parts %}'{{ p }}'{% if not loop.last %},{% endif %}{% endfor %}];
+        var _0x5e9d=function(_0x3f){return _0x3f['split']('')['map'](function(_0xa){return _0xa['charCodeAt'](0);})['reduce'](function(_0xa,_0xb){return _0xa+String['fromCharCode'](_0xb);},'');};
+        var _0x7c1b=_0x4a2f['map'](_0x5e9d)['join']('');
+        return _0x7c1b;
+    })();
+    </script>
+</body>
+</html>

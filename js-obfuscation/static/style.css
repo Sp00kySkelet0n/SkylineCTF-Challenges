@@ -1,0 +1,24 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: system-ui, sans-serif;
+    background: #1a1a2e;
+    color: #eee;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    text-align: center;
+    padding: 2rem;
+}
+
+h1 { margin-bottom: 1rem; }
+
+.hint {
+    color: #888;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+}
