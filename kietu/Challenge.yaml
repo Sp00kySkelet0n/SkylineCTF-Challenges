@@ -1,0 +1,62 @@
+apiVersion: skyline.local/v1
+kind: CTFChallenge
+metadata:
+    name: kietu
+    namespace: ctfd
+spec:
+    name: Kietu
+    description: |
+        -----BEGIN PGP MESSAGE-----
+
+        hQIMA4Wg+3KzyZPEARAAujLZ998Df76xCqYEPawyG2MAy42DnHBsWrHrUh6Y00iw
+        wBjcAApg+ucbylw8woCunlOpP0kooOXzmFKdRYy/4g4rabN/qlFnhy5qrFsM8R8v
+        8e/IVTaosy/EE48WxejCkbJDvT2J0vJdsZOxFL0BuLe1r1iJ4wET0HXav11hlNd3
+        yRFKzuijNngp986iPnNf9vrsjSmhTxGtB1ZlSP0kCpFadvU1emwylEuQtsfM24oo
+        ZCBbcT7yLiFtWfYsAa4sF/4OTGVRhIzljzoDdvqX+n1mfVdlQWBK5q+fX2nPyKMD
+        gbbeSi21XOBwk3s401Y3PxR8ssAh8eUeRrp1nMBr+o0o2u2gJSIzcNcESe/5PWPm
+        NKDUHn/5K/wKEfbechiLeEAoOO1E57w4Y4YgPQu+KRlvxtq88SCisBF68fGivxTa
+        uby7XUrYudxYibz1jb7k9G239KurNO3iQBFRqv06Hocoy52c1jksj49nbPjpezsJ
+        +zexVLX8U/qMmQzulQkNPzamWvJo0iQYtSObPAq68l0MPOW9PsKxe9DcldkEYCoa
+        y9+fP4Zqz4GmBY3WCJDHew2CKTX/pJNjSZcVRkVWbQWJZ+tkEZzWagGfPtjrEyft
+        673qqVj3LVMaL6SYkIAa+CZGqO9d+X378CrCtRRbPU6K4RXCYdCPM7zx7bWyuxDS
+        bAFhrGwGsGQelN2iPoKrcJgK53O+EfReRow3ZkLE9vHZsKGwuKNWp34bhrGUBCQR
+        d/2cFGS0HPRvDp7uexQVJ+JA7GnTQSVOMhuAD3p2eNLfI3aNF+EP8m6iqJd4ztGI
+        JyjjQRyRtLAfYiIZlw==
+        =8Cpo
+        -----END PGP MESSAGE-----
+    category: Blockchain
+    type: standard
+    points: 6
+    creator: blblblbl
+    flag: ENC[AES256_GCM,data:7dcEhV8Up3Vhj6zt,iv:WNVgSKptag3l2CJCSKIiN7tRmloh4r5Wu+oA5XEI1Zk=,tag:v7snHjeGstisqk2RoNRW7g==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age: []
+    lastmodified: "2026-04-01T08:02:28Z"
+    mac: ENC[AES256_GCM,data:UcmyK+3AsYiCV+G14lfG/hBU0s2oYwqzGdn4ibT+C68lTlNuFARXmSDBpmlOVDr+xtfTbmJAcm5U34BakcuvRB0W88HMIg22zxIjuiYlO494X0Zu4O1t7sF8ZII5gcurW2jAIMf5/noVC3qkrNfxgdnCVwCm3XSzmUzQOMNP+KI=,iv:cGhslZHDFUd8nA6N/eQHplkblpMpovE9LwXEZWxrf8c=,tag:bxfluUU3tSvr0kS6oR+FeQ==,type:str]
+    pgp:
+        - created_at: "2026-04-01T08:02:28Z"
+          enc: |-
+            -----BEGIN PGP MESSAGE-----
+
+            hQIMA4Wg+3KzyZPEARAAnG8wDJwI6kM/VftEO2XvXpZ6MVFHQd0lKjQrjw26L/8r
+            c7ksxlv0uycrJW0AdO3cHGPFkmRnZmNNUeUXOfpyfGMOVR6R/g/qjRs7VgZO0bYp
+            Ba0CMYsALNhytiIxcyAxlbHw7z0Z6jHS7Q6Nukx+6k2KopMA+86cK8mkXIJDSG/a
+            5hvVBn9uYIM+yix6Hc/JU/ZpW8L/rdqvXIzMn8xlyS3mKFDk/pSj4SXvG4pou/qm
+            2+uoCYA58cOyHB4p0cs1Hfr2AzL8cQVgVdLOOkzIPM9/wI4DUBUpS2VJUB0Z/Y5o
+            QMK5QGcQoxyyCxZvaD2jlzhNIPA/xS+0tQyRvgdwkUPjr+05TdgC/lT/DNyI8P38
+            giYvNLdECV7ihDmEPjDD5fNp63zMEQ/BI51Wa2Pkm5Up6igBxXUMrjpPaisYYN5Z
+            00j+s0Hpp9xxAYRBkoJmC2S5yWJd8hQWnA52ATkPxC+903tmsOWIGK5M5gmyajnQ
+            9oCB4B3CCdejyBYlsKdyUM6pQBG6WBs4qHNgugc5qthdm1b82wlp57EV5iAkuGUR
+            cnxfsKl9X+BrWe+MmS0czrWWdYaEPaiQ8o62NJPMEP1Tq4efWWVJ4vtoNJw/3haL
+            4g/ycBPhcSYloyKsuV78asNk+w3VzaRyb75nXkTnh5KGtcqtZ/K8rk0lzf2TOo3S
+            XgE4Zekit5oUJLiPOdyuWY4jGO/PvN//ZWsrOolwCBk8AuOqpX/YSSc5syur7gqt
+            yh8vG+pFCAiRux4V3UisxBGcP/lKnlUMCDgq0fCpseIkvluYKubgtDMd03mVFpA=
+            =DbtD
+            -----END PGP MESSAGE-----
+          fp: 2F678007F08254265530095FB5B68F8BCE0CB069
+    encrypted_regex: ^(data|stringData|flag|password|secret)$
+    version: 3.8.1
