@@ -1,0 +1,50 @@
+apiVersion: skyline.local/v1
+kind: CTFChallenge
+metadata:
+    name: cookie-admin
+    namespace: ctfd
+spec:
+    name: Cookie Admin
+    description: |
+        Une page admin protégée. Trouve comment y accéder.
+    category: Web
+    type: dynamic
+    initial: 75
+    decay: 15
+    minimum: 25
+    image: ghcr.io/sp00kyskelet0n/skylinectf-challenges/cookie-admin:latest
+    port: 8000
+    instance: true
+    creator: Enzo QUELENIS
+    flag: ENC[AES256_GCM,data:IU5cNzh83jEA9k2KLpyeNGJnLz5zrDdi0no+/w==,iv:aX8Mp0EOv1EJu+gVxDWU0B1XqBJqf77kjYmVeN6UdTw=,tag:6QHnFmpEF/Johwhbul6dTQ==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age: []
+    lastmodified: "2026-04-01T09:25:43Z"
+    mac: ENC[AES256_GCM,data:hK8Hs9Z83eElzqtRwYLuAjEt2Cd9Ha0c+97YSIU4srQlcPSat/2C+qs0yHqsCeQXADHIfjoxCCLdbRQZWzBSO83ZoA35NkMKQ9zBf/UtMI7yhfV0ZnUKss12CPPVqEuhcBi2VhLXOpZZvwzLjzbRvFp+Rr2b4V2yLWSXs2gwVBo=,iv:zjIJg6hXMhJrZKE04aN16Hyz1P1UtfZdJEwKXvbKPDA=,tag:jBA9FNlHnjz9TOahAC6csw==,type:str]
+    pgp:
+        - created_at: "2026-04-01T09:25:43Z"
+          enc: |-
+            -----BEGIN PGP MESSAGE-----
+
+            hQIMA4Wg+3KzyZPEAQ//eC7y+E7ko4R7YBBFuwd4230qvI4LtDU79Ps3ihcosXYu
+            BtYhYzV+FhT61gZmDZTxIy4uxOOMJ/TUQwnICv+1/zashzd+yJoHzzDWFpSr23vA
+            ORR8WtvMgolYvK4HHNEUwgVE9sCIDNVlaPkRpBQUJcoGfLdFmG8+N2BZaoDaFx6w
+            dg9QAy5yzOscSzth4cJt2Ctxv1fjkD1e86ECpakXugxOX3r9yLKZ9sfGmamRF+57
+            L94MCJ7boiPycOnOmjmiVeTxqG+LrTFjqUJN0X0Mq/lkWY1AgvGdfWIw9iNViaVw
+            MaM8CtVubuvQH1wrqhq/6v8v9KiAuL85tZM/plsN0lUEvFYf0W4uqir1rP4rXX+c
+            /sdLQ1J2Xiw/WOaJhSGZMh89s0S74cljJmaiU0ET9WMBho+AqlCJDWyenNTnzH9v
+            TVkQ/C+S7SsDJGoqqP87jb2cPNqpnYS0rg9JCByIN6xWucrw2ff8sm/NeZMK39Bq
+            Ezkp8YfKkvVGf8e60Kekttozqrpyz4ExKUIE3xzhV+hO+ybtUpOF26ZKiygYpPNQ
+            gM+yakPQ833OTNg7L11RyqLfNRaBciMzWYY4PlHBKTfK6jmXrcN+k8TICV/VAqsk
+            zA/bIMxG+Az6o1+5SCZyhib9xJ2CDx6BshCjCfunK01DQSMNDG9iOTxgq+tINoTS
+            XgFbuu8ZsMja0TRhwUPGyZvBpFvktJFQzvbKMVPyTAS4dZwQODPI2VnU7hKljCQ0
+            fZ1nSD724UE7k2rmM7rLQ8s/IuaRdbPKbVLqpd2g+dG2TLXMzsob16teSQ95gJA=
+            =QDQt
+            -----END PGP MESSAGE-----
+          fp: 2F678007F08254265530095FB5B68F8BCE0CB069
+    encrypted_regex: ^(data|stringData|flag|password|secret)$
+    version: 3.8.1
