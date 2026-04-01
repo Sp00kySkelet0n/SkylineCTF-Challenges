@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TimeTraveler's Blog</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="scanlines"></div>
+    <div class="container">
+        <header>
+            <div class="logo-glow">
+                <h1>⏳ TimeTraveler's Blog</h1>
+                <p class="tagline">Documenting journeys through the temporal streams since 2147</p>
+            </div>
+        </header>
+
+        <main>
+            {% for post in posts %}
+            <article class="post-card">
+                <div class="post-meta">
+                    <span class="author">{{ post.author }}</span>
+                    <span class="date">{{ post.created_at }}</span>
+                </div>
+                <h2><a href="/post/{{ post.id }}">{{ post.title }}</a></h2>
+                <p>{{ post.content[:200] }}{% if post.content|length > 200 %}...{% endif %}</p>
+                <a href="/post/{{ post.id }}" class="read-more">Enter timeline →</a>
+            </article>
+            {% endfor %}
+        </main>
+
+        <footer>
+            <p>© 2147 Temporal Research Institute — <em>"The past is never dead. It's not even past."</em></p>
+        </footer>
+    </div>
+</body>
+</html>

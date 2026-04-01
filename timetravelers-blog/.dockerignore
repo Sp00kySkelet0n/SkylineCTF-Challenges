@@ -1,0 +1,46 @@
+# Git
+.git/
+.gitignore
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.venv/
+venv/
+*.egg-info/
+.eggs/
+*.egg
+
+# IDE & OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Env & secrets
+.env
+.env.*
+*.pem
+
+# Logs & temp
+*.log
+*.tmp
+/tmp/
+/temp/
+
+# Local database
+*.db
+*.sqlite
+*.sqlite3
+
+# Docs & dev
+WRITEUP.md
+*.md
+.cursor/
+
+# Docker
+Dockerfile
+docker-compose*.yml
+.dockerignore

@@ -1,0 +1,54 @@
+apiVersion: skyline.local/v1
+kind: CTFChallenge
+metadata:
+    name: timetravelers-blog
+    namespace: ctfd
+spec:
+    name: TimeTraveler's Blog
+    description: |
+        Bienvenue dans le blog des voyageurs temporels !
+        Le Dr. Chronos tient un blog où les chronautes partagent leurs aventures à travers le temps.
+        Un système de commentaires permet à chacun d'envoyer ses 'transmissions temporelles'.
+        L'admin du blog vérifie régulièrement les commentaires.
+        On dit qu'il transporte un secret important dans ses cookies...
+    category: Web
+    type: dynamic
+    initial: 150
+    decay: 12
+    minimum: 50
+    image: ghcr.io/sp00kyskelet0n/skylinectf-challenges/timetravelers-blog:latest
+    port: 8000
+    instance: true
+    creator: Enzo QUELENIS
+    flag: ENC[AES256_GCM,data:DmJTreAFxOEIEUIJAjgmtlX3KFRqtuo/dLFCZABZzFei,iv:iukmipXj2KB+L7uNdNAHXC5WVLmyNOq46MjzxFZd/8Q=,tag:oZRfZL0QyfVZe4+Bw9P2jg==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age: []
+    lastmodified: "2026-04-01T09:34:03Z"
+    mac: ENC[AES256_GCM,data:IoI1lnt3JByTDLcHtpQQbPA7KvmxzdB6Hj05ea1iYiEgj5EmkgEw+8yg0viFYPMKJkhuWhGPgc2sxa/MVDAP+lHm0BMR5wZg9yNz5OomL7q67O7XuEqLjO/iVzxgWdkj+D7aWsGeA2Cjh5RPgvOzt7/MfJVQVO6GgxacN0xb7D0=,iv:Ik1Tq9cjy0jDMluJwq3hjzKvGMim7HRUQlXkFWyS/Kg=,tag:FPNpu69Piv99ZX6GbZsgyw==,type:str]
+    pgp:
+        - created_at: "2026-04-01T09:34:03Z"
+          enc: |-
+            -----BEGIN PGP MESSAGE-----
+
+            hQIMA4Wg+3KzyZPEAQ/8D6czX60UJTojV6h6yfYt6782hglA8AkXG+h/poCJff0l
+            hoFbzVBUL8+xH1U3Q2vyD86ek0EHemIYIo14Dw96Clu0ChrbFwzjtxHCFlLkUFIM
+            KwhThdXD5Hx7RzVsGDfnqu88masaobG8bZzXoJWgjNBzqMECbOhP7yIK4m/eCwrz
+            +Jk0TpOQolIpmsXog87Ae5IC9N5XRjiKw1u9O7eI0hejedo61XE/XcoKsDB888Lb
+            /IYENw0wTGai52nw4+hxPqvVoH4RAqlUZUlwQOHA3h28Pq5Dh+3oAudnhWIbydUR
+            f84w5tngJV+LoDss6vI4KVdBKs4QCNICA/jSo4aOGE8pGvJ6iQSn2I1w0Z4fnptC
+            CGNw1BCYyYEnFZst/fNVf/OyuuFFhleEUCOP3OR5SjHlY4qTAODwbQuX9OO5ci8/
+            IdSFx67pfphw189ZTmMsNEZgBwb9luuciXVXn+DFFl6FxdqaJ8rAF03tyaDquzYr
+            TrIrPj6UNvIJGcbm/AnJz6AbnfccjBN5USEBzKzwA3FvZ+3pK3reZu3pO3KL6+zQ
+            5WNJxlUB59OIG7E8ZmG/LyNRZo95Q4WnasaBS3jcexSINWaeEvropai+kKz1htcm
+            /LC7C+LxvPCZm58NhfJc6fguu6B+m47KwZGxalZJCKZLkcmxc9IH9hsnvg1STq/S
+            XAEIcyCf5oryfG2lHKcbdzYaGxfWVGWJej92K53U9OhGye20ufVAJQnKQhWxinhi
+            dBG01CSXI0xlFqyFylOtRkV1obQJ7BXjLv780A+4071ZG74+TNx1zBRaRyT+
+            =f4jT
+            -----END PGP MESSAGE-----
+          fp: 2F678007F08254265530095FB5B68F8BCE0CB069
+    encrypted_regex: ^(data|stringData|flag|password|secret)$
+    version: 3.8.1
