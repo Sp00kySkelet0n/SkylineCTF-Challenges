@@ -1,0 +1,19 @@
+apiVersion: skyline.local/v1
+kind: CTFChallenge
+metadata:
+    name: js-obfuscation-2
+    namespace: ctfd
+spec:
+    name: JS Obfuscation 2
+    description: |
+        Le coffre-fort a été renforcé. La clé est toujours cachée.
+    category: Reverse
+    type: dynamic
+    initial: 300
+    decay: 10
+    minimum: 75
+    image: ghcr.io/sp00kyskelet0n/skylinectf-challenges/js-obfuscation-2:latest
+    port: 8000
+    instance: true
+    creator: Enzo QUELENIS
+    flag: "HIT{0bfusc4t10n_v2_h4rd3r}"
