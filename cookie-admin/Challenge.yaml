@@ -1,0 +1,19 @@
+apiVersion: skyline.local/v1
+kind: CTFChallenge
+metadata:
+    name: cookie-admin
+    namespace: ctfd
+spec:
+    name: Cookie Admin
+    description: |
+        Une page admin protégée. Trouve comment y accéder.
+    category: Web
+    type: dynamic
+    initial: 75
+    decay: 15
+    minimum: 25
+    image: ghcr.io/sp00kyskelet0n/skylinectf-challenges/cookie-admin:latest
+    port: 8000
+    instance: true
+    creator: Enzo QUELENIS
+    flag: "HIT{c00k13_r0l3_4dm1n_1s_3z}"
