@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ post.title }} — TimeTraveler's Blog</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="scanlines"></div>
+    <div class="container">
+        <header>
+            <a href="/" class="back-link">← Back to timeline</a>
+            <div class="logo-glow">
+                <h1>⏳ TimeTraveler's Blog</h1>
+            </div>
+        </header>
+
+        <main>
+            <article class="post-full">
+                <div class="post-meta">
+                    <span class="author">{{ post.author }}</span>
+                    <span class="date">{{ post.created_at }}</span>
+                </div>
+                <h2>{{ post.title }}</h2>
+                <div class="post-content">
+                    {{ post.content }}
+                </div>
+            </article>
+
+            <section class="comments-section">
+                <h3>💬 Temporal Transmissions ({{ comments|length }})</h3>
+
+                {% if comments %}
+                    {% for comment in comments %}
+                    <div class="comment">
+                        <div class="comment-meta">
+                            <strong>{{ comment.username }}</strong>
+                            <span class="date">{{ comment.created_at }}</span>
+                        </div>
+                        <div class="comment-content">
+                            {{ comment.content }}
+                        </div>
+                    </div>
+                    {% endfor %}
+                {% else %}
+                    <p class="no-comments">No transmissions yet. Be the first to leave a message in this timeline!</p>
+                {% endif %}
+
+                <div class="comment-form">
+                    <h4>📡 Send a Transmission</h4>
+                    <form action="/post/{{ post.id }}/comment" method="POST">
+                        <div class="form-group">
+                            <label for="username">Callsign:</label>
+                            <input type="text" id="username" name="username"
+                                   placeholder="Enter your temporal callsign" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="content">Message:</label>
+                            <textarea id="content" name="content" rows="4"
+                                      placeholder="Share your temporal experience..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">Transmit →</button>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>© 2147 Temporal Research Institute</p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+apiVersion: skyline.local/v1
+kind: CTFChallenge
+metadata:
+    name: timetravelers-blog
+    namespace: ctfd
+spec:
+    name: "TimeTraveler's Blog"
+    description: |
+        Bienvenue dans le blog des voyageurs temporels !
+        Le Dr. Chronos tient un blog où les chronautes partagent leurs aventures à travers le temps.
+        Un système de commentaires permet à chacun d'envoyer ses 'transmissions temporelles'.
+        L'admin du blog vérifie régulièrement les commentaires.
+        On dit qu'il transporte un secret important dans ses cookies...
+    category: Web
+    type: dynamic
+    initial: 150
+    decay: 12
+    minimum: 50
+    image: ghcr.io/sp00kyskelet0n/skylinectf-challenges/timetravelers-blog:latest
+    port: 8000
+    instance: true
+    creator: Enzo QUELENIS
+    flag: "HIT{x55_t1m3_tr4v3l_1s_d4ng3r0us}"
