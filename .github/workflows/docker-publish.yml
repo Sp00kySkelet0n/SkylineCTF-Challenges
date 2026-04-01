@@ -4,12 +4,6 @@ on:
   push:
     branches:
       - main
-    paths:
-      - "**/Dockerfile"
-      - "**/*.zip.gpg"
-      - "**/src/**"
-      - "**/Challenge.yaml"
-      - "**/*.py"
 
 permissions:
   contents: read
