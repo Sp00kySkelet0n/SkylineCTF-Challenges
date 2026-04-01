@@ -1,0 +1,47 @@
+apiVersion: skyline.local/v1
+kind: CTFChallenge
+metadata:
+    name: cookie-admin
+    namespace: ctfd
+spec:
+    name: Cookie Admin
+    description: |
+        Une page admin est protegee par un mecanisme de session fragile.
+        Trouvez comment passer admin pour recuperer le flag.
+    category: Web
+    points: 50
+    image: ghcr.io/sp00kyskelet0n/skylinectf-challenges/cookie-admin:latest
+    port: 8000
+    instance: true
+    flag: ENC[AES256_GCM,data:C3a3sQIgOay3NbvjMK4+5ycKQKAKmLAqmHK89Q==,iv:7UXlP+6TvMa39yPufr2Ux/ZtFE9z9WwXm4wlySFKVP0=,tag:a7jdPVKygN2ep45nRFsrfA==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age: []
+    lastmodified: "2026-04-01T20:41:02Z"
+    mac: ENC[AES256_GCM,data:6/hWgW+EtyElm3AL5q2VsKMyHOe0XmPhbf+29DCs73fHuaPn58PJw0fbd7Y4r8++oKTSmVHbW75lwnLN8GcD2Y4s0M77/dgWZH2deEZv/290pr4lFpbUxT1wIWKm3cSY/rPHbqrhX2nx6P/leyOiq2d1ErfbRID93MdQs/EJhQ8=,iv:dbvk9LH9d/yCbp5ynqVLe+Ts9JfW8ynfGwPT8l3SflU=,tag:QeWqfoTCdqlL63fqLaycIg==,type:str]
+    pgp:
+        - created_at: "2026-04-01T20:41:02Z"
+          enc: |-
+            -----BEGIN PGP MESSAGE-----
+
+            hQIMA4Wg+3KzyZPEAQ/+PXW+hKXFDNwZHzXWSQEbxWfp+XNhMBHHKHMR7B63H5Lj
+            56H83DJcM3FijmYLv4w9yvGSalpucmeqTvQbKYHBJgKL2BXorCd57l65EWvvUg8O
+            2R6hIYOWth9ZGIVs4OwIiihT+jZYxv6AYQfn2jUq4CYxSLA4jgYD41wsOIrl8mVB
+            QK/69czdz1juk9Q3chT4KwaLSTd/dn8G1q4H6hObKWshk6c9CtNiHzgZK7M6+4IB
+            gD0PzmdcAg2SmdtYyiIUd83sKldcRW8xgLr/dHXoESTVFn7oe+UnnnySMlCb6ODd
+            mbTp+sVhcLdOwgGb0eEPZmqzXaWVt45dnoqFbSN4Gmg3JRrNwwH1VRJPcyv91kqp
+            oIJ4u246rf8VbzTi1K+8j7BQqGgdwGajj5JALwM8YQJzxZVLfPz1/UTT9WiGdh6Q
+            xdAK1UT/2n9pBDQiCmxFBJ1XA/C9MEP173Nn1kJL59GIt9svfYatLq71gOjii00C
+            DuGfZmm8mfupTGWhpZLa3zhBUtI+c9vQguMNhHip8W+2zNT23HqbAvh/2ykFzfvH
+            reE8DLPdrWRQd/Da1PxfrwuCbspEqscmcV2ANF+NfYk/p70Kww9bmGbGh7PgzH0R
+            pVflkPmA2hZ9rojIamMVVDW9E3vYj8QLvH5x2PXn5030inCx5cqQZZivi6sKBSHS
+            XAGdASN50KVociU+Rs3WTj6CIbMakKMNExBFgh3Nf7vr/qgp8k6ebNSaJK5gWt5Y
+            egZMwXAw3FyiKqFkqOCAvq/NzgogFPqABXr4v1Ke7U0RaXSkMXqM31vaxaZv
+            =TFNn
+            -----END PGP MESSAGE-----
+          fp: 2F678007F08254265530095FB5B68F8BCE0CB069
+    encrypted_regex: ^(data|stringData|flag|password|secret)$
+    version: 3.8.1
