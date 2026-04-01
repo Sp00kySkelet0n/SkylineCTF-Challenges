@@ -1,0 +1,41 @@
+# Git
+.git/
+.gitignore
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.venv/
+venv/
+*.egg-info/
+.eggs/
+*.egg
+
+# IDE
+.idea/
+.vscode/
+
+# SQLite (local dev)
+*.db
+*.sqlite
+*.sqlite3
+
+# Env
+.env
+.env.*
+
+# Logs
+*.log
+logs/
+
+# Docs (optional, remove if needed in image)
+WRITEUP.md
+
+# Tests (not needed in prod image)
+test.py
+
+# OS
+.DS_Store
+Thumbs.db
