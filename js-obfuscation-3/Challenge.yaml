@@ -1,0 +1,47 @@
+apiVersion: skyline.local/v1
+kind: CTFChallenge
+metadata:
+    name: js-obfuscation-3
+    namespace: ctfd
+spec:
+    name: JS Obfuscation 3
+    description: |
+        Une fausse piste JavaScript cache un chemin secret.
+        Decouvrez la vraie route puis depassez les etapes de redirection.
+    category: Web
+    points: 300
+    image: ghcr.io/sp00kyskelet0n/skylinectf-challenges/js-obfuscation-3:latest
+    port: 8000
+    instance: true
+    flag: ENC[AES256_GCM,data:An3gjkweOj8b90/3Uik7WJP1Vp6Go5XqWD8X,iv:qyC88WBqB7vuw7uO33kDOtN2Qv539YT2e3o5dd1s06c=,tag:+k6awRRZjbNejpvAFwHqGA==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age: []
+    lastmodified: "2026-04-01T20:43:13Z"
+    mac: ENC[AES256_GCM,data:LMSXm27lWKQrIZsVnfQWxnK4j/v/DvRQbG44VMsm6PxFtaAqAotuy0dmMwEzxXEeESsNIB5Otoq05XBC2mjFXzeFT2g5397hkYBi6pQ60gEx3EMuSaQVXFb/s62VgzRP+mN7T5fRCKjpaFfrWUWPQKHcFePqGI643KUuempbbzc=,iv:uoZyYR2m/W9qUK4JVhdS/ttsWPZyauC+VzdUSl1MXMc=,tag:MYDFqL3ukRxDXtDh9YXebQ==,type:str]
+    pgp:
+        - created_at: "2026-04-01T20:43:13Z"
+          enc: |-
+            -----BEGIN PGP MESSAGE-----
+
+            hQIMA4Wg+3KzyZPEAQ//SKeoNxOnAy8sgE9w1w2l97BjrvaJ8OhXwqhsM7CV9ToF
+            wbEzWw05eB3/PAAl5iGnKlSq14WfE6HQ3TOzg6BMmGoGYL+du9sWgrO2muHRfPOD
+            sjKy1r60ltENVJtgYNBWw7YvNOawECBAbpt1ezzxfAt46nxnhF2wftTjJ1+Q2/Bg
+            i8NZ5Mql3UcSqo6pAr32kD8J9syIoKSGOtRYEQiFa+ya88lTyRJdyJ3Azk4JtpHH
+            QyvT1yFNgQYmv+PM87gyVr//OXNdoeub/opTNIudPUqr4D48Hn3YvX0ma63xh/70
+            j1XhTZ26dWurJaqChmvpe2J/pfhe3hb1SqLkw+cD+yFb3lKikfnHebF0Bkw2tKDW
+            SmNkUro1GWYyb4V2LFwKaRYgJ7kJEIfG1LwZvt5tesDYcV2+A5nag4Ge507t5wsr
+            JHJjLK/qIUremD8xfBo/2sceIBBCYEFqicYWY85EECbOi+exkqypiy2Cc0hTf8lw
+            kq7bja/Tv3TFThiALOX9n/35cOtuzeHlT5rSMYwyK9nfXtGSU0RPkrsXBEr6P5Ts
+            miyeb4pf4iHNvZItYAUj0SPYGnYgIjGYXDxRb9N2fEJPBI5BTPKofdoAoRfOGMZQ
+            dYqX7BvvfcBAQnLd9Je86J3/8lLzJtAcl7dz18NhtBJ1ey1zNPoJaiyeGDTT1Z/S
+            XgGMaolDuxuDBSqYX0DERrMqw7NDm8Pk88lGdQrTzEM7wEUeGiRmD758qBNftJhR
+            Obe6WA08VPW3NIMtk5ZG5DdKcan3SFMYs0DQd8da1kGN2K38KIKbFn+8LhnIlyA=
+            =Jba3
+            -----END PGP MESSAGE-----
+          fp: 2F678007F08254265530095FB5B68F8BCE0CB069
+    encrypted_regex: ^(data|stringData|flag|password|secret)$
+    version: 3.8.1
