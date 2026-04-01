@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulator — Paradox Machine</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <div class="vhs-overlay"></div>
+
+    <nav class="nav-bar">
+        <div class="nav-left">
+            <span class="nav-logo">⬡ PARADOX MACHINE</span>
+        </div>
+        <div class="nav-right">
+            <span class="operator-info">{{ user.full_name }} <span class="rank-tag">{{ user.rank }}</span></span>
+            <a href="/logout" class="nav-exit">⏻ Disconnect</a>
+        </div>
+    </nav>
+
+    <div class="main-container">
+        <div class="sim-panel">
+            <div class="panel-header">
+                <h1>⬡ TEMPORAL SIMULATION ENGINE</h1>
+                <p>Input temporal coordinates and parameters to run a paradox simulation</p>
+            </div>
+
+            <form action="/simulate" method="POST" class="sim-form">
+                <div class="form-row">
+                    <div class="field full">
+                        <label for="coordinates">TEMPORAL COORDINATES</label>
+                        <input type="text" id="coordinates" name="coordinates"
+                            placeholder="e.g. 47.2513° N, 1985-10-26T01:21:00Z" required autocomplete="off">
+                        <span class="field-hint">Enter spacetime coordinates for the simulation target</span>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="field full">
+                        <label for="parameters">SIMULATION PARAMETERS</label>
+                        <textarea id="parameters" name="parameters" rows="3"
+                            placeholder="Optional: observer mass, velocity, temporal drift..."></textarea>
+                        <span class="field-hint">Additional variables for the paradox calculation engine</span>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-simulate">
+                    ▶ RUN SIMULATION
+                </button>
+            </form>
+
+            {% if result %}
+            <div class="result-container">
+                <h2 class="result-title">◈ Simulation Output</h2>
+                <div class="result-body">
+                    {{ result }}
+                </div>
+            </div>
+            {% endif %}
+        </div>
+
+        <div class="history-panel">
+            <h2 class="panel-subtitle">◈ Simulation History</h2>
+
+            {% if simulations %}
+            {% for sim in simulations %}
+            <div class="history-item">
+                <div class="history-meta">
+                    <span class="history-id">#{{ sim.id }}</span>
+                    <span class="history-date">{{ sim.created_at }}</span>
+                </div>
+                <div class="history-coords">{{ sim.coordinates[:60] }}{% if sim.coordinates|length > 60 %}...{% endif %}
+                </div>
+                <span class="history-status status-{{ sim.result }}">{{ sim.result }}</span>
+            </div>
+            {% endfor %}
+            {% else %}
+            <p class="empty-text">No simulations recorded yet.</p>
+            {% endif %}
+        </div>
+    </div>
+
+    <footer class="bottom-bar">
+        <span>Paradox Machine v4.2.0 — Temporal Simulation Division</span>
+        <span class="bottom-warning">⚠ Unauthorized simulations may cause temporal paradoxes</span>
+    </footer>
+</body>
+
+</html>

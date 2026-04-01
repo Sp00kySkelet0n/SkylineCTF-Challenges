@@ -1,0 +1,24 @@
+apiVersion: skyline.local/v1
+kind: CTFChallenge
+metadata:
+    name: paradox-machine
+    namespace: ctfd
+spec:
+    name: Paradox Machine
+    description: |
+        La Paradox Machine est le simulateur temporel le plus puissant jamais construit.
+        Les opérateurs y entrent des coordonnées spatio-temporelles pour simuler les paradoxes potentiels avant chaque saut.
+        Un compte opérateur de test est disponible (operator/operator).
+        Le moteur de simulation semble traiter vos entrées d'une manière particulière...
+        Certains disent que la machine est plus puissante qu'on ne le pense.
+        Un fichier confidentiel contenant des coordonnées critiques serait stocké quelque part sur le serveur.
+    category: Web
+    type: dynamic
+    initial: 500
+    decay: 6
+    minimum: 125
+    image: ghcr.io/sp00kyskelet0n/skylinectf-challenges/paradox-machine:latest
+    port: 8000
+    instance: true
+    creator: Enzo QUELENIS
+    flag: "HIT{sst1_p4r4d0x_rce_t1m3l1n3_br34ch}"

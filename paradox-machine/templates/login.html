@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paradox Machine — Temporal Simulation Engine</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body class="login-page">
+    <div class="vhs-overlay"></div>
+    <div class="hex-grid"></div>
+
+    <div class="login-container">
+        <div class="machine-logo">
+            <div class="logo-symbol">
+                <div class="ring ring-1"></div>
+                <div class="ring ring-2"></div>
+                <div class="core">⬡</div>
+            </div>
+            <h1>PARADOX MACHINE</h1>
+            <p class="machine-subtitle">Temporal Simulation Engine v4.2.0</p>
+            <p class="classification">◆ CLASSIFICATION: RESTRICTED ◆</p>
+        </div>
+
+        {% if error %}
+        <div class="alert-danger">
+            ⚠ {{ error }}
+        </div>
+        {% endif %}
+
+        <form action="/login" method="POST" class="auth-form">
+            <div class="field">
+                <label for="username">OPERATOR ID</label>
+                <input type="text" id="username" name="username" placeholder="Temporal operator ID" required
+                    autocomplete="off">
+            </div>
+
+            <div class="field">
+                <label for="password">SECURITY KEY</label>
+                <input type="password" id="password" name="password" placeholder="Access key" required>
+            </div>
+
+            <button type="submit" class="btn-auth">
+                ⟐ INITIALIZE SESSION
+            </button>
+        </form>
+
+        <div class="login-info">
+            <p>Temporal Simulation Division — All simulations are monitored</p>
+            <p class="node-info">Node: PARADOX-EU-WEST-07 | Uptime: 847d 13h</p>
+        </div>
+    </div>
+</body>
+
+</html>
