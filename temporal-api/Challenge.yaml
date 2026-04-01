@@ -1,0 +1,23 @@
+apiVersion: skyline.local/v1
+kind: CTFChallenge
+metadata:
+    name: temporal-api
+    namespace: ctfd
+spec:
+    name: Temporal API
+    description: |
+        Le Temporal Research Institute dispose d'une API REST interne pour gérer ses missions de voyage temporel.
+        Un compte 'invité' est disponible (guest/guest).
+        Mais les informations les plus sensibles sont réservées aux administrateurs de Temporal Command.
+        L'Omega Protocol, classifié au plus haut niveau, contiendrait des coordonnées temporelles d'une importance capitale...
+        L'API semble utiliser des JWT pour l'authentification. Peut-être que leur implémentation cache des faiblesses ?
+    category: Web
+    type: dynamic
+    initial: 400
+    decay: 8
+    minimum: 100
+    image: ghcr.io/sp00kyskelet0n/skylinectf-challenges/temporal-api:latest
+    port: 8000
+    instance: true
+    creator: Enzo QUELENIS
+    flag: "HIT{jwt_n0n3_4lg0_t1m3_tr4v3l_cl34r4nc3}"
