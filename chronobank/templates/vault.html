@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Vault — Chronobank</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <div class="noise-overlay"></div>
+
+    <nav class="top-nav">
+        <div class="nav-brand">
+            <span class="logo-icon-sm">◈</span> CHRONOBANK
+        </div>
+        <div class="nav-links">
+            <a href="/dashboard">Accounts</a>
+            <a href="/vault" class="active">Vault</a>
+            <span class="nav-user">{{ user.full_name }} <span class="role-badge role-{{ user.role }}">{{ user.role
+                    }}</span></span>
+            <a href="/logout" class="nav-logout">Logout ⏏</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header class="page-header">
+            <h1>🔒 Secure Vault</h1>
+            <p class="subtitle">Your encrypted temporal secrets</p>
+        </header>
+
+        <section class="vault-section">
+            {% if vault_entries %}
+            <div class="vault-grid">
+                {% for entry in vault_entries %}
+                <div class="vault-card">
+                    <div class="vault-card-header">
+                        <span class="vault-icon">◈</span>
+                        <h3>{{ entry.secret_name }}</h3>
+                    </div>
+                    <div class="vault-secret">
+                        <code>{{ entry.secret_value }}</code>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% else %}
+            <div class="empty-state">
+                <p>Your vault is empty.</p>
+            </div>
+            {% endif %}
+        </section>
+    </div>
+
+    <footer class="main-footer">
+        <p>Chronobank Temporal Banking — Encrypted on all timelines</p>
+    </footer>
+</body>
+
+</html>

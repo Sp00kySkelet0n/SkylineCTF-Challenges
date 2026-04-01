@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chronobank — Temporal Banking System</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body class="login-page">
+    <div class="noise-overlay"></div>
+    <div class="grid-bg"></div>
+
+    <div class="login-container">
+        <div class="bank-logo">
+            <div class="logo-icon">◈</div>
+            <h1>CHRONOBANK</h1>
+            <p class="bank-tagline">Secure Temporal Banking Since 2089</p>
+        </div>
+
+        {% if error %}
+        <div class="alert alert-error">
+            <span class="alert-icon">⚠</span> {{ error }}
+        </div>
+        {% endif %}
+
+        <form action="/login" method="POST" class="login-form">
+            <div class="input-group">
+                <label for="username">IDENTIFICATION</label>
+                <div class="input-wrapper">
+                    <span class="input-icon">⟐</span>
+                    <input type="text" id="username" name="username" placeholder="Enter your temporal ID" required
+                        autocomplete="off">
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="password">ACCESS KEY</label>
+                <div class="input-wrapper">
+                    <span class="input-icon">⚿</span>
+                    <input type="password" id="password" name="password" placeholder="Enter your access key" required>
+                </div>
+            </div>
+
+            <button type="submit" class="btn-login">
+                <span>AUTHENTICATE</span>
+                <span class="btn-arrow">→</span>
+            </button>
+        </form>
+
+        <div class="login-footer">
+            <p>Authorized personnel only — All access attempts are logged</p>
+            <p class="version">System v3.7.1 — Node: PARIS-EU-04</p>
+        </div>
+    </div>
+</body>
+
+</html>
