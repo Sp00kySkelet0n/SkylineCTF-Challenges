@@ -1,0 +1,50 @@
+apiVersion: skyline.local/v1
+kind: CTFChallenge
+metadata:
+    name: react-admin-route
+    namespace: ctfd
+spec:
+    name: React Admin Route
+    description: |
+        Une page admin protégée. Le chemin est aléatoire à chaque build.
+    category: Web
+    type: dynamic
+    initial: 150
+    decay: 12
+    minimum: 50
+    image: ghcr.io/sp00kyskelet0n/skylinectf-challenges/react-admin-route:latest
+    port: 80
+    instance: true
+    creator: Enzo QUELENIS
+    flag: ENC[AES256_GCM,data:ITJcjqsnJM8avaz483yB263UgPm/tMTU36w8dA==,iv:3zKh/DZmvBA2iz/51AoPHDqKTZ4JxhbqfYG3O/2hN6w=,tag:+9ijBaFu6gYPE2xLfVJNMg==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age: []
+    lastmodified: "2026-04-01T09:29:05Z"
+    mac: ENC[AES256_GCM,data:0sMLGtFUbr8lLOESzWQx6hs6UTir4JQ8cFYIUmX75JGLdyh6RwLeIha0EWfTVJjT3glGN7/FzznZew/FQ3VeRfqLOdD2lQ7pVa5f3XX64Cvg97qxLe+8iPwdn5QecLWLRkhkRws0hwOQCIW9PQVSOZp1qb/TvSu29x+y5D8GPSc=,iv:i2KND756qm5X2jMq+SbjGVBw456zf1i2juR25IAgv94=,tag:c2nN4eWehom4qkNxcHynZQ==,type:str]
+    pgp:
+        - created_at: "2026-04-01T09:29:05Z"
+          enc: |-
+            -----BEGIN PGP MESSAGE-----
+
+            hQIMA4Wg+3KzyZPEARAAtjwc895QgCwkJo0+wNaQRMihZHH8L7pRDo6Ic6EC0T8l
+            g+l4MbYZ5X3bxlL5qVqOVQTu8ADyG9qU0j7FJtuEWdhLOJJGsrbeHj895FOOskyx
+            JIdxvOxTt9gKg0+TDE+D3wY28AkuQKlmMhH+dvAqUI+GBzpFRyO4yfQ8lJ7HCx1f
+            ZoFrLveE+kqJTCf5BfmM4F+3Gw+cYoLzIJvS4huR5HIx3nKbQQFEXuvHO/xSLJmD
+            jiI/gOUxIuWXnlatfvW3PGser5jcBqFamaVeBRzGlxF8equ1u4GPoDbaGf4DO2LY
+            LsOPr79lnkMWazfPIsY7yxmbXvmYHy9aQe0SnbKy57pdhujAHF5Of0M7rN9luDKY
+            geA6Jq0Lr2w0KDevMS6n4w3fRa3mxl4uaZS95mPhsNQS3lwYxIT+8/TcF8TjHE43
+            Fgb8sxUoNvH6Od7GSeIeHxzJynjZYZtqvjb/NQJYE8/WeADEF9H4AmYjm9GG0A1I
+            wF+jFTRXUuRM/GpBzfzyWarzaU8maLLP6LLo9W2KERqGD3IcAoh3xMNcpgbEaIxV
+            PHjqt2sTiI6jD0glWaC18kwat+nfmZ1v091f+9wNmkdCY8IFBtI5QrxrLz/gVbNx
+            ztQ8rO2+VtTyU9HZILq4+sAThj8jhwj43FHH7AIdQVoaypECGopi77ESXKs4K+XS
+            XgHm/L3gEItGxH6bppCz51fb00nxBJCgvUji3BXYRErvhf5KQb1jtLX6ezBIwujO
+            ulpFriqINTDElAvXkWnB0FBjM4rig+9+aMM/jB531i6EoZesT/Nivw2xB4NCYlU=
+            =t9Vv
+            -----END PGP MESSAGE-----
+          fp: 2F678007F08254265530095FB5B68F8BCE0CB069
+    encrypted_regex: ^(data|stringData|flag|password|secret)$
+    version: 3.8.1
