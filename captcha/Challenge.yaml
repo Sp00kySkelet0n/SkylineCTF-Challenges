@@ -1,0 +1,47 @@
+apiVersion: skyline.local/v1
+kind: CTFChallenge
+metadata:
+    name: captcha
+    namespace: ctfd
+spec:
+    name: Captcha
+    description: |
+        Une interface de verification vous demande de resoudre un captcha image.
+        Le temps est limite, mais l'image suit un schema previsible.
+    category: Web
+    points: 200
+    image: ghcr.io/sp00kyskelet0n/skylinectf-challenges/captcha:latest
+    port: 8000
+    instance: true
+    flag: ENC[AES256_GCM,data:WS1/CpcsXMdebbbUblw3rwpgkd1o6g==,iv:6daUPMA/jRfBuxBaRwg8orzM1Y47g5RP9Vpa8aBtFM0=,tag:vnNqP2K+sEEsVTAN0gwmlQ==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age: []
+    lastmodified: "2026-04-01T19:51:28Z"
+    mac: ENC[AES256_GCM,data:VPH7NJN1Qi5oyuSUD5W6YA9BuhzNp+Tte3evQEo8RshzG8JHKigP0mign/bCX3YQ5Meq0lpNZedap0QerM9VIonBRDTLBB2elDVOu/HMmkIIaXynUKAfBd08tkaZ79mQ5xqwtFL4IBDZWoB8GuQcz96JbuGrYxzymOG9ouIZyhM=,iv:dFoHsU2Q/TXh0JdrgYlmp5k0vJ7IQtjUcYHZm0aEduw=,tag:wc6hBWzULJI3intfUXFpng==,type:str]
+    pgp:
+        - created_at: "2026-04-01T19:51:28Z"
+          enc: |-
+            -----BEGIN PGP MESSAGE-----
+
+            hQIMA4Wg+3KzyZPEARAAvo71RI/35i9Mv8P5c6/yxxl7UuQf31qP0JYsI3q6tjCt
+            jata9cXGR69ACU64NO9u9VCp8VNQO0oBEOiUZmMB3gojhFhYdX9peoFB4gvsW8uv
+            298lo9EdwGcHu+5EkQgRZbbMiZ7achUSxfTqtZUEgL5tcA7YUpMxKnccMiny/Bnp
+            S9pixgsmbHqRw7EsNCiQoCM8dW1kJHelpToojRmuIic1cTyC9m+MGg+4tvCeqnqy
+            uTGowa53zmiUrxMCYpFWilncIi9VADe3vnDEakwRMxpSRbj4sYLjaJDIdq/Ky/xp
+            UZp2QlfKTodvIsn5cp1lzFZj7HAMvg4wMWYoadMLD+zeS7dUyw2fAhb/UMU6wR93
+            vvRNgrE1DdKOND4toc/LHppnUZJuSPShtq4teXzrDvmYg1V6ptg8S1+ZA/ouacJi
+            zd5V+AMww5DXmVVnj9ijvHFFinkhf9m19U17WSmkcNNUQAyxLwOR/aZytbKsCw7m
+            ee+ZPOrDXyfVEf7JpamunzjFXBkFSkCXqCfe3uqOYfwN7CciQWdfe2giwNL4qF5g
+            +lqkHzJd01hjQz+SFwFo0RTjiZulfKXMYqr5EgMcLX6d0xoNB6FJtiyPW6GKhkV2
+            8sxLtHzTY7JAIM3213AyRW0FZoJ585JZM8qKxboqw+HrQNP64yc0+JC6TAQRisnS
+            XgGkO5znUH144ACdyDoorXUor+bRLKpzzr1rjIt+6WqJ7O9rLoHUmI9rMIpPHwrm
+            c0y8Ae5q6nBzmOoLCuMcYSwMEwA50cyckqPHyA4LXenD0Hah1UW99LEffv9XUJw=
+            =pOHc
+            -----END PGP MESSAGE-----
+          fp: 2F678007F08254265530095FB5B68F8BCE0CB069
+    encrypted_regex: ^(data|stringData|flag|password|secret)$
+    version: 3.8.1
