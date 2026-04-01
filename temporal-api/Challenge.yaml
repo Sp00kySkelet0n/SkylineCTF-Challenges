@@ -1,0 +1,47 @@
+apiVersion: skyline.local/v1
+kind: CTFChallenge
+metadata:
+    name: temporal-api
+    namespace: ctfd
+spec:
+    name: Temporal API
+    description: |
+        L'API interne de recherche temporelle utilise des JWT pour l'authentification.
+        Obtenez un acces admin pour lire les informations classifiees.
+    category: Web
+    points: 300
+    image: ghcr.io/sp00kyskelet0n/skylinectf-challenges/temporal-api:latest
+    port: 8000
+    instance: true
+    flag: ENC[AES256_GCM,data:Upd3zJyOxYnOiuxumc4aSvWagVnPu/V8HT5fcXV1yPfWIt7PwJYtZQ==,iv:z6SazRQcarr88uop0Zchl8iUJmh8tlfPHBsYPc0db4M=,tag:8tRTWiNO5ygptW2SIo5avg==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age: []
+    lastmodified: "2026-04-01T20:44:43Z"
+    mac: ENC[AES256_GCM,data:ChnBB2B/1t2LchQhx/TDrA/B3LQosA7TIuRjJ5ZBXuJVqZBGvqKhnt0GuDlI5bSdUk6nxJC5KKXT47LjcnZw/7G8dsB3mMG/EBSoXXor70NqNZOOI8q15SzEfLsuudC65ipm3+NAeDWlSzce0VWXK1btln9EDgAWU/teWw4MbJo=,iv:2BCNPBKZbcdSG00GLxS0yYQvzXdqwAHaCsxp9sN0Vcc=,tag:VcUVki9vLzu1rVAj4HRLwA==,type:str]
+    pgp:
+        - created_at: "2026-04-01T20:44:43Z"
+          enc: |-
+            -----BEGIN PGP MESSAGE-----
+
+            hQIMA4Wg+3KzyZPEAQ//eEEDgUHTn7qi1TNWJwK+aKPC+TVodtPu4LbmbAzeWIWS
+            DE5C6jp/lmvo/KSbjIegKJuQF/cSSpq86/WW3OA7pkd43JiBM8z0sqd4kIppQgUQ
+            C00OvAT4oig5TOO7Y+fn99MQtGHC6g4E2TPqhQU4I4QEm7NSat5afhWkOITr0TYw
+            XAgiGt1yv9ocTHQxIWqBnuZeH6NNx17SlXR+kAEBVfdKJWrhCd0NYkZYREDC4nlO
+            P4NAipzsNs3g3MAkkW4Netk9TJA9lF17gZ/fe2saTTLBGKVp9K2ph9M8esMrc2Ni
+            lwdkbZ9t3flDtIxYJ1gmwiLC8QDrz9KPGzlyAyP1q6W7Q3golX0acEVdOSNMCz5c
+            SNy9JzR/BUw4EU3zAWMtxf88/Dc5pONLTAm6f+TZGRiguobw6EF7hh9v6g66He2N
+            kQxe54QtCUKYxuze5Y6u4FjHJV9JHRgUmYzbF/1AV8w9N2ODsE7WPBo62X6ss8Tt
+            v9rR1A2DWZocXOWafua/lU4Id3K/Khq5hp0isGCrAWa97zR34G0dAL3qUw2a+v1p
+            SzUTMZS9E2PMn4DIkMfwuTxrxPTzHpsRtXI3/xDkBjebbBF9SocyTZ8764dtFJR+
+            9k/eNBDTvWkYEQOHJRlJbv0LYhTs6Tr7UG0XVC4V6im95obyrg6iZrb19edNmVHS
+            XgGZuu+fEHJwg/vxm6ifxZAY6i07FdOTN5Yvyh/dGFViVHiyK2xc6xiqzhngVVl1
+            EX1vu0ZG6uycZN9/H3O/mtG5s/4cEQMJeEbstNvYuJ2eXDLhjUby7hmXhSHV7ds=
+            =FBFp
+            -----END PGP MESSAGE-----
+          fp: 2F678007F08254265530095FB5B68F8BCE0CB069
+    encrypted_regex: ^(data|stringData|flag|password|secret)$
+    version: 3.8.1
