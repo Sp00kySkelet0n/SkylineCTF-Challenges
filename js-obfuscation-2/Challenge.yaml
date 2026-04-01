@@ -1,0 +1,50 @@
+apiVersion: skyline.local/v1
+kind: CTFChallenge
+metadata:
+    name: js-obfuscation-2
+    namespace: ctfd
+spec:
+    name: JS Obfuscation 2
+    description: |
+        Le coffre-fort a été renforcé. La clé est toujours cachée.
+    category: Reverse
+    type: dynamic
+    initial: 300
+    decay: 10
+    minimum: 75
+    image: ghcr.io/sp00kyskelet0n/skylinectf-challenges/js-obfuscation-2:latest
+    port: 8000
+    instance: true
+    creator: Enzo QUELENIS
+    flag: ENC[AES256_GCM,data:Te0V0hCS3fLFpJise0upgr3KtJgeNY+3THE=,iv:QZpvRJuiOA2GfyiIcOS3zn+VYt6tWWq9tdZ9P3m30WY=,tag:h//KtiHfSbjwCQU04ZXdyg==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age: []
+    lastmodified: "2026-04-01T09:27:04Z"
+    mac: ENC[AES256_GCM,data:pYCw4wmFC6pa+2E9EPcGfXZJPWPuSIZE5pdpa4x7DK/ZP7L1oujj/0lgCJwQzKy0XHYoAkz6EpkLGPMAbcTPeQ5N3iovBwRqA+js1qYaMnla0pyiX6jvezIBP3K4Ss1y/chWRXskB3ar39M2n2SzEQtT8H+ADvmtqKyLf8HUIMA=,iv:0dj2hRle/T2y08Ii9gxQ+6ANl4VSr60GbJQsEriUQ+c=,tag:igqni4K6gv64WrbisVgZQg==,type:str]
+    pgp:
+        - created_at: "2026-04-01T09:27:04Z"
+          enc: |-
+            -----BEGIN PGP MESSAGE-----
+
+            hQIMA4Wg+3KzyZPEAQ/+KVhFfKloUZZUEaqI9A5o45foPCIorweJbSs97X7fnU7C
+            GgzUHfNisAcoqfI/pMBkQDgpBxen5ZVv80q8qbQSzECTVTOZaMN/Oo8pameU45Zp
+            WwZ3z69NEAtaeVpL2KsJcTBz1ZhkYF4iI6i8IPRI9tKeTu0e/zcJXbsBBi5mv8N2
+            FVhXpUGk0AX7/ltWkOTN1ocjq0rMOcOWrw/3CoteM0Z6ftvbucaV/w4MTSmea+pi
+            N+j81dwLuNIptRJS7+HAaUzZT3ZO6Hja0G14PhNzMpciWL16cwNgy0DHMvrA4+Do
+            Q+5s0BM1rl0yRSsZTH0RsSmSzCUPlsxMCT4Loyxe8hkc4+s8qDGd9xG0shjzyP5p
+            7PKFWP0NWIzZ9HGD8bNZE2imebJezMCqEDYR6JsEF/5hM5NIuEjuF0IwIVGwmjQe
+            NedlfBbk4YdWQvp2FOmMUmo0XdXrswwrDG6A9836lX7WfIcy8mHB6/hxxE+HxzF2
+            IiWIXFJGgQDypTrEVhfUx2CzVl0ws5TVwNeJENHwg4UzmcQVQrE2UCBFNV5wID6E
+            g1euG6beSmndOvymmvHfjNVqHQoldtlZQD96I6nDOxh1w4sNJSS1j+OCtiUaK2Jl
+            kChsYDsBg0qupasryxKGPPgP87PeDDRHB0bDHokg88i0bweO8ZO4ffUyRsVe0gfS
+            XgEFar3BsdfXdoF5yE+ewZ4gS1Ttv6UE6JVsHeY1ByMmEiVM0MBKFSC9vTddt7uw
+            Pbiu0q+uwqE2Uv70MbQNcKxJ7ll+x0XKLRjmmkRQSq1LqkMpA/e92vXmujytI0o=
+            =8Fs1
+            -----END PGP MESSAGE-----
+          fp: 2F678007F08254265530095FB5B68F8BCE0CB069
+    encrypted_regex: ^(data|stringData|flag|password|secret)$
+    version: 3.8.1
