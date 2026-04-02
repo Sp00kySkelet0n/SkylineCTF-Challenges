@@ -10,7 +10,7 @@ spec:
     Le buffer est-il vraiment assez grand ?
   connection_info: Lancer votre instance sur https://deployer.esgi.local/
   category: Pwn
-  points: 100
+  points: 150
   image: ghcr.io/sp00kyskelet0n/skylinectf-challenges/stack-overflow:latest
   port: 9000
   instance: true

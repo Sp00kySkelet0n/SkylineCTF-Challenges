@@ -10,7 +10,7 @@ spec:
     Votre objectif est de vous évader de cette prison (jail escape) pour lire le flag.
     Username: user \ password: user
   category: System
-  points: 100
+  points: 75
   instance: true
   image: ghcr.io/sp00kyskelet0n/skylinectf-challenges/ce-l-l-block:latest
   connection_info: Lancer votre instance sur https://deployer.esgi.local/ puis ssh user@<IP> -p <PORT>

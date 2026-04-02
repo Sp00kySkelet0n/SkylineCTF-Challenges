@@ -13,7 +13,7 @@ spec:
         Cependant, il semble avoir oublié certains cas limites...
         Contournez la protection pour lire à nouveau le flag.
     category: Web
-    points: 100
+    points: 50
     type: standard
     state: visible
     connection_info: Lancer votre instance sur https://deployer.esgi.local/

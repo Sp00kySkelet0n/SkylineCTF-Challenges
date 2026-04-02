@@ -9,7 +9,7 @@ spec:
         Un administrateur système a mis en place un outil interne pour vérifier la latence réseau des serveurs. Cependant, il semble qu'il ait oublié de sécuriser correctement les entrées utilisateur... 
         Sauras-tu exploiter cette faille pour récupérer le flag caché ?
     category: Web
-    points: 100
+    points: 25
     instance: true
     connection_info: Lancer votre instance sur https://deployer.esgi.local/
     image: ghcr.io/sp00kyskelet0n/skylinectf-challenges/ping-quest:latest

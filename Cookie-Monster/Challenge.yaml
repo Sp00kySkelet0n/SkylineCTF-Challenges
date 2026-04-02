@@ -11,7 +11,7 @@ spec:
         Connectez-vous en tant qu'admin pour récupérer le flag.
     connection_info: Lancer votre instance sur https://deployer.esgi.local/
     category: Web
-    points: 75
+    points: 20
     image: ghcr.io/sp00kyskelet0n/skylinectf-challenges/cookie-monster:latest
     port: 8080
     instance: true
