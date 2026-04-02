@@ -9,7 +9,7 @@ spec:
         Temp
     connection_info: Lancer votre instance sur https://deployer.esgi.local/
     category: Network
-    proxmox_vm_id: "192"
+    proxmox_vm_id: "193"  
     points: 200
     instance: true
     flag: ENC[AES256_GCM,data:Nbuk5nO42+Jq,iv:KaR4Pzhyam4qkjAY5BSwd65M06ERyGyusY+2K4va1zg=,tag:fELoKLwQIUg2c9ikeMD/Zw==,type:str]
