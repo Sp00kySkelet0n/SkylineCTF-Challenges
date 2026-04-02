@@ -1,0 +1,46 @@
+apiVersion: skyline.local/v1
+kind: CTFChallenge
+metadata:
+    name: KnockKnock
+    namespace: ctfd
+spec:
+    name: KnockKnock
+    description: |
+        Temp
+    connection_info: Lancer votre instance sur https://deployer.esgi.local/
+    category: Network
+    proxmox_vm_id: "192"
+    points: 200
+    instance: true
+    flag: ENC[AES256_GCM,data:Nbuk5nO42+Jq,iv:KaR4Pzhyam4qkjAY5BSwd65M06ERyGyusY+2K4va1zg=,tag:fELoKLwQIUg2c9ikeMD/Zw==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age: []
+    lastmodified: "2026-04-02T10:06:40Z"
+    mac: ENC[AES256_GCM,data:FH1TBPiOO/zQZmy1PhioZGiVzHUOc72d9cmCeI705nbwoNlNdw/Jf/TgXbGJNzjN7Vt8pe2A5MGYuBjZMn4hH7y477UPnpmiZ34mmfc/j2f+jQAHJ+S7n3fy7NdL2lI1OXmLe0P958cLphdqUuak7LrfpChYT4RN5qYq2p+J4B0=,iv:IZ/bTlpclFmtz9toghekxor3U3QF8Mj2BW1OIFTW5zw=,tag:OMjPR5eN0lMs8qr6Fu5VwQ==,type:str]
+    pgp:
+        - created_at: "2026-04-02T10:06:40Z"
+          enc: |-
+            -----BEGIN PGP MESSAGE-----
+
+            hQIMA4Wg+3KzyZPEAQ//RpNDRxjiZXvDZqOWzm+frWgDuZSJCwTgAjYbGjI+Hxp5
+            PEVIrENaA+ptEA1T8ieiWcq/2UVkyDQvAFHgEk6818VtkAtIxC3EpcoHafuOnOHr
+            kFu8oCWHmwyFE04CCGh4rs3mOgeZMOp1Ird0iJ2yiRiPcYuP9U2ZVF7yE8QKwiKX
+            JQGC7K7YAo1jXaPPaw2njGWM1uKt6y98ypekHojlXc9+RsG0MhlB6KKoAL32nvNk
+            kzeVZ47gVoadOIb/i1C5vMZUOqNdY3RRYio1l1SocgQiT8m8iJTH3wNmpQFfgaOS
+            1Ma8UCA98ksJ5LlMSZeYAMafGvZchEVRVpe4lXoSXr7b44dqtkNIQqyT+/4kLR6G
+            7oAzvsYLNWtZpRMw7epr7+ab5RJ4KuH+CueUQHFnavjquU/D8lk5npaQXGVi79Sq
+            mAq+b0SXaz3EfzlWszV5wo5akepNrbWLNHbV4SYHAVUKO+hl9EI20Vhh4ZWvKHHy
+            S0lkp3gRSvwEH+X49NRCiEqI55f2kPqZBZH8JnW3P1o12kZAP1xb3oft+IVNWLu9
+            s+MGgGpv7oz82iAcOliGzBJi/aXJsfiw+u/cmOge64/PU7LWriB0wEmUKXEHQJoa
+            tjleI4ZZwLFHlnRZ04iaZBpHq8/v555J4hjCSqpQ+ZUEI9u2olCx0aW6nR/QUiLS
+            XgE5EpSyS/S/R4xZS2M/MUkWB+CLSgd7Qxsp9PuUYjxRdAnREa6/1kn1eNFHy1kI
+            lFhrtPrtNp1LElzaYPo4nByltWaZuSXZ7Z4UuVJ1aJWlJjBS3PTvF7wyLRWC7j0=
+            =mPk/
+            -----END PGP MESSAGE-----
+          fp: 2F678007F08254265530095FB5B68F8BCE0CB069
+    encrypted_regex: ^(data|stringData|flag|password|secret)$
+    version: 3.8.1
