@@ -8,6 +8,7 @@ spec:
     description: |
         L'API interne de recherche temporelle utilise des JWT pour l'authentification.
         Obtenez un acces admin pour lire les informations classifiees.
+    connection_info: Lancer votre instance sur https://deployer.esgi.local/
     category: Web
     points: 300
     image: ghcr.io/sp00kyskelet0n/skylinectf-challenges/temporal-api:latest
@@ -25,23 +26,23 @@ sops:
     pgp:
         - created_at: "2026-04-01T20:44:43Z"
           enc: |-
-            -----BEGIN PGP MESSAGE-----
+              -----BEGIN PGP MESSAGE-----
 
-            hQIMA4Wg+3KzyZPEAQ//eEEDgUHTn7qi1TNWJwK+aKPC+TVodtPu4LbmbAzeWIWS
-            DE5C6jp/lmvo/KSbjIegKJuQF/cSSpq86/WW3OA7pkd43JiBM8z0sqd4kIppQgUQ
-            C00OvAT4oig5TOO7Y+fn99MQtGHC6g4E2TPqhQU4I4QEm7NSat5afhWkOITr0TYw
-            XAgiGt1yv9ocTHQxIWqBnuZeH6NNx17SlXR+kAEBVfdKJWrhCd0NYkZYREDC4nlO
-            P4NAipzsNs3g3MAkkW4Netk9TJA9lF17gZ/fe2saTTLBGKVp9K2ph9M8esMrc2Ni
-            lwdkbZ9t3flDtIxYJ1gmwiLC8QDrz9KPGzlyAyP1q6W7Q3golX0acEVdOSNMCz5c
-            SNy9JzR/BUw4EU3zAWMtxf88/Dc5pONLTAm6f+TZGRiguobw6EF7hh9v6g66He2N
-            kQxe54QtCUKYxuze5Y6u4FjHJV9JHRgUmYzbF/1AV8w9N2ODsE7WPBo62X6ss8Tt
-            v9rR1A2DWZocXOWafua/lU4Id3K/Khq5hp0isGCrAWa97zR34G0dAL3qUw2a+v1p
-            SzUTMZS9E2PMn4DIkMfwuTxrxPTzHpsRtXI3/xDkBjebbBF9SocyTZ8764dtFJR+
-            9k/eNBDTvWkYEQOHJRlJbv0LYhTs6Tr7UG0XVC4V6im95obyrg6iZrb19edNmVHS
-            XgGZuu+fEHJwg/vxm6ifxZAY6i07FdOTN5Yvyh/dGFViVHiyK2xc6xiqzhngVVl1
-            EX1vu0ZG6uycZN9/H3O/mtG5s/4cEQMJeEbstNvYuJ2eXDLhjUby7hmXhSHV7ds=
-            =FBFp
-            -----END PGP MESSAGE-----
+              hQIMA4Wg+3KzyZPEAQ//eEEDgUHTn7qi1TNWJwK+aKPC+TVodtPu4LbmbAzeWIWS
+              DE5C6jp/lmvo/KSbjIegKJuQF/cSSpq86/WW3OA7pkd43JiBM8z0sqd4kIppQgUQ
+              C00OvAT4oig5TOO7Y+fn99MQtGHC6g4E2TPqhQU4I4QEm7NSat5afhWkOITr0TYw
+              XAgiGt1yv9ocTHQxIWqBnuZeH6NNx17SlXR+kAEBVfdKJWrhCd0NYkZYREDC4nlO
+              P4NAipzsNs3g3MAkkW4Netk9TJA9lF17gZ/fe2saTTLBGKVp9K2ph9M8esMrc2Ni
+              lwdkbZ9t3flDtIxYJ1gmwiLC8QDrz9KPGzlyAyP1q6W7Q3golX0acEVdOSNMCz5c
+              SNy9JzR/BUw4EU3zAWMtxf88/Dc5pONLTAm6f+TZGRiguobw6EF7hh9v6g66He2N
+              kQxe54QtCUKYxuze5Y6u4FjHJV9JHRgUmYzbF/1AV8w9N2ODsE7WPBo62X6ss8Tt
+              v9rR1A2DWZocXOWafua/lU4Id3K/Khq5hp0isGCrAWa97zR34G0dAL3qUw2a+v1p
+              SzUTMZS9E2PMn4DIkMfwuTxrxPTzHpsRtXI3/xDkBjebbBF9SocyTZ8764dtFJR+
+              9k/eNBDTvWkYEQOHJRlJbv0LYhTs6Tr7UG0XVC4V6im95obyrg6iZrb19edNmVHS
+              XgGZuu+fEHJwg/vxm6ifxZAY6i07FdOTN5Yvyh/dGFViVHiyK2xc6xiqzhngVVl1
+              EX1vu0ZG6uycZN9/H3O/mtG5s/4cEQMJeEbstNvYuJ2eXDLhjUby7hmXhSHV7ds=
+              =FBFp
+              -----END PGP MESSAGE-----
           fp: 2F678007F08254265530095FB5B68F8BCE0CB069
     encrypted_regex: ^(data|stringData|flag|password|secret)$
     version: 3.8.1

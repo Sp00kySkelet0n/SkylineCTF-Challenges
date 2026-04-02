@@ -8,6 +8,7 @@ spec:
   description: |
     Ce site permet d'afficher des fichiers, mais vérifie-t-il vraiment ce que vous demandez ?
     Exploitez la vulnérabilité LFI (Local File Inclusion) pour lire le fichier contenant le flag.
+  connection_info: Lancer votre instance sur https://deployer.esgi.local/
   category: Web
   points: 100
   image: ghcr.io/sp00kyskelet0n/skylinectf-challenges/file-quest-lvl-1:latest

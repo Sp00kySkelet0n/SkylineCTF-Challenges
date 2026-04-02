@@ -8,6 +8,7 @@ spec:
     description: |
         Un script JavaScript obfusque protege un secret.
         Analysez le code client pour retrouver la valeur cachee.
+    connection_info: Lancer votre instance sur https://deployer.esgi.local/
     category: Web
     points: 100
     image: ghcr.io/sp00kyskelet0n/skylinectf-challenges/js-obfuscation:latest
@@ -25,23 +26,23 @@ sops:
     pgp:
         - created_at: "2026-04-01T20:41:56Z"
           enc: |-
-            -----BEGIN PGP MESSAGE-----
+              -----BEGIN PGP MESSAGE-----
 
-            hQIMA4Wg+3KzyZPEAQ//W8k7zHxbALMEs/xQ3dXu4qHTKGTLFTfqwmnyY/3wbCYR
-            lgCetXuCpap9t1jLUa1A9B7yAlylct1HwVNsCHjFnyd1bF+3DnafAEp70UAyZTx7
-            9mDjcLEiIFLHdqRBksxPfHtVvadJP4jekRY5lpbN44XIY4TdAuiyuMvAdQenlCV2
-            q6KagZOXwAl7q16PniAIgO3pqN5R8mhYQVnwIds3914MD0BEOqEQJ1hV0IlgHBjC
-            Y6IdhB11+Qxcu7673Zv76YUbEjkRSDFwPLVI0TCNk0+52ax1UaaM6Z4cMFTzgwGV
-            9qmDGxFENTniRs/iQeYDhtpdTMwofS+lVNCfvzbY5S8vtHkRIEHqLAZ3Wy7L/U/Q
-            ZgqxViMVNLRBFINOhZXDt9lri1AqrPTdI0ehKvoTK8FlZzA1wsX7OWBWK4Q9Q8v0
-            qPju0OvSa+IDG5QBKE4yPrFxUJ0uQLSLT52tlmcAs0kqtcGdC7GSuOw26NwNGRex
-            t15NJny/XEvPE2qG92di7q2IItx02ZKeN/RsZL+6sWeDTv917y5hiDuGUmHUr3es
-            JrBsALYicNaP+zCbZXR9t7ctLNQCypYClrGY31tELiOmQSujg+MiaHuPbO2JBgoW
-            VUDpTqIEMbIW1ahltFs667kQM3G9yYGigE7R6ia2vQ+rEzsMV7W2lEGvvlY7YT7S
-            XgG3ocuh01i3BNOEtV60BKxHIh7W9MJmj8wQ1IVBYahQt+i8L++EwW+5I+ptzPSD
-            dwCofjXb9pY9v/P9v7UF7mEd1R753KRkEId8BIGuSAapnKPxkaEyCsnz8BaJvng=
-            =IjSS
-            -----END PGP MESSAGE-----
+              hQIMA4Wg+3KzyZPEAQ//W8k7zHxbALMEs/xQ3dXu4qHTKGTLFTfqwmnyY/3wbCYR
+              lgCetXuCpap9t1jLUa1A9B7yAlylct1HwVNsCHjFnyd1bF+3DnafAEp70UAyZTx7
+              9mDjcLEiIFLHdqRBksxPfHtVvadJP4jekRY5lpbN44XIY4TdAuiyuMvAdQenlCV2
+              q6KagZOXwAl7q16PniAIgO3pqN5R8mhYQVnwIds3914MD0BEOqEQJ1hV0IlgHBjC
+              Y6IdhB11+Qxcu7673Zv76YUbEjkRSDFwPLVI0TCNk0+52ax1UaaM6Z4cMFTzgwGV
+              9qmDGxFENTniRs/iQeYDhtpdTMwofS+lVNCfvzbY5S8vtHkRIEHqLAZ3Wy7L/U/Q
+              ZgqxViMVNLRBFINOhZXDt9lri1AqrPTdI0ehKvoTK8FlZzA1wsX7OWBWK4Q9Q8v0
+              qPju0OvSa+IDG5QBKE4yPrFxUJ0uQLSLT52tlmcAs0kqtcGdC7GSuOw26NwNGRex
+              t15NJny/XEvPE2qG92di7q2IItx02ZKeN/RsZL+6sWeDTv917y5hiDuGUmHUr3es
+              JrBsALYicNaP+zCbZXR9t7ctLNQCypYClrGY31tELiOmQSujg+MiaHuPbO2JBgoW
+              VUDpTqIEMbIW1ahltFs667kQM3G9yYGigE7R6ia2vQ+rEzsMV7W2lEGvvlY7YT7S
+              XgG3ocuh01i3BNOEtV60BKxHIh7W9MJmj8wQ1IVBYahQt+i8L++EwW+5I+ptzPSD
+              dwCofjXb9pY9v/P9v7UF7mEd1R753KRkEId8BIGuSAapnKPxkaEyCsnz8BaJvng=
+              =IjSS
+              -----END PGP MESSAGE-----
           fp: 2F678007F08254265530095FB5B68F8BCE0CB069
     encrypted_regex: ^(data|stringData|flag|password|secret)$
     version: 3.8.1

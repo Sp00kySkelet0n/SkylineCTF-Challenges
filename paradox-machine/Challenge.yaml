@@ -8,6 +8,7 @@ spec:
     description: |
         Le simulateur temporel accepte des coordonnees et parametres operateur.
         Le moteur de rendu semble interpreter plus que de simples donnees.
+    connection_info: Lancer votre instance sur https://deployer.esgi.local/
     category: Web
     points: 500
     image: ghcr.io/sp00kyskelet0n/skylinectf-challenges/paradox-machine:latest
@@ -25,23 +26,23 @@ sops:
     pgp:
         - created_at: "2026-04-01T20:04:29Z"
           enc: |-
-            -----BEGIN PGP MESSAGE-----
+              -----BEGIN PGP MESSAGE-----
 
-            hQIMA4Wg+3KzyZPEARAAutpGx1x34wJFN7t0e60ccGHUWpJNDpVOCvUgFKPe9YV/
-            1nBKXi4Dk/+idWfFXOo2ssVrE6A97uf+PP8z8sg0BzrdsvkGc68uDZ/5NJY2FAwg
-            ph7tqfEeK3WohxYLCtnfAcoZRyhzfUA7TEaGJZeOOtwWs/4BYGEYOgtHVulEvor8
-            XKufniS9ZnswbRAuoxe/sj9xn7vHO6hL9h5Pxspz+Yrahp6hFgnkbsqu4gvEg1sC
-            sKrh4LnpNSNS1swsa8CyevM3Xlix8KnxdkIkH3u5FuK6/aq5dLICGJfvgAUEV+xR
-            oqvJaVMIA9YHbEESplGVdUFf+pIn/MxDBCeaBLZh2CDReN4I+XUzxOMJZqYkV2ei
-            g5x7jS/XbQYe/Nm81mPMi46QNASerKc1iduDs3EAC3JLrKdRuLA/Flu2ExrPIx2J
-            WkTPLgnLQZmqDVWypC/8LOMDV19xvFHngpDC1m8p2AmyGwNxkJOR0qslQawUxRun
-            qqsuR/75JyfHDX9+Su1CZtuyHauT0OGP9Y8AKyofFAPcPb4s9VO0tO0gTIctChou
-            HsPF+S9SXUMZYTZFzh7ZoSWDpDiHgdb8krvI/qi3MFI6QcIGgI0bKVKavl1mybIS
-            /KO0rT4XVE7kFU7loTPNDiJMQnCJ7lsPtLVh/M371uCwUh6dDKjEtB0BhjDd06XS
-            XgH7EM0a1AB3BBzJWeqvIJtd0iv5mf8H2vpxuViFCegB2mQJvTVGBg+wHgSFH/Yi
-            NrkjSHH9zfFym21Q3N8wDdWzcWvYhHbY1VK104gS7dKhTwcjI9W4KzV0RyhD7rM=
-            =bpgK
-            -----END PGP MESSAGE-----
+              hQIMA4Wg+3KzyZPEARAAutpGx1x34wJFN7t0e60ccGHUWpJNDpVOCvUgFKPe9YV/
+              1nBKXi4Dk/+idWfFXOo2ssVrE6A97uf+PP8z8sg0BzrdsvkGc68uDZ/5NJY2FAwg
+              ph7tqfEeK3WohxYLCtnfAcoZRyhzfUA7TEaGJZeOOtwWs/4BYGEYOgtHVulEvor8
+              XKufniS9ZnswbRAuoxe/sj9xn7vHO6hL9h5Pxspz+Yrahp6hFgnkbsqu4gvEg1sC
+              sKrh4LnpNSNS1swsa8CyevM3Xlix8KnxdkIkH3u5FuK6/aq5dLICGJfvgAUEV+xR
+              oqvJaVMIA9YHbEESplGVdUFf+pIn/MxDBCeaBLZh2CDReN4I+XUzxOMJZqYkV2ei
+              g5x7jS/XbQYe/Nm81mPMi46QNASerKc1iduDs3EAC3JLrKdRuLA/Flu2ExrPIx2J
+              WkTPLgnLQZmqDVWypC/8LOMDV19xvFHngpDC1m8p2AmyGwNxkJOR0qslQawUxRun
+              qqsuR/75JyfHDX9+Su1CZtuyHauT0OGP9Y8AKyofFAPcPb4s9VO0tO0gTIctChou
+              HsPF+S9SXUMZYTZFzh7ZoSWDpDiHgdb8krvI/qi3MFI6QcIGgI0bKVKavl1mybIS
+              /KO0rT4XVE7kFU7loTPNDiJMQnCJ7lsPtLVh/M371uCwUh6dDKjEtB0BhjDd06XS
+              XgH7EM0a1AB3BBzJWeqvIJtd0iv5mf8H2vpxuViFCegB2mQJvTVGBg+wHgSFH/Yi
+              NrkjSHH9zfFym21Q3N8wDdWzcWvYhHbY1VK104gS7dKhTwcjI9W4KzV0RyhD7rM=
+              =bpgK
+              -----END PGP MESSAGE-----
           fp: 2F678007F08254265530095FB5B68F8BCE0CB069
     encrypted_regex: ^(data|stringData|flag|password|secret)$
     version: 3.8.1

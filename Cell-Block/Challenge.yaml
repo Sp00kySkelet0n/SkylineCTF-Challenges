@@ -12,7 +12,7 @@ spec:
   points: 100
   instance: true
   image: ghcr.io/sp00kyskelet0n/skylinectf-challenges/ce-l-l-block:latest
-  connection_info: Lancer votre instance sur http://10.255.0.53 puis ssh user@<IP> -p <PORT>
+  connection_info: Lancer votre instance sur https://deployer.esgi.local/ puis ssh user@<IP> -p <PORT>
   port: 22
   flag: ENC[AES256_GCM,data:OYBYnQKhxwkb9fQVNfHtief+kJFDQBmRaRWHtVI9ULAWPgtxwbBy/A==,iv:1N1drT2RUG5tR1OruyOfCi9M4ukI9PZu37QbVyDn22o=,tag:C7Zpfx0VLfOfJZcGhGn5Gw==,type:str]
 sops:

@@ -15,7 +15,7 @@ spec:
     type: standard
     state: visible
     instance: true
-    connection_info: Lancer votre instance sur http://deployer.ctfd.tail575cd.ts.net
+    connection_info: Lancer votre instance sur https://deployer.esgi.local/
     max_attempts: 0
     image: ghcr.io/sp00kyskelet0n/skylinectf-challenges/gate-bypass:latest
     port: 80
@@ -27,23 +27,23 @@ sops:
     pgp:
         - created_at: "2026-02-11T17:13:11Z"
           enc: |-
-            -----BEGIN PGP MESSAGE-----
+              -----BEGIN PGP MESSAGE-----
 
-            hQIMA4Wg+3KzyZPEAQ//cTc7LCAfQ+FsWmNcuwVnXs5RgQZhYSFVlzv18Is3C7KI
-            ep5GKbtnv6iZKhCw1CJ75+GOLho8foWsHXhjwCLB4p2jDiv/RWeSM56ZFGqn/lg1
-            V5c9VtnUHA/6mPvJv8vL7i8zyJGTpLAFMbRCgrnDf4NA5GL6Jr9d33yuZT4+VAmr
-            nfp2BINkbu5jJX9z49rza67UOLx5g4df+Nkc4rH5ZK/VmiPDQi/yVuJJgHeUPI4n
-            0g55OQixHlhGpMMWpv7XIgA0Zf9qwy8TjP7JwznB5L0sEbnDeoVrVqdldGlJbxgM
-            d9aC7An1nKW7RSf2u0Hmbf4gyDPQiespDGpMZmgqj7kihzfyqygXc7jq1pF01p0q
-            GCplh6qBsCSwFTaMSied+De76G2EIES75eXFpN3UWMGAEVzwt2avAIi9+7BegR3T
-            XYmmOxsZhijzEnL526F59lpFXEEpbY6/gwYsi29NPSEKYrRatTfnBYf3eoQuHNGu
-            /09KVnmQkwsYuCFk47gm3VhXzeCf6IYDuc8lx5HeWf55jXAUA789a/k++KMvp5H1
-            2MwxE/lqWlerXlCLiRQ02s111SyDjmdEgEIDCK23aM52CMdAQ4MPnMHXvRQMw64X
-            9r3AaCWni5DOyY9WR/tb9h9UxceTTbqhRmZ83e1efjlpc/IbSoamY/bkiWUOMLXS
-            XgHcyu5AYGSqmWJDiRBPrh87DIuy02XkZuFfvB+ePINN8jLsbGyAOpRa3DUKzF4J
-            cpuJ3S6hpN/SAWlyHGjKLzDKmXnW2TfPqt67z0LbARywFSlZRj+6xX7j8qPYMHc=
-            =Un/2
-            -----END PGP MESSAGE-----
+              hQIMA4Wg+3KzyZPEAQ//cTc7LCAfQ+FsWmNcuwVnXs5RgQZhYSFVlzv18Is3C7KI
+              ep5GKbtnv6iZKhCw1CJ75+GOLho8foWsHXhjwCLB4p2jDiv/RWeSM56ZFGqn/lg1
+              V5c9VtnUHA/6mPvJv8vL7i8zyJGTpLAFMbRCgrnDf4NA5GL6Jr9d33yuZT4+VAmr
+              nfp2BINkbu5jJX9z49rza67UOLx5g4df+Nkc4rH5ZK/VmiPDQi/yVuJJgHeUPI4n
+              0g55OQixHlhGpMMWpv7XIgA0Zf9qwy8TjP7JwznB5L0sEbnDeoVrVqdldGlJbxgM
+              d9aC7An1nKW7RSf2u0Hmbf4gyDPQiespDGpMZmgqj7kihzfyqygXc7jq1pF01p0q
+              GCplh6qBsCSwFTaMSied+De76G2EIES75eXFpN3UWMGAEVzwt2avAIi9+7BegR3T
+              XYmmOxsZhijzEnL526F59lpFXEEpbY6/gwYsi29NPSEKYrRatTfnBYf3eoQuHNGu
+              /09KVnmQkwsYuCFk47gm3VhXzeCf6IYDuc8lx5HeWf55jXAUA789a/k++KMvp5H1
+              2MwxE/lqWlerXlCLiRQ02s111SyDjmdEgEIDCK23aM52CMdAQ4MPnMHXvRQMw64X
+              9r3AaCWni5DOyY9WR/tb9h9UxceTTbqhRmZ83e1efjlpc/IbSoamY/bkiWUOMLXS
+              XgHcyu5AYGSqmWJDiRBPrh87DIuy02XkZuFfvB+ePINN8jLsbGyAOpRa3DUKzF4J
+              cpuJ3S6hpN/SAWlyHGjKLzDKmXnW2TfPqt67z0LbARywFSlZRj+6xX7j8qPYMHc=
+              =Un/2
+              -----END PGP MESSAGE-----
           fp: 2F678007F08254265530095FB5B68F8BCE0CB069
     encrypted_regex: ^(data|stringData|flag|password|secret)$
     version: 3.8.1

@@ -9,6 +9,7 @@ spec:
         Bienvenue dans Chronobank, la banque temporelle de 2147.
         Un compte de test est fourni, mais le vrai objectif est d'acceder au coffre admin.
     category: Web
+    connection_info: Lancer votre instance sur https://deployer.esgi.local/
     points: 200
     image: ghcr.io/sp00kyskelet0n/skylinectf-challenges/chronobank:latest
     port: 8000
@@ -25,23 +26,23 @@ sops:
     pgp:
         - created_at: "2026-04-01T20:24:47Z"
           enc: |-
-            -----BEGIN PGP MESSAGE-----
+              -----BEGIN PGP MESSAGE-----
 
-            hQIMA4Wg+3KzyZPEARAAt4DbE52l/AJy8Ugm872VORjAOGRy1pque3Ma1zPYJYiv
-            5DxE0nje3cKAu/Dk6+LcJMUygUJOqaxN7VCM3+UT8N1zhN6GMjZwv03q3hz4Ss1c
-            UcLYmzRLurvjm54lTiOakGiRI+n3pkF2Jm9ZAEBcpzUkChB0GFvhTn6FOanzBSuP
-            oQ5PQ36rX8BBw2hSe0xafZva7Ou8qDoq27bcQ31xdEi5pvtZfkffr+6AcZ6d2Qb7
-            unE59lFGloUg/vGiSc/SjJZXTrQjyU0GSfCCcekwJUUAfaIvt+cG3IBRcmQVbTWG
-            HE10BX5OpRZ50kS8kaxvEEsrntw7z7iyq6W7PoRkV8E0KNjGVKoQtr73rUcsVMKe
-            3nW62WJOr5lJHBjSRrHFtn2rF5U0sb1epDlFhb+GIHG9higUTVKryNQ2ODEg4eFG
-            FWSxNHclHzufARYWg7UPtnX7MddXdfDT7RfQoJuRHru8y/z48LYHCr0lHmYBSfHL
-            Uxb/YSfIgWuxIOcVRYwIHdsq0iGYwQoPGe+2nIpN1HDXD9mlpV01x9DyL3q+1Aiw
-            1QHSqQqMy3jGo0xALDeQm/rskvgP9UL0I4cS0devWRNF/cHsUUOnC5LO7enqCIl3
-            DpRmxufn2d/M5Lidd5E8qfhUkvyeLsVPZqynpTnhsPPyirTVAi439IZELcJKRXHS
-            XgFajvU92LBPgvy4kn4wGRtkoAb336j8YcoNc0RCmaJOURfR4wpMnV678AfWHm6u
-            cipHxEPVmR5qIrUdecFP1Q1ei5lea4mMDgshUGWl6RP3rcEysiMD8jFAQC1qFx0=
-            =GUl4
-            -----END PGP MESSAGE-----
+              hQIMA4Wg+3KzyZPEARAAt4DbE52l/AJy8Ugm872VORjAOGRy1pque3Ma1zPYJYiv
+              5DxE0nje3cKAu/Dk6+LcJMUygUJOqaxN7VCM3+UT8N1zhN6GMjZwv03q3hz4Ss1c
+              UcLYmzRLurvjm54lTiOakGiRI+n3pkF2Jm9ZAEBcpzUkChB0GFvhTn6FOanzBSuP
+              oQ5PQ36rX8BBw2hSe0xafZva7Ou8qDoq27bcQ31xdEi5pvtZfkffr+6AcZ6d2Qb7
+              unE59lFGloUg/vGiSc/SjJZXTrQjyU0GSfCCcekwJUUAfaIvt+cG3IBRcmQVbTWG
+              HE10BX5OpRZ50kS8kaxvEEsrntw7z7iyq6W7PoRkV8E0KNjGVKoQtr73rUcsVMKe
+              3nW62WJOr5lJHBjSRrHFtn2rF5U0sb1epDlFhb+GIHG9higUTVKryNQ2ODEg4eFG
+              FWSxNHclHzufARYWg7UPtnX7MddXdfDT7RfQoJuRHru8y/z48LYHCr0lHmYBSfHL
+              Uxb/YSfIgWuxIOcVRYwIHdsq0iGYwQoPGe+2nIpN1HDXD9mlpV01x9DyL3q+1Aiw
+              1QHSqQqMy3jGo0xALDeQm/rskvgP9UL0I4cS0devWRNF/cHsUUOnC5LO7enqCIl3
+              DpRmxufn2d/M5Lidd5E8qfhUkvyeLsVPZqynpTnhsPPyirTVAi439IZELcJKRXHS
+              XgFajvU92LBPgvy4kn4wGRtkoAb336j8YcoNc0RCmaJOURfR4wpMnV678AfWHm6u
+              cipHxEPVmR5qIrUdecFP1Q1ei5lea4mMDgshUGWl6RP3rcEysiMD8jFAQC1qFx0=
+              =GUl4
+              -----END PGP MESSAGE-----
           fp: 2F678007F08254265530095FB5B68F8BCE0CB069
     encrypted_regex: ^(data|stringData|flag|password|secret)$
     version: 3.8.1

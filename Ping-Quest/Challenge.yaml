@@ -12,7 +12,7 @@ spec:
     category: Web
     points: 100
     instance: true
-    connection_info: Lancer votre instance sur http://deployer.ctfd.tail575cd.ts.net
+    connection_info: Lancer votre instance sur https://deployer.esgi.local/
     image: ghcr.io/sp00kyskelet0n/skylinectf-challenges/ping-quest:latest
     port: 5000
     flag: ENC[AES256_GCM,data:oy52GHwGyZYxth/c5YeNZ2AodX8hepx3,iv:ac8c0x+ovMk3Q9w8wbqWgpVr3VX8aGC+Kd9Ma11RXRI=,tag:w1JBC40g8/OOjk9HMGLMeQ==,type:str]
@@ -27,23 +27,23 @@ sops:
     pgp:
         - created_at: "2026-02-11T17:12:00Z"
           enc: |-
-            -----BEGIN PGP MESSAGE-----
+              -----BEGIN PGP MESSAGE-----
 
-            hQIMA4Wg+3KzyZPEAQ/+M3S+Ow8BtBYYnllLfaYJ199HBiOhIprJob69mXxESut/
-            Rtbs181fwc4NfFW0mqnVLFwGeD0On0z3BBejZW8VA12VH9etbDXFpCcwq9D7QZXT
-            VeTpvt0VBoue7URZNEc09AfIrWZ5cqTQ9CBYV/Xq4a6a0P/YLnHrLWr36nwUkZE9
-            kwlL+ldX3ZYyieMRh6N4Vo1dOIwonCh1vQvLuZZ+ToY7wcb8SOBJzDxW7b8om0oA
-            rhmNMOaugo2NY5H6TBUyxMmMp06IeTcHFDb4qQKpWUzWN/Tg5rDnKQa7Wek1+Os8
-            HGhdYvHioPAp/01UBlngAhJdMwBNZIG41td4XWt7yuAucsfzpyuy0Ui0xRF/IVuR
-            p0wAxWXqM3O7dUYiAqKyNsYCyKRDMb+3G/yNcMAR1B7tUCMJ/2yRlFDw1nlsVunA
-            IkDnS2rxD8fk93uotp0+b0i9gEmPCSMthtaYWtKTyoYLxuOhWYN0qZT7r5GIqKoQ
-            0DJYUS/Gj+zqW0NEni9uJwEAXl8MGcmAR2AgMnpBPFtwbSuljURqwC4Gkf3LD+PU
-            XTbPY+/M2unYvJV7AjPjonj7uoPa0gpMqrllJ27q2LsNkRJROnL1ievbF6hn0yWL
-            LSguKzfIxq3Yoq8GC52RDtim9vCiQN+l8IBL4JeegyI1RPLUVGQRYdNFOr5vwv7S
-            XAF0fUa2qpHENFiT9YissBJ2oxmgkhGZIxOhnfcon4SAkHWCeNmdczQepK7f/BEE
-            8XBPM5n4N97eJyc+duoEvPRbuwjFWtWKrVI7TsXbV5j+5OmGETPF6q//zJ6r
-            =YvnP
-            -----END PGP MESSAGE-----
+              hQIMA4Wg+3KzyZPEAQ/+M3S+Ow8BtBYYnllLfaYJ199HBiOhIprJob69mXxESut/
+              Rtbs181fwc4NfFW0mqnVLFwGeD0On0z3BBejZW8VA12VH9etbDXFpCcwq9D7QZXT
+              VeTpvt0VBoue7URZNEc09AfIrWZ5cqTQ9CBYV/Xq4a6a0P/YLnHrLWr36nwUkZE9
+              kwlL+ldX3ZYyieMRh6N4Vo1dOIwonCh1vQvLuZZ+ToY7wcb8SOBJzDxW7b8om0oA
+              rhmNMOaugo2NY5H6TBUyxMmMp06IeTcHFDb4qQKpWUzWN/Tg5rDnKQa7Wek1+Os8
+              HGhdYvHioPAp/01UBlngAhJdMwBNZIG41td4XWt7yuAucsfzpyuy0Ui0xRF/IVuR
+              p0wAxWXqM3O7dUYiAqKyNsYCyKRDMb+3G/yNcMAR1B7tUCMJ/2yRlFDw1nlsVunA
+              IkDnS2rxD8fk93uotp0+b0i9gEmPCSMthtaYWtKTyoYLxuOhWYN0qZT7r5GIqKoQ
+              0DJYUS/Gj+zqW0NEni9uJwEAXl8MGcmAR2AgMnpBPFtwbSuljURqwC4Gkf3LD+PU
+              XTbPY+/M2unYvJV7AjPjonj7uoPa0gpMqrllJ27q2LsNkRJROnL1ievbF6hn0yWL
+              LSguKzfIxq3Yoq8GC52RDtim9vCiQN+l8IBL4JeegyI1RPLUVGQRYdNFOr5vwv7S
+              XAF0fUa2qpHENFiT9YissBJ2oxmgkhGZIxOhnfcon4SAkHWCeNmdczQepK7f/BEE
+              8XBPM5n4N97eJyc+duoEvPRbuwjFWtWKrVI7TsXbV5j+5OmGETPF6q//zJ6r
+              =YvnP
+              -----END PGP MESSAGE-----
           fp: 2F678007F08254265530095FB5B68F8BCE0CB069
     encrypted_regex: ^(data|stringData|flag|password|secret)$
     version: 3.8.1
